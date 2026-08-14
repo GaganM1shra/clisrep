@@ -1,7 +1,6 @@
 ---
 # CLISREP Phase 1 Analysis Summary
-# Source: Jira CLI ESR issues (Feb-Aug 2026)
-# NOTE: Slack (all-cloud-engineers) data pending - no Slack MCP available in this session
+# Source: Jira CLI ESR issues + Slack #all-cloud-engineers (Feb-Aug 2026)
 # Last updated: 2026-08-14
 
 metadata:
@@ -12,16 +11,12 @@ metadata:
       period: "2026-02-14 to 2026-08-14"
       total_issues: 1496
       sampled: 600
-  data_sources_pending:
     - source: "Slack"
       channel: "all-cloud-engineers"
-      reason: "Slack MCP not configured in this session"
-      expected_additional_insights:
-        - "Informal requests that never become tickets"
-        - "Knowledge questions (no ticket needed)"
-        - "Team routing patterns"
-        - "Response time patterns"
-        - "Tribal knowledge exchanges"
+      period: "2026-02-28 to 2026-08-13"
+      total_messages: 924
+      human_messages: 765
+      threads_with_replies: 117
 
 # ============ KEY FINDINGS ============
 key_findings:
