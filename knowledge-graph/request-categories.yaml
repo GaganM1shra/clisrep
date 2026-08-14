@@ -1,0 +1,358 @@
+---
+# CLISREP Knowledge Graph - Request Categories
+# Source: CLI project ESR issues (Feb 2026 - Aug 2026)
+# Total analyzed: 1,496 issues (600 sampled with full details)
+# Maintainer: Cloud Engineering Team
+# Last updated: 2026-08-14
+
+metadata:
+  source: "Jira CLI project, issuetype=ESR"
+  analysis_period: "2026-02-14 to 2026-08-14"
+  total_issues: 1496
+  sampled_issues: 600
+  avg_monthly_volume: ~250
+
+categories:
+  - id: database_mongodb
+    name: "MongoDB Operations"
+    percentage: 13.3
+    volume_per_month: ~33
+    description: "Scaling, disk operations, index management, data fixes on MongoDB clusters"
+    sub_types:
+      - id: mongo_scaling
+        name: "MongoDB Scaling (instance tier/disk)"
+        examples:
+          - "Scale MongoDB cdng to M80 in prod2"
+          - "Scale MongoDB cluster disk to 900Gi in prod0"
+        automation_feasibility: high
+        typical_workflow: "Validate cluster → check current size → apply resize → verify"
+      - id: mongo_data_operations
+        name: "MongoDB Data Operations (insert/delete/index)"
+        examples:
+          - "Deleting the data in these collections to ease new index and field creations"
+          - "Adding 3m documents in acl collection via mongoscript-test"
+          - "Create unique index on subdomainurl field"
+        automation_feasibility: medium
+        typical_workflow: "Validate request → backup → execute → verify → report"
+      - id: mongo_kafka_connect
+        name: "MongoDB CDC/Kafka Connect"
+        examples:
+          - "Need consumer lag check for kafka topic - pmsMongo.pms-harness.planExecutionsSummary"
+          - "Simplified SDLC for onboarding new collection into existing kafka-connect"
+        automation_feasibility: medium
+      - id: mongo_config
+        name: "MongoDB Configuration Changes"
+        examples:
+          - "Exempt qpeperfmongodb and scaletestmongdb from deletion ttl"
+          - "Separate mongo db for integration-manager from idp in QA"
+        automation_feasibility: low
+
+  - id: database_postgres
+    name: "PostgreSQL / CloudSQL Operations"
+    percentage: 6.0
+    volume_per_month: ~15
+    description: "Dirty migrations, scaling, query execution, access provisioning"
+    sub_types:
+      - id: pg_dirty_migration
+        name: "Dirty Migration Recovery"
+        examples:
+          - "Need help in recovering a dirty migration on sto-core PG (prod2)"
+          - "Decrementing migration number to rerun migration"
+        automation_feasibility: medium
+        typical_workflow: "Check migration state → decrement version → mark clean → rerun"
+        repeat_frequency: "7+ times in 6 months"
+      - id: pg_scaling
+        name: "PostgreSQL Instance Scaling"
+        examples:
+          - "Increase code-prod1 postgres instance vCPU and Memory"
+          - "Upgrade ACS CloudSQL instance in Prod2"
+        automation_feasibility: high
+      - id: pg_query_execution
+        name: "Adhoc Query Execution"
+        examples:
+          - "Require Adhoc query run in prod2 for iac db"
+          - "Execute query in prod1 pms-harness db"
+        automation_feasibility: medium
+      - id: pg_access
+        name: "PostgreSQL Access Provisioning"
+        examples:
+          - "Require Read Access To Prod5 IACM Postgres"
+          - "Increase timeout of PDT write queries for 'looker' db user"
+        automation_feasibility: high
+
+  - id: secrets_certificates
+    name: "Secrets & Certificates Management"
+    percentage: 13.7
+    volume_per_month: ~34
+    description: "Creating secrets in GSM/AWS, cert rotation, token generation, service accounts"
+    sub_types:
+      - id: secret_creation
+        name: "Secret Creation (GSM/AWS)"
+        examples:
+          - "Create secret in GSM for SEI"
+          - "Secrets creation in AWS Prod5 and Prod7"
+          - "Create clickhouse secrets on prod1"
+          - "Add secret to prod1 GSM"
+        automation_feasibility: high
+        repeat_frequency: "5+ identical patterns per month"
+        typical_workflow: "Validate requester → check existing → create secret → verify → notify"
+      - id: secret_migration
+        name: "Secret Migration"
+        examples:
+          - "Migrate secrets from prod-shared to harness-zero-shared"
+        automation_feasibility: medium
+      - id: cert_management
+        name: "Certificate Management"
+        examples:
+          - "Update Temporal client cert secrets for QA-Setup Cluster"
+          - "Update the QA GCLB certs in code to reflect the current state"
+        automation_feasibility: medium
+      - id: service_accounts
+        name: "Service Account Creation"
+        examples:
+          - "Create a new service account in levelops-dev GCP project"
+          - "Create and annotate registry-log-monitor-ksa in qa-private cluster"
+        automation_feasibility: high
+      - id: token_generation
+        name: "Token Generation"
+        examples:
+          - "Generate the admin portal token for account deletions"
+          - "Create and share grafana service account token for mcp"
+        automation_feasibility: high
+        repeat_frequency: "2-3x per month"
+
+  - id: observability
+    name: "Observability & Monitoring"
+    percentage: 10.7
+    volume_per_month: ~27
+    description: "Grafana access, dashboard creation, alert configuration, metrics issues"
+    sub_types:
+      - id: grafana_access
+        name: "Grafana Access/Permissions"
+        examples:
+          - "Edit access to gitops grafana dashboard"
+          - "Get admin / editor role for grafana dashboards"
+          - "Need access to Grafana Dashboards for UI Monitoring Health"
+        automation_feasibility: high
+        repeat_frequency: "4+ per month"
+      - id: alert_config
+        name: "Alert Configuration"
+        examples:
+          - "Create temporary log-based alert for inova_bitbucket_webhook_pipeline"
+          - "Mute Service Healthcheck alerts for SEI services in Harness0"
+          - "Need help to configure scs slack channel and PD on grafana alerts"
+        automation_feasibility: medium
+      - id: dashboard_creation
+        name: "Dashboard Creation/Migration"
+        examples:
+          - "Missing metrics for iac-server in new Haul Observability"
+          - "Provide permissions to run 'grafana - promote dashboard' pipeline"
+        automation_feasibility: medium
+      - id: metrics_issues
+        name: "Metrics/Monitoring Issues"
+        examples:
+          - "Metrics of last 10 days are not showing up in grafana for QA env"
+          - "qa-setup GCP project: Cloud Monitoring Prometheus metric descriptor quota exhausted"
+        automation_feasibility: low
+
+  - id: deployment_release
+    name: "Deployment & Release Operations"
+    percentage: 9.5
+    volume_per_month: ~24
+    description: "Image publishing, helm operations, config changes, rollouts"
+    sub_types:
+      - id: image_publishing
+        name: "Image Copy/Publish"
+        examples:
+          - "Copy argocd 3.5.0 rapidfort images from Quay to HAR"
+          - "Updating plugin version for ssca-plugins"
+        automation_feasibility: high
+        repeat_frequency: "19x for ssca-plugins alone"
+      - id: config_changes
+        name: "Deployment Config Changes"
+        examples:
+          - "Need to change the value of SEGMEMENT_WRITE_KEY in iac-server QA deployment"
+          - "Deleting incorrectly set config entity"
+        automation_feasibility: medium
+      - id: helm_operations
+        name: "Helm Chart Operations"
+        examples:
+          - "Uninstall Prisma Runtime Helm Chart for QA Cluster"
+          - "Deploy delegate hotfix 26.04.88904 on Harness0"
+        automation_feasibility: medium
+      - id: workload_identity
+        name: "Workload Identity Mapping"
+        examples:
+          - "[prod1] workload identity mapping for release-management"
+          - "[prod1] workload identity mapping for genai-service"
+        automation_feasibility: high
+        repeat_frequency: "4+ per service rollout"
+
+  - id: networking_dns
+    name: "Networking, DNS & Load Balancers"
+    percentage: 3.2
+    volume_per_month: ~8
+    description: "Vanity URLs, GCLB rules, DNS records, VPC operations"
+    sub_types:
+      - id: vanity_urls
+        name: "Vanity URL / GCLB Creation"
+        examples:
+          - "[VanityURL] Create entry in GCLB for proofpoint-test.harness.io - Prod 1"
+          - "Creation of GCLB rule for Itaú - Sandbox"
+          - "Create Vanity URL Mapping for Staging Environment"
+        automation_feasibility: high
+        typical_workflow: "Validate domain → create GCLB rule → update DNS → verify SSL → notify"
+      - id: dns_updates
+        name: "DNS Record Updates"
+        examples:
+          - "ingress ip has been changed but DNS is not updated accordingly"
+        automation_feasibility: high
+      - id: vpc_network
+        name: "VPC/Network Operations"
+        examples:
+          - "VPC regions + EKS regions Creation"
+          - "ip whitelisting"
+        automation_feasibility: medium
+
+  - id: kubernetes_infra
+    name: "Kubernetes & Cluster Operations"
+    percentage: 3.2
+    volume_per_month: ~8
+    description: "Cluster operations, namespace management, node issues, pod operations"
+    sub_types:
+      - id: cluster_operations
+        name: "Cluster Setup/Config"
+        examples:
+          - "QA cluster CPU/memory under-provisioned"
+          - "Move Harness0 IDP app cluster to regular nodes"
+        automation_feasibility: low
+      - id: namespace_ops
+        name: "Namespace Operations"
+        examples:
+          - "Prepare Infra components for UDP on prod6"
+        automation_feasibility: medium
+      - id: pod_operations
+        name: "Pod/App Lifecycle"
+        examples:
+          - "help in deleting this stuck spark app in prod3"
+          - "GKE prod1 pod restart storm - memory pressure"
+        automation_feasibility: medium
+
+  - id: kafka_messaging
+    name: "Kafka & Event Processing"
+    percentage: 2.0
+    volume_per_month: ~5
+    description: "Outbox unblocking, topic management, Kafka Connect operations"
+    sub_types:
+      - id: outbox_unblock
+        name: "Outbox Event Unblocking"
+        examples:
+          - "Unblock QA outbox events"
+          - "Process QA outbox blocked events"
+        automation_feasibility: high
+        repeat_frequency: "7+ times in 6 months (recurring issue)"
+        typical_workflow: "Identify blocked events → validate → process/skip → verify consumer lag"
+      - id: topic_management
+        name: "Topic/Retention Management"
+        examples:
+          - "Bump data-platform-cdc-ingestion-request topic retention"
+        automation_feasibility: medium
+      - id: pubsub_permissions
+        name: "PubSub/Kafka Permissions"
+        examples:
+          - "Grant spark-workload-identity SA pubsub.publisher on data-job-status topic"
+        automation_feasibility: high
+
+  - id: access_permissions
+    name: "Access & Permissions"
+    percentage: 4.0
+    volume_per_month: ~10
+    description: "IAM roles, RBAC, read-only access, GCP project permissions"
+    sub_types:
+      - id: gcp_iam
+        name: "GCP IAM / Service Account Roles"
+        examples:
+          - "S3 storage permissions for secrets-connectors-service"
+          - "Network-Level Metadata Access Restriction for CI Runners"
+        automation_feasibility: high
+      - id: grafana_rbac
+        name: "Grafana/Tool Access"
+        examples:
+          - "Get admin / editor role for grafana dashboards"
+          - "Create grafana service account for using with mcp"
+        automation_feasibility: high
+
+  - id: environment_onboarding
+    name: "Environment & Account Setup"
+    percentage: 3.0
+    volume_per_month: ~8
+    description: "New accounts, org creation, infra prep for new environments"
+    sub_types:
+      - id: account_creation
+        name: "Account/Org Creation"
+        examples:
+          - "Request for AI-Evals Org creation in Harness0 account"
+          - "Account Creation in AWS for QA"
+        automation_feasibility: medium
+      - id: infra_prep
+        name: "Infrastructure Preparation"
+        examples:
+          - "Prepare Infra components for UDP on prod6"
+          - "Create GCS buckets (blobstore) for Test Intelligence"
+        automation_feasibility: medium
+
+  - id: troubleshooting
+    name: "Troubleshooting & Investigation"
+    percentage: 2.7
+    volume_per_month: ~7
+    description: "Incident investigation, performance issues, stuck processes"
+    sub_types:
+      - id: incident_investigation
+        name: "Incident Investigation"
+        examples:
+          - "Investigate span dropping in Tempo production environments"
+          - "Investigate unclean Postgres stop and recovery"
+        automation_feasibility: low
+      - id: stuck_processes
+        name: "Stuck/Hung Processes"
+        examples:
+          - "deleting this stuck spark app in prod3"
+          - "Why is deployment stuck?"
+        automation_feasibility: medium
+      - id: performance_issues
+        name: "Performance Issues"
+        examples:
+          - "Read queries slow on rw instance"
+          - "GKE prod1 pod restart storm - memory pressure and health check failures"
+        automation_feasibility: low
+
+  - id: data_operations
+    name: "Data Operations & Backfills"
+    percentage: 0.5
+    volume_per_month: ~2
+    description: "Data fixes, backfills, record deletions"
+    sub_types:
+      - id: data_fix
+        name: "Production Data Fixes"
+        examples:
+          - "Backfill gitops licensing related data in ng-manager postgres"
+          - "Insert ceDataReRunRequest docs for DFIN anomaly rerun"
+          - "[PIPE-36489] prod3: Repair 15 auditevents rows"
+        automation_feasibility: low
+
+  - id: compliance_security
+    name: "Compliance & Security"
+    percentage: 1.2
+    volume_per_month: ~3
+    description: "FedRAMP, DR clusters, security findings, audits"
+    sub_types:
+      - id: fedramp
+        name: "FedRAMP Operations"
+        examples:
+          - "FedRAMP DR Cluster"
+        automation_feasibility: low
+      - id: security_findings
+        name: "Security Findings Response"
+        examples:
+          - "AWS GuardDuty finding - reverse shell detected on EC2 instance"
+        automation_feasibility: low

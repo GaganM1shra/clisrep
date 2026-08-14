@@ -1,0 +1,272 @@
+---
+# CLISREP Knowledge Graph - Ownership Model
+# Source: CLI project ESR issues assignee analysis (Feb-Aug 2026)
+# Maintainer: Cloud Engineering Team
+# Last updated: 2026-08-14
+
+metadata:
+  source: "Jira CLI ESR assignee patterns"
+  analysis_period: "2026-02-14 to 2026-08-14"
+  total_assignees_active: 20
+  notes: "Ownership derived from actual ticket assignment patterns, not org chart"
+
+# Core CLI/Cloud Engineering team members and their specializations
+team_members:
+  - id: anurag_singh
+    email: anurag.singh@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - MongoDB
+    secondary_domains:
+      - Scaling/Resources
+      - Kubernetes
+      - Secrets/Certs
+    ticket_volume: 64
+    specialization_notes: "Primary MongoDB owner - handles scaling, data ops, index operations"
+
+  - id: vishnu_smurali
+    email: vishnu.smurali@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - PostgreSQL
+      - Secrets/Certificates
+    secondary_domains:
+      - Deployments
+      - MongoDB
+      - Scaling
+    ticket_volume: 95
+    specialization_notes: "Highest volume handler. PostgreSQL specialist, also covers secrets and deployments"
+
+  - id: kishan_singh
+    email: kishan.singh@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - Observability
+      - MongoDB
+    secondary_domains:
+      - Secrets/Certs
+      - Kafka/Messaging
+      - Kubernetes
+    ticket_volume: 68
+    specialization_notes: "Observability lead, Grafana/metrics. Also handles Kafka and MongoDB"
+
+  - id: sunil_mareddy
+    email: sunil.mareddy@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - PostgreSQL
+    secondary_domains:
+      - Scaling
+      - Observability
+      - Kubernetes
+    ticket_volume: 58
+    specialization_notes: "PostgreSQL/CloudSQL specialist, handles scaling and Kubernetes"
+
+  - id: narendra_gottipati
+    email: narendra.gottipati@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - MongoDB
+    secondary_domains:
+      - Observability
+      - Secrets/Certs
+    ticket_volume: 45
+    specialization_notes: "MongoDB operations focus"
+
+  - id: manish_jaiswal
+    email: manish.jaiswal2@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - Secrets/Certificates
+      - Observability
+    secondary_domains:
+      - MongoDB
+      - Deployments
+      - Kubernetes
+    ticket_volume: 44
+    specialization_notes: "Secrets management and observability"
+
+  - id: saurabh_pahuja
+    email: saurabh.pahuja@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - Networking/DNS
+    secondary_domains:
+      - Secrets/Certs
+      - Feature Flags
+    ticket_volume: 27
+    specialization_notes: "Networking specialist - GCLB, Vanity URLs, DNS"
+
+  - id: chandra_prakash
+    email: chandra.prakash@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - Secrets/Certificates
+      - Deployments
+    secondary_domains: []
+    ticket_volume: 26
+    specialization_notes: "Secrets and deployment operations"
+
+  - id: tanmay_maheshwari
+    email: tanmay.maheshwari@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - Secrets/Certificates
+    secondary_domains:
+      - MongoDB
+      - Observability
+      - Kubernetes
+    ticket_volume: 26
+    specialization_notes: "Secrets management, CLI-specific operations"
+
+  - id: jonathan_charette
+    email: jonathan.charette@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - Deployments
+    secondary_domains:
+      - Observability
+      - Kubernetes
+    ticket_volume: 25
+    specialization_notes: "Deployment operations, helm, ArgoCD"
+
+  - id: jonathan_mell
+    email: jonathan.mell@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - Deployments
+      - Kubernetes
+    secondary_domains:
+      - Observability
+      - MongoDB
+      - Secrets/Certs
+    ticket_volume: 24
+    specialization_notes: "Deployments and Kubernetes infrastructure"
+
+  - id: sachin_kadam
+    email: sachin.kadam@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - Secrets/Certificates
+    secondary_domains:
+      - Deployments
+      - CD
+    ticket_volume: 23
+    specialization_notes: "Secrets and CD-related operations"
+
+  - id: amit_kumardash
+    email: amit.kumardash@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - CI
+    secondary_domains:
+      - Secrets/Certs
+      - Kubernetes
+      - Observability
+    ticket_volume: 16
+    specialization_notes: "CI infrastructure focus"
+
+  - id: ragesh_moyan
+    email: ragesh.moyan@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - Secrets/Certificates
+      - Scaling
+    secondary_domains:
+      - Kubernetes
+    ticket_volume: 8
+
+  - id: shaishaw_shashank
+    email: shaishaw.shashank@harness.io
+    role: "Cloud Engineer"
+    primary_domains:
+      - Kafka/Messaging
+    secondary_domains: []
+    ticket_volume: 3
+    specialization_notes: "Kafka specialist"
+
+# Domain → Owner routing rules (for CLISREP control plane)
+routing_rules:
+  - domain: "MongoDB scaling/disk"
+    primary_owner: anurag_singh
+    fallback: narendra_gottipati
+
+  - domain: "MongoDB data operations"
+    primary_owner: anurag_singh
+    fallback: narendra_gottipati
+
+  - domain: "PostgreSQL operations"
+    primary_owner: vishnu_smurali
+    fallback: sunil_mareddy
+
+  - domain: "PostgreSQL dirty migrations"
+    primary_owner: vishnu_smurali
+    fallback: sunil_mareddy
+
+  - domain: "Secrets creation (GSM/AWS)"
+    primary_owner: vishnu_smurali
+    fallback: manish_jaiswal
+
+  - domain: "Certificate management"
+    primary_owner: tanmay_maheshwari
+    fallback: chandra_prakash
+
+  - domain: "Observability/Grafana"
+    primary_owner: kishan_singh
+    fallback: manish_jaiswal
+
+  - domain: "Alert configuration"
+    primary_owner: kishan_singh
+    fallback: manish_jaiswal
+
+  - domain: "Deployments/Helm/ArgoCD"
+    primary_owner: jonathan_charette
+    fallback: jonathan_mell
+
+  - domain: "Networking/DNS/GCLB"
+    primary_owner: saurabh_pahuja
+    fallback: null
+
+  - domain: "Kafka/Messaging"
+    primary_owner: kishan_singh
+    fallback: shaishaw_shashank
+
+  - domain: "Kubernetes/Cluster operations"
+    primary_owner: jonathan_mell
+    fallback: kishan_singh
+
+  - domain: "CI infrastructure"
+    primary_owner: amit_kumardash
+    fallback: null
+
+  - domain: "Scaling/Resource requests"
+    primary_owner: anurag_singh
+    fallback: sunil_mareddy
+
+# Top requesters (teams generating the most work)
+top_requesters:
+  - email: jira.ops@harness.io
+    volume: 88
+    notes: "Automated/escalation bot - mostly MongoDB and outbox issues"
+
+  - email: abel.mathew@harness.io
+    volume: 18
+    notes: "Frequent requester across multiple domains"
+
+  - email: c_rutvik.shiyani@harness.io
+    volume: 10
+    notes: "Secrets and deployments focus"
+
+  - email: pranav.joshi@harness.io
+    volume: 9
+
+  - email: sumit.khaitan@harness.io
+    volume: 9
+
+  - email: mobasshir.ali@harness.io
+    volume: 7
+    notes: "Secrets requests primarily"
+
+  - email: guilherme.zanini@harness.io
+    volume: 6
+    notes: "Secrets requests primarily"

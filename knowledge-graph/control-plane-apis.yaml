@@ -1,0 +1,540 @@
+---
+# CLISREP Knowledge Graph - Control Plane APIs & MCPs
+# Defines what APIs and MCP tools should be exposed in the control plane
+# Source: Workflow analysis + init doc Epic 3
+# Maintainer: Cloud Engineering Team
+# Last updated: 2026-08-14
+
+metadata:
+  purpose: "Define APIs/MCPs for the CLISREP Control Plane (admin-managed)"
+  derived_from:
+    - "Workflow frequency analysis"
+    - "Top automation opportunities"
+    - "Init doc Epic 3 (Platform Action APIs)"
+  priority_basis: "Volume × automation feasibility × impact"
+
+# ============ MCP TOOLS (for AI agent integration) ============
+mcp_tools:
+
+  # --- Secrets & Certificates ---
+  - id: mcp_secrets_create
+    name: "secrets/create"
+    priority: P0
+    description: "Create a secret in GCP Secret Manager or AWS Secrets Manager"
+    params:
+      - name: provider
+        type: enum
+        values: [gcp_gsm, aws_sm]
+      - name: project_or_account
+        type: string
+      - name: secret_name
+        type: string
+      - name: secret_value
+        type: string
+        sensitive: true
+      - name: labels
+        type: map
+        optional: true
+    authorization: "Requester must be on approved list or have manager approval"
+    underlying_apis:
+      - "gcloud secrets create"
+      - "aws secretsmanager create-secret"
+    estimated_weekly_usage: 8-12
+
+  - id: mcp_secrets_list
+    name: "secrets/list"
+    priority: P0
+    description: "List secrets in a project (names only, not values)"
+    params:
+      - name: provider
+        type: enum
+        values: [gcp_gsm, aws_sm]
+      - name: project_or_account
+        type: string
+      - name: filter
+        type: string
+        optional: true
+    authorization: "Read access to project"
+
+  - id: mcp_service_account_create
+    name: "iam/service-account/create"
+    priority: P1
+    description: "Create a GCP service account with specified roles"
+    params:
+      - name: sa_name
+        type: string
+      - name: gcp_project
+        type: string
+      - name: roles
+        type: list[string]
+      - name: description
+        type: string
+    authorization: "Requires admin approval for production"
+
+  - id: mcp_token_generate
+    name: "auth/token/generate"
+    priority: P1
+    description: "Generate admin portal tokens, Grafana SA tokens"
+    params:
+      - name: token_type
+        type: enum
+        values: [admin_portal, grafana_sa, temporal_cert]
+      - name: target_environment
+        type: string
+      - name: expiry
+        type: duration
+
+  # --- Database Operations ---
+  - id: mcp_mongodb_scale
+    name: "mongodb/scale"
+    priority: P0
+    description: "Scale a MongoDB cluster (tier or disk)"
+    params:
+      - name: cluster_name
+        type: string
+      - name: environment
+        type: string
+      - name: scale_type
+        type: enum
+        values: [tier, disk]
+      - name: target_value
+        type: string
+        description: "M80, 900Gi, etc"
+    authorization: "Requires approval for production"
+    underlying_apis:
+      - "MongoDB Atlas API"
+      - "kubectl patch (operator-managed)"
+    estimated_weekly_usage: 3-5
+
+  - id: mcp_mongodb_query
+    name: "mongodb/query"
+    priority: P1
+    description: "Execute read-only queries on MongoDB (for investigation)"
+    params:
+      - name: cluster_name
+        type: string
+      - name: database
+        type: string
+      - name: collection
+        type: string
+      - name: query
+        type: object
+      - name: limit
+        type: int
+        default: 100
+    authorization: "Read-only, audit logged"
+    guardrails:
+      - "SELECT only, no mutations"
+      - "Query timeout: 30s"
+      - "Result limit: 1000 docs"
+
+  - id: mcp_postgres_migration_status
+    name: "postgres/migration/status"
+    priority: P0
+    description: "Check and fix dirty migration state"
+    params:
+      - name: service
+        type: string
+      - name: database
+        type: string
+      - name: environment
+        type: string
+      - name: action
+        type: enum
+        values: [check, decrement, mark_clean]
+    authorization: "Requires approval for decrement/mark_clean"
+    estimated_weekly_usage: 1-2
+
+  - id: mcp_postgres_scale
+    name: "postgres/scale"
+    priority: P1
+    description: "Scale CloudSQL/PostgreSQL instance"
+    params:
+      - name: instance_name
+        type: string
+      - name: target_vcpu
+        type: int
+      - name: target_memory_gb
+        type: int
+      - name: environment
+        type: string
+    authorization: "Requires approval for production"
+    underlying_apis:
+      - "gcloud sql instances patch"
+
+  - id: mcp_postgres_query
+    name: "postgres/query"
+    priority: P1
+    description: "Execute read-only queries on PostgreSQL"
+    params:
+      - name: instance
+        type: string
+      - name: database
+        type: string
+      - name: query
+        type: string
+      - name: environment
+        type: string
+    authorization: "Read-only, audit logged"
+    guardrails:
+      - "SET statement_timeout = '30s'"
+      - "Read-only transaction"
+
+  # --- Kubernetes Operations ---
+  - id: mcp_k8s_deployment_status
+    name: "k8s/deployment/status"
+    priority: P0
+    description: "Get deployment status, pod health, recent events"
+    params:
+      - name: namespace
+        type: string
+      - name: deployment
+        type: string
+      - name: cluster
+        type: string
+    authorization: "Read-only"
+
+  - id: mcp_k8s_deployment_restart
+    name: "k8s/deployment/restart"
+    priority: P1
+    description: "Restart a deployment (rolling restart)"
+    params:
+      - name: namespace
+        type: string
+      - name: deployment
+        type: string
+      - name: cluster
+        type: string
+    authorization: "Non-prod auto-approved, prod requires approval"
+    underlying_apis:
+      - "kubectl rollout restart"
+
+  - id: mcp_k8s_pod_logs
+    name: "k8s/pod/logs"
+    priority: P0
+    description: "Fetch pod logs for troubleshooting"
+    params:
+      - name: namespace
+        type: string
+      - name: pod_or_deployment
+        type: string
+      - name: cluster
+        type: string
+      - name: since
+        type: duration
+        default: "1h"
+      - name: container
+        type: string
+        optional: true
+    authorization: "Read-only"
+
+  - id: mcp_k8s_events
+    name: "k8s/events"
+    priority: P0
+    description: "Get Kubernetes events for a namespace or resource"
+    params:
+      - name: namespace
+        type: string
+      - name: resource_name
+        type: string
+        optional: true
+      - name: cluster
+        type: string
+    authorization: "Read-only"
+
+  # --- Observability ---
+  - id: mcp_grafana_access
+    name: "grafana/access/grant"
+    priority: P0
+    description: "Grant user access to Grafana dashboard/folder"
+    params:
+      - name: user_email
+        type: string
+      - name: resource_type
+        type: enum
+        values: [dashboard, folder]
+      - name: resource_id
+        type: string
+      - name: permission
+        type: enum
+        values: [viewer, editor, admin]
+    authorization: "Auto-approved for viewer, approval for editor/admin"
+    estimated_weekly_usage: 4-6
+
+  - id: mcp_grafana_sa_token
+    name: "grafana/service-account/create"
+    priority: P1
+    description: "Create Grafana service account and token"
+    params:
+      - name: sa_name
+        type: string
+      - name: role
+        type: enum
+        values: [viewer, editor]
+      - name: expiry
+        type: duration
+
+  - id: mcp_alert_create
+    name: "alerts/create"
+    priority: P1
+    description: "Create a Grafana alert rule"
+    params:
+      - name: alert_name
+        type: string
+      - name: datasource
+        type: string
+      - name: query
+        type: string
+      - name: threshold
+        type: object
+      - name: notification_channel
+        type: string
+      - name: folder
+        type: string
+
+  - id: mcp_alert_mute
+    name: "alerts/mute"
+    priority: P1
+    description: "Mute an alert for a specified duration"
+    params:
+      - name: alert_id
+        type: string
+      - name: duration
+        type: duration
+      - name: reason
+        type: string
+
+  # --- Networking & DNS ---
+  - id: mcp_vanity_url_create
+    name: "networking/vanity-url/create"
+    priority: P0
+    description: "Create a vanity URL with GCLB rule and DNS"
+    params:
+      - name: domain
+        type: string
+      - name: target_backend
+        type: string
+      - name: environment
+        type: string
+      - name: ssl_auto
+        type: bool
+        default: true
+    authorization: "Requires customer verification"
+    underlying_apis:
+      - "gcloud compute url-maps"
+      - "gcloud dns record-sets"
+    estimated_weekly_usage: 2-3
+
+  - id: mcp_dns_update
+    name: "networking/dns/update"
+    priority: P1
+    description: "Update DNS record"
+    params:
+      - name: zone
+        type: string
+      - name: record_name
+        type: string
+      - name: record_type
+        type: enum
+        values: [A, CNAME, TXT]
+      - name: value
+        type: string
+      - name: ttl
+        type: int
+        default: 300
+
+  # --- Kafka/Messaging ---
+  - id: mcp_outbox_unblock
+    name: "kafka/outbox/unblock"
+    priority: P0
+    description: "Process or skip blocked outbox events"
+    params:
+      - name: environment
+        type: string
+      - name: service
+        type: string
+        optional: true
+      - name: action
+        type: enum
+        values: [process, skip, list]
+    authorization: "Non-prod auto-approved"
+    estimated_weekly_usage: 1-2
+
+  - id: mcp_kafka_consumer_lag
+    name: "kafka/consumer-lag"
+    priority: P1
+    description: "Check consumer group lag"
+    params:
+      - name: consumer_group
+        type: string
+      - name: topic
+        type: string
+        optional: true
+      - name: cluster
+        type: string
+    authorization: "Read-only"
+
+  # --- Deployment Operations ---
+  - id: mcp_helm_deploy
+    name: "deploy/helm"
+    priority: P1
+    description: "Deploy or upgrade a Helm release"
+    params:
+      - name: release_name
+        type: string
+      - name: chart
+        type: string
+      - name: namespace
+        type: string
+      - name: cluster
+        type: string
+      - name: values_override
+        type: map
+        optional: true
+    authorization: "Requires approval for production"
+
+  - id: mcp_argocd_sync
+    name: "deploy/argocd/sync"
+    priority: P1
+    description: "Sync an ArgoCD application"
+    params:
+      - name: app_name
+        type: string
+      - name: revision
+        type: string
+        optional: true
+    authorization: "Non-prod auto-sync allowed"
+
+  - id: mcp_image_copy
+    name: "deploy/image/copy"
+    priority: P1
+    description: "Copy container image between registries"
+    params:
+      - name: source
+        type: string
+      - name: destination
+        type: string
+      - name: scan
+        type: bool
+        default: true
+    underlying_apis:
+      - "crane copy"
+      - "harbor API"
+
+  # --- Knowledge/Ownership Queries ---
+  - id: mcp_ownership_lookup
+    name: "knowledge/ownership"
+    priority: P0
+    description: "Look up service/resource ownership"
+    params:
+      - name: query
+        type: string
+        description: "Service name, namespace, or resource"
+    returns:
+      - owner_email
+      - owner_team
+      - escalation_path
+      - related_dashboards
+      - related_runbooks
+
+  - id: mcp_service_info
+    name: "knowledge/service"
+    priority: P0
+    description: "Get service information (repo, cluster, namespace, dashboards)"
+    params:
+      - name: service_name
+        type: string
+    returns:
+      - repository
+      - namespace
+      - cluster
+      - owner
+      - dashboards
+      - alerts
+      - runbook_url
+
+  - id: mcp_routing_suggest
+    name: "knowledge/route"
+    priority: P0
+    description: "Suggest who should handle a request based on content"
+    params:
+      - name: request_text
+        type: string
+    returns:
+      - suggested_owner
+      - confidence
+      - reasoning
+      - similar_past_tickets
+
+# ============ REST APIs (for programmatic access) ============
+rest_apis:
+
+  - id: api_health_check
+    path: "/api/v1/health/{service}/{environment}"
+    method: GET
+    description: "Quick health check for a service"
+    returns: "pod_status, deployment_status, recent_events, resource_usage"
+
+  - id: api_request_create
+    path: "/api/v1/requests"
+    method: POST
+    description: "Create a new cloud engineering request (replaces ESR tickets)"
+    body:
+      - category
+      - description
+      - urgency
+      - requester
+    returns: "request_id, assigned_owner, estimated_time, auto_resolution_possible"
+
+  - id: api_request_status
+    path: "/api/v1/requests/{id}"
+    method: GET
+    description: "Get request status and resolution progress"
+
+  - id: api_runbook_execute
+    path: "/api/v1/runbooks/{id}/execute"
+    method: POST
+    description: "Execute a runbook step with approval if needed"
+    body:
+      - parameters
+      - dry_run
+      - approval_token
+    authorization: "RBAC + approval workflow"
+
+# ============ AUTHORIZATION MODEL ============
+authorization:
+  tiers:
+    - name: auto_approved
+      description: "Read-only operations, non-prod changes"
+      examples:
+        - "Query deployment status"
+        - "View logs"
+        - "Check migration state"
+        - "Restart non-prod deployment"
+        - "Grant Grafana viewer access"
+
+    - name: owner_approved
+      description: "Requires the service/resource owner's approval"
+      examples:
+        - "Create secrets in production"
+        - "Scale databases in production"
+        - "Deploy to production"
+        - "Grant editor/admin access"
+
+    - name: admin_approved
+      description: "Requires Cloud Engineering admin approval"
+      examples:
+        - "Create new environments"
+        - "Modify network rules"
+        - "Delete production resources"
+        - "Grant admin permissions"
+
+  rbac_roles:
+    - role: engineer
+      description: "Standard engineer - can read, request, execute in non-prod"
+    - role: service_owner
+      description: "Owns a service - can approve changes to their service"
+    - role: cloud_engineer
+      description: "CLI team - can execute most operations"
+    - role: cloud_admin
+      description: "Senior CLI team - can approve all operations"

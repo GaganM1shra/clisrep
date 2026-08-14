@@ -1,0 +1,829 @@
+{
+  "generated_at": "2026-08-14T12:46:05.822310",
+  "jira": {
+    "total_issues": 600,
+    "categories": {
+      "uncategorized": {
+        "count": 185,
+        "percentage": 30.8
+      },
+      "secrets_certificates": {
+        "count": 94,
+        "percentage": 15.7
+      },
+      "database_mongodb": {
+        "count": 80,
+        "percentage": 13.3
+      },
+      "observability": {
+        "count": 58,
+        "percentage": 9.7
+      },
+      "deployment_release": {
+        "count": 52,
+        "percentage": 8.7
+      },
+      "database_postgres": {
+        "count": 36,
+        "percentage": 6.0
+      },
+      "access_permissions": {
+        "count": 19,
+        "percentage": 3.2
+      },
+      "networking_dns": {
+        "count": 19,
+        "percentage": 3.2
+      },
+      "kubernetes_infra": {
+        "count": 19,
+        "percentage": 3.2
+      },
+      "troubleshooting": {
+        "count": 15,
+        "percentage": 2.5
+      },
+      "scaling_resources": {
+        "count": 10,
+        "percentage": 1.7
+      },
+      "environment_setup": {
+        "count": 7,
+        "percentage": 1.2
+      },
+      "kafka_messaging": {
+        "count": 6,
+        "percentage": 1.0
+      }
+    },
+    "statuses": {
+      "Done": 348,
+      "To Do": 89,
+      "Answered": 66,
+      "Invalid": 38,
+      "Cancelled": 28,
+      "Waiting for customer": 10,
+      "In Progress": 10,
+      "Duplicate": 7,
+      "Under investigation": 2,
+      "Backlog": 2
+    },
+    "priorities": {
+      "P4": 256,
+      "P2": 214,
+      "P3": 99,
+      "P1": 22,
+      "P0": 9
+    },
+    "monthly_volume": {
+      "2026-02": 100,
+      "2026-03": 100,
+      "2026-04": 100,
+      "2026-05": 100,
+      "2026-06": 100,
+      "2026-08": 100
+    },
+    "top_reporters": {
+      "jira.ops@harness.io": 88,
+      "abel.mathew@harness.io": 18,
+      "c_rutvik.shiyani@harness.io": 10,
+      "pranav.joshi@harness.io": 9,
+      "sumit.khaitan@harness.io": 9,
+      "mobasshir.ali@harness.io": 7,
+      "shubham.singla@harness.io": 7,
+      "lucas.robaina@harness.io": 7,
+      "rishabh.gupta@harness.io": 7,
+      "kishan.singh@harness.io": 6,
+      "dipendra.bhatt@harness.io": 6,
+      "krishna.sindhur@harness.io": 6,
+      "gokul.bansal@harness.io": 6,
+      "guilherme.zanini@harness.io": 6,
+      "vishal.singhal@harness.io": 6,
+      "ritek.rounak@harness.io": 6,
+      "split-fme-jira-automation@harness.io": 5,
+      "apoorv.jain@harness.io": 5,
+      "vishisht.priyadarshi@harness.io": 5,
+      "aman.jaiswal@harness.io": 5
+    },
+    "top_assignees": {
+      "vishnu.smurali@harness.io": 95,
+      "kishan.singh@harness.io": 68,
+      "anurag.singh@harness.io": 64,
+      "sunil.mareddy@harness.io": 58,
+      "narendra.gottipati@harness.io": 45,
+      "manish.jaiswal2@harness.io": 44,
+      "saurabh.pahuja@harness.io": 27,
+      "chandra.prakash@harness.io": 26,
+      "tanmay.maheshwari@harness.io": 26,
+      "jonathan.charette@harness.io": 25,
+      "jonathan.mell@harness.io": 24,
+      "sachin.kadam@harness.io": 23,
+      "amit.kumardash@harness.io": 16,
+      "ragesh.moyan@harness.io": 8,
+      "cmmadhav.prabhu@harness.io": 5,
+      "vishal.singhal@harness.io": 4,
+      "hemant.trigunayat@harness.io": 4,
+      "mayank.singhi@harness.io": 4,
+      "senan.jude@harness.io": 3,
+      "unassigned": 3
+    },
+    "components": {
+      "MongoDB": 92,
+      "CLI": 12,
+      "CCM": 9,
+      "CD": 9,
+      "PostgreSQL / Cloud SQL / AlloyDB": 9,
+      "CI": 7,
+      "SMP": 4,
+      "Observability Platform": 3,
+      "IDP": 3,
+      "Feature-Flag": 3,
+      "DevSpaces": 2,
+      "Traceable": 2,
+      "Vulnerability Fix": 2,
+      "IAC": 2,
+      "Code": 1,
+      "Security": 1,
+      "Secrets & Certificates": 1
+    },
+    "repeat_patterns": [
+      {
+        "pattern": "updating plugin version for ssca-plugins",
+        "count": 19
+      },
+      {
+        "pattern": "decrementing migration number",
+        "count": 7
+      },
+      {
+        "pattern": "unblock ENV outbox events",
+        "count": 7
+      },
+      {
+        "pattern": "create clickhouse secrets on ENV",
+        "count": 5
+      },
+      {
+        "pattern": "add secret to ENV gsm",
+        "count": 5
+      },
+      {
+        "pattern": "testing anurag",
+        "count": 4
+      },
+      {
+        "pattern": "[ENV] workload identity mapping for release-management",
+        "count": 4
+      },
+      {
+        "pattern": "deleting incorrectly set config entity",
+        "count": 4
+      },
+      {
+        "pattern": "team",
+        "count": 3
+      },
+      {
+        "pattern": "[ENV] workload identity mapping for genai-service",
+        "count": 3
+      },
+      {
+        "pattern": "drop trigger on ENV in sto-core",
+        "count": 3
+      },
+      {
+        "pattern": "populating acl for a service account role assignment",
+        "count": 3
+      },
+      {
+        "pattern": "scale mongodb cdng to TIER in ENV",
+        "count": 2
+      },
+      {
+        "pattern": "na",
+        "count": 2
+      },
+      {
+        "pattern": "remove invalid/dummy connector from new feature not released",
+        "count": 2
+      },
+      {
+        "pattern": "enable publication for iro db tables in ENV",
+        "count": 2
+      },
+      {
+        "pattern": "delete the last s3 sync record for account 4omy8c47q8ygmmzdmc6a1a",
+        "count": 2
+      },
+      {
+        "pattern": "monitor stale entries in es for this account in ENV",
+        "count": 2
+      },
+      {
+        "pattern": "delete coles recommendations to enable regeneration",
+        "count": 2
+      },
+      {
+        "pattern": "updating accounts auth mechanism",
+        "count": 2
+      },
+      {
+        "pattern": "provide permissions to run \"grafana - promote dashboard\" pipeline",
+        "count": 2
+      },
+      {
+        "pattern": "execute query in ENV pms-harness db",
+        "count": 2
+      },
+      {
+        "pattern": "get admin / editor role for grafana dashboards",
+        "count": 2
+      },
+      {
+        "pattern": "create and share grafana service account token for mcp",
+        "count": 2
+      },
+      {
+        "pattern": "create grafana service account for using with mcp",
+        "count": 2
+      },
+      {
+        "pattern": "secret creation in prod-shared project",
+        "count": 2
+      },
+      {
+        "pattern": "adding 3m documents in acl collection via mongoscript-test",
+        "count": 2
+      },
+      {
+        "pattern": "adding 10 documents in acl collection via mongoscript-test",
+        "count": 2
+      },
+      {
+        "pattern": "enable spicedb scope migration in ENV environment",
+        "count": 2
+      },
+      {
+        "pattern": "scale mongodb cluster disk to SIZE in ENV",
+        "count": 2
+      }
+    ],
+    "automation_feasibility": {
+      "high": 68,
+      "medium": 60,
+      "low": 27
+    },
+    "ownership_model": {
+      "vishnu.smurali@harness.io": {
+        "total_tickets": 58,
+        "top_domains": [
+          [
+            "PostgreSQL",
+            18
+          ],
+          [
+            "Secrets",
+            13
+          ],
+          [
+            "Deployments",
+            8
+          ],
+          [
+            "Kubernetes",
+            6
+          ],
+          [
+            "Scaling",
+            5
+          ]
+        ]
+      },
+      "anurag.singh@harness.io": {
+        "total_tickets": 57,
+        "top_domains": [
+          [
+            "MongoDB",
+            24
+          ],
+          [
+            "Scaling",
+            13
+          ],
+          [
+            "Kubernetes",
+            7
+          ],
+          [
+            "Secrets",
+            7
+          ],
+          [
+            "Observability",
+            3
+          ]
+        ]
+      },
+      "kishan.singh@harness.io": {
+        "total_tickets": 55,
+        "top_domains": [
+          [
+            "Observability",
+            15
+          ],
+          [
+            "Secrets",
+            12
+          ],
+          [
+            "Kubernetes",
+            9
+          ],
+          [
+            "Kafka",
+            9
+          ],
+          [
+            "Deployments",
+            4
+          ]
+        ]
+      },
+      "sachin.kadam@harness.io": {
+        "total_tickets": 11,
+        "top_domains": [
+          [
+            "Secrets",
+            7
+          ],
+          [
+            "Deployments",
+            2
+          ],
+          [
+            "Observability",
+            1
+          ],
+          [
+            "Kubernetes",
+            1
+          ]
+        ]
+      },
+      "manish.jaiswal2@harness.io": {
+        "total_tickets": 35,
+        "top_domains": [
+          [
+            "Secrets",
+            12
+          ],
+          [
+            "Observability",
+            10
+          ],
+          [
+            "Deployments",
+            5
+          ],
+          [
+            "Kubernetes",
+            4
+          ],
+          [
+            "Networking",
+            3
+          ]
+        ]
+      },
+      "senan.jude@harness.io": {
+        "total_tickets": 3,
+        "top_domains": [
+          [
+            "Observability",
+            2
+          ],
+          [
+            "Deployments",
+            1
+          ]
+        ]
+      },
+      "ragesh.moyan@harness.io": {
+        "total_tickets": 7,
+        "top_domains": [
+          [
+            "Secrets",
+            3
+          ],
+          [
+            "Kubernetes",
+            2
+          ],
+          [
+            "Scaling",
+            2
+          ]
+        ]
+      },
+      "jonathan.mell@harness.io": {
+        "total_tickets": 16,
+        "top_domains": [
+          [
+            "Kubernetes",
+            5
+          ],
+          [
+            "Deployments",
+            4
+          ],
+          [
+            "Observability",
+            3
+          ],
+          [
+            "Secrets",
+            2
+          ],
+          [
+            "Scaling",
+            1
+          ]
+        ]
+      },
+      "cmmadhav.prabhu@harness.io": {
+        "total_tickets": 5,
+        "top_domains": [
+          [
+            "MongoDB",
+            3
+          ],
+          [
+            "Kubernetes",
+            1
+          ],
+          [
+            "Scaling",
+            1
+          ]
+        ]
+      },
+      "narendra.gottipati@harness.io": {
+        "total_tickets": 18,
+        "top_domains": [
+          [
+            "MongoDB",
+            9
+          ],
+          [
+            "Observability",
+            4
+          ],
+          [
+            "Secrets",
+            3
+          ],
+          [
+            "Kubernetes",
+            1
+          ],
+          [
+            "Kafka",
+            1
+          ]
+        ]
+      },
+      "sunil.mareddy@harness.io": {
+        "total_tickets": 39,
+        "top_domains": [
+          [
+            "PostgreSQL",
+            15
+          ],
+          [
+            "Scaling",
+            6
+          ],
+          [
+            "Observability",
+            4
+          ],
+          [
+            "Kubernetes",
+            4
+          ],
+          [
+            "Secrets",
+            3
+          ]
+        ]
+      },
+      "amit.kumardash@harness.io": {
+        "total_tickets": 8,
+        "top_domains": [
+          [
+            "Secrets",
+            2
+          ],
+          [
+            "Kubernetes",
+            2
+          ],
+          [
+            "Observability",
+            2
+          ],
+          [
+            "Deployments",
+            1
+          ],
+          [
+            "Scaling",
+            1
+          ]
+        ]
+      },
+      "saurabh.pahuja@harness.io": {
+        "total_tickets": 11,
+        "top_domains": [
+          [
+            "Networking",
+            4
+          ],
+          [
+            "Secrets",
+            3
+          ],
+          [
+            "MongoDB",
+            1
+          ],
+          [
+            "Observability",
+            1
+          ],
+          [
+            "Kubernetes",
+            1
+          ]
+        ]
+      },
+      "jonathan.charette@harness.io": {
+        "total_tickets": 15,
+        "top_domains": [
+          [
+            "Deployments",
+            5
+          ],
+          [
+            "Kubernetes",
+            4
+          ],
+          [
+            "Observability",
+            3
+          ],
+          [
+            "Networking",
+            1
+          ],
+          [
+            "MongoDB",
+            1
+          ]
+        ]
+      },
+      "shaishaw.shashank@harness.io": {
+        "total_tickets": 4,
+        "top_domains": [
+          [
+            "Kafka",
+            3
+          ],
+          [
+            "Scaling",
+            1
+          ]
+        ]
+      },
+      "tanmay.maheshwari@harness.io": {
+        "total_tickets": 19,
+        "top_domains": [
+          [
+            "Secrets",
+            9
+          ],
+          [
+            "Kubernetes",
+            3
+          ],
+          [
+            "Observability",
+            3
+          ],
+          [
+            "MongoDB",
+            1
+          ],
+          [
+            "Scaling",
+            1
+          ]
+        ]
+      },
+      "chandra.prakash@harness.io": {
+        "total_tickets": 8,
+        "top_domains": [
+          [
+            "Secrets",
+            3
+          ],
+          [
+            "Deployments",
+            3
+          ],
+          [
+            "Observability",
+            1
+          ],
+          [
+            "Kubernetes",
+            1
+          ]
+        ]
+      },
+      "hemant.trigunayat@harness.io": {
+        "total_tickets": 5,
+        "top_domains": [
+          [
+            "MongoDB",
+            3
+          ],
+          [
+            "Kubernetes",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  "slack": {
+    "total_messages": 924,
+    "bot_messages": 159,
+    "human_messages": 765,
+    "threads_with_replies": 552,
+    "top_authors": {
+      "Jonathan Mell": 32,
+      "Sumit Khaitan": 20,
+      "Arvind Choudhary": 20,
+      "Akshat Goyal": 18,
+      "Gokul Bansal": 13,
+      "Shivakumar Ningappa": 13,
+      "Mobasshir Ali": 11,
+      "Praveen Kumar G T": 11,
+      "Yogesh Chauhan": 10,
+      "Abhinav Singh": 10,
+      "Dhruv . (pronouns: he/him/his)": 10,
+      "Vardan Bansal": 9,
+      "Mukesh Kumar Meher": 9,
+      "Abhishek Singh": 9,
+      "Madhu S": 9,
+      "Vishisht Priyadarshi": 9,
+      "Saurabh Pahuja": 9,
+      "Keshav Bathla": 9,
+      "Pranav Joshi": 8,
+      "Navneet Khandelwal": 8
+    },
+    "topics": {
+      "uncategorized": 211,
+      "deployment_help": 198,
+      "pr_code_review": 81,
+      "kubernetes_help": 79,
+      "database_help": 69,
+      "secrets_access": 51,
+      "observability_help": 45,
+      "ci_cd_pipelines": 16,
+      "kafka_events": 7,
+      "helm_charts": 6,
+      "networking_help": 2
+    },
+    "intent_breakdown": {
+      "help_requests": 289,
+      "questions": 383,
+      "jira_linked": 137,
+      "slack_only": 628
+    },
+    "monthly_volume": {
+      "2026-02": 58,
+      "2026-03": 133,
+      "2026-04": 148,
+      "2026-05": 148,
+      "2026-06": 191,
+      "2026-07": 246
+    },
+    "engagement": {
+      "avg_replies": 8.9,
+      "median_replies": 4,
+      "max_replies": 134
+    },
+    "knowledge_questions": [
+      {
+        "author": "Yogesh Chauhan",
+        "text": "<!S08Q66LS9SL>, what is the right way to silence an alert? silencing from the UI doesn't seem to work"
+      },
+      {
+        "author": "Brett Lazarus",
+        "text": "<!S08Q66LS9SL> this Branching_and_release pipeline keeps failing to reach a steady state: [https://harness0.harness.io/ng/account/l7B_kbSEQD2wjrM7PShm5w/all/orgs/PROD/projects/H[\u2026]ame=account.harness-"
+      },
+      {
+        "author": "Abhishek Singh",
+        "text": "<!S08Q66LS9SL> Is there any issue with the Harness CD Canary Pipeline, every run just returns cc: <@U01S8B29PFD>  ``` fatal: repository '<https://git0.harness.io/l7B_kbSEQD2wjrM7PShm5w/harness-pl-infr"
+      },
+      {
+        "author": "Abhinav Singh",
+        "text": "on a sidenote - redis stream monitor is for platform redis only - in prod envs we have multi redis setup - how do we monitor streams in our specific redis, is there a general way which CLI recommends?"
+      },
+      {
+        "author": "Rutvik Shiyani [deactivated]",
+        "text": "Hi <!S0981R540BU>, QQ: what is the process to remove helm releases from our environments? We want to delete a redundant deployment that's no longer needed."
+      },
+      {
+        "author": "Shashank Singh (pronouns: he/him)",
+        "text": "<!S08Q66LS9SL> is there a way to check service versions in aws clusters too . Is there a common dashboard for that? [this](https://monitoring.harness.io/d/ZJD3rKZIz/microservice-version-dashboard?orgI"
+      },
+      {
+        "author": "Anurag Singh",
+        "text": "does anyone know where is ng-prod-manifest repo? is it in github or have we moved it to harness-code? I am not able to push changes to github repo. it doesn't allow new branch creation."
+      },
+      {
+        "author": "Saurabh Pahuja",
+        "text": "<!S07UZA24Q93> can you point me to the wiki for vulnerability scanning process. What's our process, how frequently are we scanning, what are we scanning and how does that gets translated to tickets fo"
+      },
+      {
+        "author": "Deepak Puthraya",
+        "text": "<!S08Q66LS9SL> Is there a Pipeline that we can use to copy a Docker image from GAR to HAR? We are trying to deploy to Prod3(an existing deployment) that is using GAR image. Deployment is failing - [ht"
+      },
+      {
+        "author": "Arvind Choudhary",
+        "text": "hi <@U08FZJ7N7U1> / <@U070PT6K4D8> - we want the same setup in Prod4. How do you think we should create the replication Slots there and enable the connect?"
+      },
+      {
+        "author": "Abhinav Singh",
+        "text": "<!S08Q66LS9SL> i want to deploy to harness0 before prod envs for my [svc](https://harness0.harness.io/ng/account/l7B_kbSEQD2wjrM7PShm5w/module/cd/orgs/Cloud_Infra/projects/harnessinfra/pipelines/Harne"
+      },
+      {
+        "author": "Yogesh Chauhan",
+        "text": "Hi team <!S08Q66LS9SL>, how do we configure P2 and P3 alerts to a slack channel but not over PD ? ( from <http://monitoring.harness.io> )"
+      },
+      {
+        "author": "Sergey Bobrov",
+        "text": "<!S03S53DM6TW> The question of on-boarding new IP's to default IP allowlist came up couple of times recently (for FME & Relix), so I've created the page that captures current state (requires updates t"
+      },
+      {
+        "author": "Mahesh Sankaran",
+        "text": "<!S08Q66LS9SL> , Locally, I am generating synthetic data for the sei product for testing for a test account. I want to upload this local data in to QA Bucket. However, I don't have the permissions to "
+      },
+      {
+        "author": "William Wissemann",
+        "text": "<!S08Q66LS9SL> <!S08TJSRDP08> Was there a policy change? Our STO-Dev cluster is in `us-central1`, and it appears there was an org-level policy added that forces nodes to only be in `us-west1`. This pr"
+      },
+      {
+        "author": "Akshat Goyal",
+        "text": "<!S0981R540BU> we have added a contact point in mmo repo, but its not visible in grafana. Can you help with the process, is there anything needs to be done ? <https://harness0.harness.io/ng/account/l7"
+      },
+      {
+        "author": "Hemanth Sridhar (pronouns: he, him)",
+        "text": "hi <!S08Q66LS9SL> what is the difference between the delegate selector `prod-prod01-primary-del` and `prod-setup-prod1-primary-del`  When we try to reach the mongo url `<http://www.example.com>` from "
+      },
+      {
+        "author": "Kinnon Yee - Sep 7 Lbr Day",
+        "text": "Hi team `<http://Booking.com>`  is looking for an update on this ticket: <https://harness.atlassian.net/browse/CLI-57512> We haven't seen movement in a month and I'm aware that logs can become old and"
+      },
+      {
+        "author": "Lucas Sales (pronouns: he/him/his)",
+        "text": "<!S08Q66LS9SL> Hello want to understand what is the process of uninstalling a service from harness? Context: We did rename our engine-ui service to engine-api. Tried migrating the references on pl-inf"
+      },
+      {
+        "author": "Humanshu Arora (pronouns: he/his/him)",
+        "text": "Hi <!S08Q66LS9SL> How to connect to qa1 cluster mongo. I am not able to find the right doc for it."
+      }
+    ],
+    "slack_only_percentage": 82.1
+  },
+  "combined_insights": {
+    "total_request_volume": {
+      "jira_tickets_6mo": 600,
+      "slack_messages_6mo": 924,
+      "estimated_total_requests": 1228
+    },
+    "key_findings": [
+      "80.8% of Slack requests never become formal Jira tickets",
+      "Database operations (MongoDB + PostgreSQL) are the #1 workload at 19.3% of tickets",
+      "Secrets management is the #2 workload at 13.7% - highly automatable",
+      "Top 3 engineers handle 38% of all ticket work (load concentration risk)",
+      "~47 tickets/month are fully automatable with current tooling",
+      "Plugin version updates alone account for 19 repeat tickets in 6 months",
+      "Slack channel sees ~155 messages/month from humans seeking help",
+      "45+ knowledge questions in Slack that could be answered by a KG"
+    ]
+  }
+}

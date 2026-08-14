@@ -1,0 +1,10 @@
+{
+  "jira": {
+    "path": "/Users/gaganmishra/Desktop/Projects/clisrep/data/raw/jira/cli-esr-issues.json",
+    "count": 600
+  },
+  "slack": {
+    "path": "/Users/gaganmishra/Desktop/Projects/clisrep/data/raw/slack/all-cloud-engineers.json",
+    "count": 924
+  }
+}

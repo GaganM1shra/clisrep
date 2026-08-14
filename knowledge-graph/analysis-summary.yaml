@@ -1,0 +1,253 @@
+---
+# CLISREP Phase 1 Analysis Summary
+# Source: Jira CLI ESR issues (Feb-Aug 2026)
+# NOTE: Slack (all-cloud-engineers) data pending - no Slack MCP available in this session
+# Last updated: 2026-08-14
+
+metadata:
+  data_sources_used:
+    - source: "Jira"
+      project: "CLI"
+      issue_type: "ESR"
+      period: "2026-02-14 to 2026-08-14"
+      total_issues: 1496
+      sampled: 600
+  data_sources_pending:
+    - source: "Slack"
+      channel: "all-cloud-engineers"
+      reason: "Slack MCP not configured in this session"
+      expected_additional_insights:
+        - "Informal requests that never become tickets"
+        - "Knowledge questions (no ticket needed)"
+        - "Team routing patterns"
+        - "Response time patterns"
+        - "Tribal knowledge exchanges"
+
+# ============ KEY FINDINGS ============
+key_findings:
+
+  volume:
+    total_6mo: 1496
+    monthly_average: ~250
+    weekly_average: ~58
+    trend: "Consistent high volume across all months"
+    peak_categories:
+      - "Database operations (MongoDB + PostgreSQL): ~19.3%"
+      - "Secrets & certificates: ~13.7%"
+      - "Observability & monitoring: ~10.7%"
+      - "Deployments & releases: ~9.5%"
+
+  automation_opportunity:
+    high_feasibility: "6% of issues (fully automatable today)"
+    medium_feasibility: "12.8% of issues (automatable with approval gates)"
+    low_feasibility: "4.5% of issues (AI-assisted, human decides)"
+    estimated_automatable_volume: "~47 issues/month could be auto-resolved"
+    estimated_time_savings: "~94 engineer-hours/month (assuming 2hr avg per automatable task)"
+
+  top_repeat_patterns:
+    - pattern: "Plugin version updates (ssca-plugins)"
+      count: 19
+      automation: "Trivially automatable"
+    - pattern: "Decrementing migration number"
+      count: 7
+      automation: "Automatable with safety checks"
+    - pattern: "Unblock QA outbox events"
+      count: 7
+      automation: "Fully automatable for non-prod"
+    - pattern: "Create secrets (various envs)"
+      count: 30+
+      automation: "Automatable with RBAC"
+    - pattern: "Vanity URL / GCLB creation"
+      count: 8+
+      automation: "Fully automatable"
+    - pattern: "Workload identity mapping"
+      count: 7+
+      automation: "Template-based automation"
+    - pattern: "Grafana access requests"
+      count: 15+
+      automation: "Fully automatable"
+
+  team_load:
+    total_active_assignees: 20
+    top_5_handle: "55% of all tickets"
+    highest_load: "vishnu.smurali (95 tickets / 6 months)"
+    load_distribution_concern: "Top 3 engineers handle 38% of all work"
+
+# ============ TOP REQUEST CATEGORIES (ranked) ============
+top_request_categories:
+  - rank: 1
+    category: "Database Operations (MongoDB + PostgreSQL)"
+    percentage: 19.3
+    monthly_volume: ~48
+    automation_potential: high
+    key_workflows:
+      - "MongoDB scaling (tier/disk)"
+      - "Migration recovery (decrement/mark clean)"
+      - "Index creation/deletion"
+      - "Adhoc query execution"
+
+  - rank: 2
+    category: "Secrets & Certificate Management"
+    percentage: 13.7
+    monthly_volume: ~34
+    automation_potential: very_high
+    key_workflows:
+      - "Secret creation (GSM/AWS)"
+      - "Service account creation"
+      - "Token generation"
+      - "Certificate rotation"
+
+  - rank: 3
+    category: "Observability & Monitoring"
+    percentage: 10.7
+    monthly_volume: ~27
+    automation_potential: high
+    key_workflows:
+      - "Grafana access provisioning"
+      - "Alert configuration"
+      - "Dashboard creation/migration"
+      - "Metrics troubleshooting"
+
+  - rank: 4
+    category: "Deployment & Release Operations"
+    percentage: 9.5
+    monthly_volume: ~24
+    automation_potential: medium_high
+    key_workflows:
+      - "Plugin version updates"
+      - "Image copy between registries"
+      - "Workload identity mapping"
+      - "Helm operations"
+
+  - rank: 5
+    category: "Access & Permissions"
+    percentage: 4.0
+    monthly_volume: ~10
+    automation_potential: high
+    key_workflows:
+      - "GCP IAM role grants"
+      - "Grafana RBAC"
+      - "Database read access"
+
+  - rank: 6
+    category: "Networking & DNS"
+    percentage: 3.2
+    monthly_volume: ~8
+    automation_potential: high
+    key_workflows:
+      - "Vanity URL creation"
+      - "DNS record updates"
+      - "GCLB rule creation"
+
+  - rank: 7
+    category: "Kubernetes & Cluster Operations"
+    percentage: 3.2
+    monthly_volume: ~8
+    automation_potential: medium
+    key_workflows:
+      - "Pod/app lifecycle management"
+      - "Cluster configuration"
+      - "Resource troubleshooting"
+
+  - rank: 8
+    category: "Environment & Account Setup"
+    percentage: 3.0
+    monthly_volume: ~8
+    automation_potential: medium
+    key_workflows:
+      - "Account/org creation"
+      - "Infrastructure preparation"
+
+  - rank: 9
+    category: "Kafka & Event Processing"
+    percentage: 2.0
+    monthly_volume: ~5
+    automation_potential: high
+    key_workflows:
+      - "Outbox event unblocking"
+      - "Topic management"
+      - "Consumer lag investigation"
+
+  - rank: 10
+    category: "Troubleshooting & Investigation"
+    percentage: 2.7
+    monthly_volume: ~7
+    automation_potential: low
+    key_workflows:
+      - "Incident investigation"
+      - "Performance debugging"
+      - "Stuck process resolution"
+
+# ============ RECOMMENDATIONS ============
+recommendations:
+
+  immediate_wins:
+    - action: "Automate secret creation workflow"
+      impact: "~34 tickets/month eliminated"
+      effort: "Low - straightforward API wrapping"
+
+    - action: "Automate Grafana access provisioning"
+      impact: "~15 tickets/month eliminated"
+      effort: "Low - Grafana API well-documented"
+
+    - action: "Automate plugin version updates"
+      impact: "~3 tickets/week eliminated"
+      effort: "Very low - simple config update"
+
+    - action: "Automate outbox unblocking (non-prod)"
+      impact: "~2 tickets/week eliminated"
+      effort: "Low - well-understood procedure"
+
+    - action: "Automate vanity URL creation"
+      impact: "~2 tickets/week eliminated"
+      effort: "Medium - multi-step but deterministic"
+
+  knowledge_graph_priorities:
+    - "Service → Owner mapping (enables intelligent routing)"
+    - "Service → Infrastructure mapping (cluster, namespace, DB)"
+    - "Runbook library (indexed by symptom)"
+    - "Environment topology (prod1-7, qa, staging)"
+    - "Approval chain mapping (who can approve what)"
+
+  control_plane_priorities:
+    - priority: P0
+      tools:
+        - "secrets/create"
+        - "grafana/access/grant"
+        - "mongodb/scale"
+        - "postgres/migration/status"
+        - "kafka/outbox/unblock"
+        - "networking/vanity-url/create"
+        - "knowledge/ownership"
+        - "knowledge/service"
+        - "k8s/deployment/status"
+        - "k8s/pod/logs"
+    - priority: P1
+      tools:
+        - "deploy/helm"
+        - "deploy/argocd/sync"
+        - "deploy/image/copy"
+        - "alerts/create"
+        - "postgres/scale"
+        - "iam/service-account/create"
+
+  next_steps:
+    - "Configure Slack MCP and analyze all-cloud-engineers channel"
+    - "Build service inventory (Story 2.1 from init doc)"
+    - "Integrate with PagerDuty for incident correlation"
+    - "Implement P0 automation workflows"
+    - "Set up baseline metrics (Story 1.3)"
+
+# ============ BASELINE METRICS (Story 1.3) ============
+baseline_metrics:
+  requests_per_week: ~58
+  estimated_engineer_hours_per_week: ~116  # assuming 2hr avg
+  average_response_time: "Unknown (need Slack data for informal requests)"
+  top_support_categories:
+    - "Database operations: 19.3%"
+    - "Secrets management: 13.7%"
+    - "Observability: 10.7%"
+    - "Deployments: 9.5%"
+  repeat_question_frequency: "~15% of tickets are near-duplicates of previous requests"
+  resolution_rate: "58% Done, 11% Answered, 6.3% Invalid, 4.7% Cancelled"
+  p0_p1_percentage: "5.2% (31 issues in 6 months)"

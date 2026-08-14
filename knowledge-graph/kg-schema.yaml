@@ -1,0 +1,335 @@
+---
+# CLISREP Knowledge Graph - Schema Definition
+# This defines the structure developers will maintain as YAML files
+# Maintainer: Cloud Engineering Team
+# Last updated: 2026-08-14
+
+metadata:
+  version: "0.1.0"
+  description: "Schema for the CLISREP Knowledge Graph - manually maintained YAML files"
+  purpose: "Central knowledge store for AI agents and engineers to query"
+
+# ============ ENTITY TYPES ============
+entity_types:
+
+  service:
+    description: "A deployable service/microservice"
+    fields:
+      - name: id
+        type: string
+        required: true
+        description: "Unique identifier (e.g., 'iacm-manager')"
+      - name: display_name
+        type: string
+        required: true
+      - name: repository
+        type: string
+        description: "Git repository URL"
+      - name: owner
+        type: ref(team_member)
+        required: true
+      - name: team
+        type: string
+      - name: deployments
+        type: list[ref(deployment)]
+      - name: databases
+        type: list[ref(database)]
+      - name: dashboards
+        type: list[ref(dashboard)]
+      - name: alerts
+        type: list[ref(alert)]
+      - name: runbook_url
+        type: string
+      - name: pagerduty_service
+        type: string
+      - name: dependencies
+        type: list[ref(service)]
+      - name: helm_chart
+        type: string
+      - name: description
+        type: string
+
+  deployment:
+    description: "A specific deployment of a service in an environment"
+    fields:
+      - name: id
+        type: string
+        required: true
+      - name: service
+        type: ref(service)
+        required: true
+      - name: environment
+        type: ref(environment)
+        required: true
+      - name: cluster
+        type: ref(cluster)
+        required: true
+      - name: namespace
+        type: string
+        required: true
+      - name: replicas
+        type: int
+      - name: cpu_request
+        type: string
+      - name: memory_request
+        type: string
+      - name: helm_release
+        type: string
+      - name: argocd_app
+        type: string
+
+  environment:
+    description: "A logical environment (prod1, prod2, qa, staging)"
+    fields:
+      - name: id
+        type: string
+        required: true
+        description: "e.g., 'prod1', 'prod2', 'qa-setup'"
+      - name: cloud_provider
+        type: enum[gcp, aws, azure]
+      - name: gcp_project
+        type: string
+      - name: aws_account
+        type: string
+      - name: region
+        type: string
+      - name: clusters
+        type: list[ref(cluster)]
+      - name: tier
+        type: enum[production, staging, qa, dev]
+      - name: approval_required
+        type: bool
+      - name: fedramp
+        type: bool
+        default: false
+
+  cluster:
+    description: "A Kubernetes cluster"
+    fields:
+      - name: id
+        type: string
+        required: true
+      - name: provider
+        type: enum[gke, eks]
+      - name: environment
+        type: ref(environment)
+      - name: region
+        type: string
+      - name: node_pools
+        type: list[object]
+      - name: namespaces
+        type: list[string]
+
+  database:
+    description: "A database instance (MongoDB, PostgreSQL, Redis, etc.)"
+    fields:
+      - name: id
+        type: string
+        required: true
+      - name: type
+        type: enum[mongodb, postgresql, redis, clickhouse, elasticsearch, starrocks]
+      - name: provider
+        type: string
+        description: "Atlas, CloudSQL, AlloyDB, self-managed"
+      - name: environment
+        type: ref(environment)
+      - name: tier
+        type: string
+        description: "M60, M80, db-custom-4-26624, etc."
+      - name: disk_size
+        type: string
+      - name: services
+        type: list[ref(service)]
+      - name: owner
+        type: ref(team_member)
+      - name: connection_string_secret
+        type: string
+        description: "Name of the secret containing connection string"
+
+  dashboard:
+    description: "A Grafana dashboard or monitoring view"
+    fields:
+      - name: id
+        type: string
+        required: true
+      - name: url
+        type: string
+      - name: folder
+        type: string
+      - name: service
+        type: ref(service)
+      - name: datasource
+        type: string
+
+  alert:
+    description: "An alerting rule"
+    fields:
+      - name: id
+        type: string
+        required: true
+      - name: name
+        type: string
+      - name: type
+        type: enum[grafana, gcp_monitoring, pagerduty]
+      - name: service
+        type: ref(service)
+      - name: notification_channel
+        type: string
+        description: "Slack channel or PD service"
+      - name: severity
+        type: enum[critical, warning, info]
+
+  team_member:
+    description: "A person who owns or operates services"
+    fields:
+      - name: id
+        type: string
+        required: true
+      - name: email
+        type: string
+        required: true
+      - name: name
+        type: string
+      - name: role
+        type: string
+      - name: domains
+        type: list[string]
+        description: "Areas of expertise (from ownership model)"
+      - name: slack_handle
+        type: string
+
+  workflow:
+    description: "A documented operational procedure"
+    fields:
+      - name: id
+        type: string
+        required: true
+      - name: name
+        type: string
+        required: true
+      - name: category
+        type: string
+      - name: automation_tier
+        type: enum[p0_immediate, p1_assisted, p2_guided]
+      - name: triggers
+        type: list[string]
+        description: "Keywords/phrases that identify this workflow"
+      - name: owner
+        type: ref(team_member)
+      - name: steps
+        type: list[string]
+      - name: apis_needed
+        type: list[string]
+      - name: guardrails
+        type: list[string]
+      - name: frequency
+        type: string
+
+  secret:
+    description: "A managed secret/credential"
+    fields:
+      - name: id
+        type: string
+        required: true
+      - name: provider
+        type: enum[gcp_gsm, aws_sm, vault]
+      - name: project
+        type: string
+      - name: name
+        type: string
+      - name: environment
+        type: ref(environment)
+      - name: used_by
+        type: list[ref(service)]
+      - name: rotation_policy
+        type: string
+      - name: owner
+        type: ref(team_member)
+
+# ============ RELATIONSHIP TYPES ============
+relationships:
+  - type: owns
+    from: team_member
+    to: [service, database, dashboard]
+    description: "Primary ownership"
+
+  - type: deployed_in
+    from: service
+    to: environment
+    via: deployment
+
+  - type: uses_database
+    from: service
+    to: database
+
+  - type: monitored_by
+    from: service
+    to: [dashboard, alert]
+
+  - type: depends_on
+    from: service
+    to: service
+    description: "Runtime dependency"
+
+  - type: runs_on
+    from: deployment
+    to: cluster
+
+  - type: routes_to
+    from: request_category
+    to: team_member
+    description: "Request routing rule"
+
+# ============ FILE STRUCTURE ============
+file_structure:
+  description: "How the KG is stored as YAML files on disk"
+  layout:
+    - path: "knowledge-graph/services/{service-id}.yaml"
+      contains: "One file per service with all relationships"
+    - path: "knowledge-graph/environments/{env-id}.yaml"
+      contains: "Environment topology"
+    - path: "knowledge-graph/teams/{team-id}.yaml"
+      contains: "Team members and ownership"
+    - path: "knowledge-graph/workflows/{workflow-id}.yaml"
+      contains: "Operational procedures"
+    - path: "knowledge-graph/databases/{db-id}.yaml"
+      contains: "Database instances"
+    - path: "knowledge-graph/request-categories.yaml"
+      contains: "Request taxonomy and routing"
+    - path: "knowledge-graph/ownership-model.yaml"
+      contains: "Who owns what"
+
+# ============ EXAMPLE SERVICE ENTRY ============
+example:
+  # knowledge-graph/services/iacm-manager.yaml
+  service:
+    id: iacm-manager
+    display_name: "IACM Manager"
+    repository: "https://github.com/harness/harness-core"
+    owner: krishna_sindhur
+    team: "IACM"
+    deployments:
+      - environment: prod1
+        cluster: gke-prod1-primary
+        namespace: iacm
+        replicas: 3
+      - environment: prod2
+        cluster: gke-prod2-primary
+        namespace: iacm
+        replicas: 3
+    databases:
+      - id: iacm-postgres-prod1
+        type: postgresql
+        provider: CloudSQL
+      - id: iacm-mongo-prod1
+        type: mongodb
+        provider: Atlas
+    dashboards:
+      - url: "https://observability.harness.io/dashboards/f/iacm-playground"
+    alerts:
+      - name: "IACM Manager Health"
+        notification_channel: "#iacm-alerts"
+    runbook_url: "https://harness.atlassian.net/wiki/spaces/IACM/pages/runbooks"
+    dependencies:
+      - ng-manager
+      - platform-service

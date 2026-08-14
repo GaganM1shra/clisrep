@@ -1,0 +1,427 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+# CLISREP Knowledge Graph - Identified Workflows
+# Source: CLI ESR issue patterns (Feb-Aug 2026)
+
+metadata:
+  source: "Jira CLI ESR patterns + repeat request analysis"
+  analysis_period: "2026-02-14 to 2026-08-14"
+  total_workflows_identified: 24
+
+workflows:
+# ===== P0 - FULLY AUTOMATABLE =====
+  - id: wf_secret_creation_gsm
+    name: "Create Secret in GCP Secret Manager"
+    category: secrets_certificates
+    automation_tier: p0_immediate
+    frequency: "5-8x per week"
+    owner: vishnu_smurali
+    triggers:
+      - "create secret in GSM"
+      - "add secret to ENV GSM"
+      - "secret creation in PROJECT"
+    steps:
+      - validate_requester_permissions
+      - check_secret_doesnt_exist
+      - create_secret_in_gsm
+      - verify_secret_accessible
+      - notify_requester
+    apis_needed:
+      - "gcloud secrets create"
+      - "gcloud secrets versions add"
+    guardrails:
+      - "Requester must be on approved list"
+      - "No plaintext secrets in tickets"
+      - "Audit log all creations"
+
+  - id: wf_secret_creation_aws
+    name: "Create Secret in AWS Secrets Manager"
+    category: secrets_certificates
+    automation_tier: p0_immediate
+    frequency: "3-5x per week"
+    owner: vishnu_smurali
+    triggers:
+      - "secrets creation in AWS"
+      - "create secret in ENV"
+    steps:
+      - validate_requester_permissions
+      - check_secret_doesnt_exist
+      - create_secret_in_aws_sm
+      - verify_secret_accessible
+      - notify_requester
+    apis_needed:
+      - "aws secretsmanager create-secret"
+
+  - id: wf_plugin_version_update
+    name: "Update Plugin Version (SSCA)"
+    category: deployment_release
+    automation_tier: p0_immediate
+    frequency: "3x per week"
+    repeat_count: 19
+    owner: deployment_team
+    triggers:
+      - "updating plugin version for ssca-plugins"
+      - "update ssca plugin"
+    steps:
+      - validate_version_exists
+      - update_config
+      - trigger_deployment
+      - verify_rollout
+    apis_needed:
+      - "helm upgrade"
+      - "argocd app sync"
+
+  - id: wf_outbox_unblock
+    name: "Unblock QA Outbox Events"
+    category: kafka_messaging
+    automation_tier: p0_immediate
+    frequency: "1-2x per week"
+    repeat_count: 7
+    owner: kishan_singh
+    triggers:
+      - "unblock QA outbox events"
+      - "process QA outbox blocked events"
+    steps:
+      - identify_blocked_events
+      - validate_safe_to_process
+      - process_or_skip_blocked_events
+      - verify_consumer_lag_cleared
+      - notify_requester
+    apis_needed:
+      - "MongoDB query on outbox collection"
+      - "Kafka consumer group management"
+    guardrails:
+      - "Only non-prod by default"
+      - "Log all skipped events"
+
+  - id: wf_vanity_url_creation
+    name: "Create Vanity URL / GCLB Entry"
+    category: networking_dns
+    automation_tier: p0_immediate
+    frequency: "2x per week"
+    owner: saurabh_pahuja
+    triggers:
+      - "VanityURL"
+      - "create entry in GCLB"
+      - "create vanity URL mapping"
+    steps:
+      - validate_domain_ownership
+      - create_gclb_rule
+      - configure_ssl_cert
+      - update_dns_record
+      - verify_resolution
+      - notify_requester
+    apis_needed:
+      - "gcloud compute url-maps"
+      - "gcloud compute ssl-certificates"
+      - "gcloud dns record-sets"
+
+  - id: wf_grafana_access
+    name: "Grant Grafana Dashboard Access"
+    category: observability
+    automation_tier: p0_immediate
+    frequency: "4x per week"
+    owner: kishan_singh
+    triggers:
+      - "edit access to grafana dashboard"
+      - "get admin/editor role for grafana"
+      - "need access to grafana"
+      - "create grafana service account"
+    steps:
+      - validate_requester
+      - check_dashboard_exists
+      - grant_access
+      - verify_access
+      - notify_requester
+    apis_needed:
+      - "Grafana API permissions"
+      - "Grafana API service accounts"
+
+  - id: wf_migration_decrement
+    name: "Decrement Migration Number"
+    category: database_postgres
+    automation_tier: p0_immediate
+    frequency: "1x per week"
+    repeat_count: 7
+    owner: vishnu_smurali
+    triggers:
+      - "decrementing migration number"
+      - "rerun migration"
+      - "dirty migration"
+    steps:
+      - connect_to_database
+      - check_current_migration_state
+      - validate_safe_to_decrement
+      - update_schema_migrations_table
+      - verify_state
+      - notify_requester
+    apis_needed:
+      - "PostgreSQL direct query"
+    guardrails:
+      - "Backup migration table before change"
+      - "Only decrement by 1 unless approved"
+
+  - id: wf_workload_identity_mapping
+    name: "Workload Identity Mapping"
+    category: deployment_release
+    automation_tier: p0_immediate
+    frequency: "2x per week during rollouts"
+    repeat_count: 7
+    owner: jonathan_charette
+    triggers:
+      - "workload identity mapping for SERVICE"
+    steps:
+      - validate_gcp_sa_exists
+      - annotate_k8s_sa
+      - bind_iam_policy
+      - verify_workload_identity
+    apis_needed:
+      - "kubectl annotate"
+      - "gcloud iam service-accounts add-iam-policy-binding"
+
+  # ===== P1 - AI-ASSISTED WITH APPROVAL =====
+  - id: wf_mongodb_scaling
+    name: "Scale MongoDB Cluster"
+    category: database_mongodb
+    automation_tier: p1_assisted
+    frequency: "3x per week"
+    owner: anurag_singh
+    triggers:
+      - "scale MongoDB"
+      - "MongoDB disk"
+      - "scale MongoDB cluster disk"
+    steps:
+      - check_current_cluster_state
+      - validate_scaling_parameters
+      - generate_change_request
+      - await_approval
+      - execute_scaling
+      - monitor_replication_lag
+      - verify_cluster_healthy
+    apis_needed:
+      - "MongoDB Atlas API"
+      - "kubectl patch for operator-managed"
+    guardrails:
+      - "Cannot scale down in production"
+      - "Must validate replica sync"
+      - "Production requires approval"
+
+  - id: wf_postgres_scaling
+    name: "Scale PostgreSQL/CloudSQL Instance"
+    category: database_postgres
+    automation_tier: p1_assisted
+    frequency: "2x per week"
+    owner: sunil_mareddy
+    triggers:
+      - "increase postgres vCPU"
+      - "upgrade CloudSQL instance"
+      - "increase DB CPU"
+    steps:
+      - check_current_instance_specs
+      - validate_scaling_parameters
+      - check_maintenance_window
+      - generate_change_request
+      - await_approval
+      - execute_scaling
+      - verify_instance_healthy
+    apis_needed:
+      - "gcloud sql instances patch"
+
+  - id: wf_deploy_hotfix
+    name: "Deploy Hotfix/Service"
+    category: deployment_release
+    automation_tier: p1_assisted
+    frequency: "2x per week"
+    owner: jonathan_charette
+    triggers:
+      - "deploy"
+      - "hotfix"
+      - "rollout"
+    steps:
+      - validate_image_exists
+      - check_current_version
+      - generate_deploy_plan
+      - await_approval
+      - execute_deployment
+      - monitor_rollout
+      - verify_health
+    apis_needed:
+      - "argocd app sync"
+      - "kubectl rollout status"
+      - "helm upgrade"
+
+  - id: wf_alert_creation
+    name: "Create/Configure Alert"
+    category: observability
+    automation_tier: p1_assisted
+    frequency: "2x per week"
+    owner: kishan_singh
+    triggers:
+      - "create alert"
+      - "configure alert"
+      - "mute alert"
+    steps:
+      - validate_alert_parameters
+      - check_duplicate_alerts
+      - create_alert_rule
+      - configure_notification
+      - verify_alert_fires_correctly
+    apis_needed:
+      - "Grafana Alerting API"
+      - "GCP Cloud Monitoring API"
+
+  - id: wf_image_copy
+    name: "Copy Container Images Between Registries"
+    category: deployment_release
+    automation_tier: p1_assisted
+    frequency: "1-2x per week"
+    owner: deployment_team
+    triggers:
+      - "copy images"
+      - "copy from Quay to HAR"
+      - "publish images"
+    steps:
+      - validate_source_image_exists
+      - check_target_doesnt_exist
+      - pull_and_push_image
+      - verify_image_in_target
+      - scan_for_vulnerabilities
+    apis_needed:
+      - "crane copy"
+      - "harbor API"
+
+  - id: wf_service_account_creation
+    name: "Create GCP Service Account"
+    category: secrets_certificates
+    automation_tier: p1_assisted
+    frequency: "1-2x per week"
+    owner: vishnu_smurali
+    triggers:
+      - "create service account"
+      - "new service account"
+      - "grant SA permissions"
+    steps:
+      - validate_naming_convention
+      - check_sa_doesnt_exist
+      - create_service_account
+      - bind_iam_roles
+      - generate_key_if_needed
+      - verify_permissions
+    apis_needed:
+      - "gcloud iam service-accounts create"
+      - "gcloud projects add-iam-policy-binding"
+
+  # ===== P2 - AI-GUIDED (HUMAN EXECUTES) =====
+
+  - id: wf_incident_investigation
+    name: "Infrastructure Incident Investigation"
+    category: troubleshooting
+    automation_tier: p2_guided
+    frequency: "2x per week"
+    owner: varies_by_domain
+    triggers:
+      - "investigate"
+      - "pod restart storm"
+      - "memory pressure"
+      - "not working"
+    ai_assists_with:
+      - "Gather relevant logs"
+      - "Check recent deployments"
+      - "Pull Kubernetes events"
+      - "Check resource utilization"
+    human_does:
+      - "Root cause determination"
+      - "Remediation decision"
+      - "Stakeholder communication"
+
+  - id: wf_dirty_migration_recovery
+    name: "PostgreSQL Dirty Migration Recovery"
+    category: database_postgres
+    automation_tier: p2_guided
+    frequency: "2x per month"
+    owner: vishnu_smurali
+    triggers:
+      - "dirty migration"
+      - "recovering dirty migration"
+    ai_assists_with:
+      - "Check migration table state"
+      - "Identify failed migration"
+      - "Suggest recovery approach"
+    human_does:
+      - "Decide decrement vs fix forward"
+      - "Verify data integrity"
+
+  - id: wf_kafka_connect_onboarding
+    name: "Kafka Connect New Collection Onboarding"
+    category: kafka_messaging
+    automation_tier: p2_guided
+    frequency: "1x per month"
+    owner: shaishaw_shashank
+    triggers:
+      - "onboard collection into kafka-connect"
+      - "new mongo connector"
+    ai_assists_with:
+      - "Generate connector config"
+      - "Validate topic naming"
+      - "Check resource capacity"
+    human_does:
+      - "Review connector config"
+      - "Deploy and monitor"
+
+  - id: wf_data_backfill
+    name: "Production Data Backfill"
+    category: data_operations
+    automation_tier: p2_guided
+    frequency: "1x per week"
+    owner: varies_by_service
+    triggers:
+      - "backfill"
+      - "data fix"
+      - "insert docs"
+      - "repair rows"
+    ai_assists_with:
+      - "Generate backfill script"
+      - "Validate data shape"
+      - "Estimate impact"
+    human_does:
+      - "Review and approve script"
+      - "Execute with monitoring"
+    guardrails:
+      - "Always backup before modification"
+      - "Dry-run in non-prod first"
+
+  - id: wf_environment_setup
+    name: "New Environment/Service Onboarding"
+    category: environment_onboarding
+    automation_tier: p2_guided
+    frequency: "2x per month"
+    owner: varies
+    triggers:
+      - "prepare infra"
+      - "new environment"
+      - "onboard service"
+    ai_assists_with:
+      - "Generate infrastructure checklist"
+      - "Create configs from templates"
+      - "Validate all dependencies met"
+    human_does:
+      - "Review infrastructure plan"
+      - "Approve resource costs"
+
+  - id: wf_security_response
+    name: "Security Finding Response"
+    category: compliance_security
+    automation_tier: p2_guided
+    frequency: "1-2x per month"
+    owner: security_team
+    triggers:
+      - "GuardDuty finding"
+      - "security alert"
+      - "vulnerability"
+    ai_assists_with:
+      - "Gather context about affected resource"
+      - "Check if known pattern"
+      - "Suggest containment steps"
+    human_does:
+      - "Determine severity"
+      - "Execute containment"
+      - "Report to security team"
