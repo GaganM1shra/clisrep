@@ -38,11 +38,12 @@ key_findings:
       - "Deployments & releases: ~9.5%"
 
   automation_opportunity:
-    high_feasibility: "6% of issues (fully automatable today)"
-    medium_feasibility: "12.8% of issues (automatable with approval gates)"
+    high_feasibility: "11.3% of issues (fully automatable today)"
+    medium_feasibility: "10.0% of issues (automatable with approval gates)"
     low_feasibility: "4.5% of issues (AI-assisted, human decides)"
-    estimated_automatable_volume: "~47 issues/month could be auto-resolved"
-    estimated_time_savings: "~94 engineer-hours/month (assuming 2hr avg per automatable task)"
+    combined_automatable: "21.3% of all tickets (high + medium)"
+    estimated_automatable_volume: "~53 issues/month could be auto-resolved"
+    estimated_time_savings: "~106 engineer-hours/month (assuming 2hr avg per automatable task)"
 
   top_repeat_patterns:
     - pattern: "Plugin version updates (ssca-plugins)"

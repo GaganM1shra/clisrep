@@ -1,2 +1,4 @@
-.DS_Store     # macOS system file
-init.docx     # initial documentation file
+.DS_Store
+__pycache__/
+*.pyc
+init.docx

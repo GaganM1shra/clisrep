@@ -17,8 +17,10 @@ workflows:
     owner: vishnu_smurali
     triggers:
       - "create secret in GSM"
-      - "add secret to ENV GSM"
-      - "secret creation in PROJECT"
+      - "add secret to GSM"
+      - "secret creation in GCP"
+      - "GCP Secret Manager"
+      - "secrets in prod-shared"
     steps:
       - validate_requester_permissions
       - check_secret_doesnt_exist
@@ -101,8 +103,10 @@ workflows:
     owner: saurabh_pahuja
     triggers:
       - "VanityURL"
-      - "create entry in GCLB"
-      - "create vanity URL mapping"
+      - "GCLB rule"
+      - "vanity URL mapping"
+      - "entry in GCLB for"
+      - "create GCLB"
     steps:
       - validate_domain_ownership
       - create_gclb_rule
@@ -309,6 +313,53 @@ workflows:
     apis_needed:
       - "gcloud iam service-accounts create"
       - "gcloud projects add-iam-policy-binding"
+
+  - id: wf_k8s_pod_operations
+    name: "Kubernetes Pod/Namespace Operations"
+    category: kubernetes_infra
+    automation_tier: p1_assisted
+    frequency: "2x per week"
+    owner: jonathan_mell
+    triggers:
+      - "stuck pod"
+      - "delete stuck spark app"
+      - "namespace operations"
+      - "pod restart storm"
+      - "move to regular nodes"
+    steps:
+      - identify_target_resource
+      - check_current_state
+      - generate_action_plan
+      - await_approval
+      - execute_operation
+      - verify_cluster_health
+    apis_needed:
+      - "kubectl delete pod"
+      - "kubectl get events"
+      - "kubectl describe"
+
+  - id: wf_iam_access_grant
+    name: "Grant IAM/RBAC Access"
+    category: access_permissions
+    automation_tier: p1_assisted
+    frequency: "2-3x per week"
+    owner: vishnu_smurali
+    triggers:
+      - "grant access"
+      - "need permission"
+      - "IAM role"
+      - "read-only access to"
+      - "editor role for"
+    steps:
+      - validate_requester_authorization
+      - check_current_permissions
+      - determine_minimum_required_role
+      - apply_permission
+      - verify_access
+      - notify_requester
+    apis_needed:
+      - "gcloud projects add-iam-policy-binding"
+      - "kubectl create rolebinding"
 
   # ===== P2 - AI-GUIDED (HUMAN EXECUTES) =====
 
