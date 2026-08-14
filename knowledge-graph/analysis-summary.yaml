@@ -32,10 +32,11 @@ key_findings:
     weekly_average: ~58
     trend: "Consistent high volume across all months"
     peak_categories:
-      - "Database operations (MongoDB + PostgreSQL): ~19.3%"
-      - "Secrets & certificates: ~13.7%"
-      - "Observability & monitoring: ~10.7%"
-      - "Deployments & releases: ~9.5%"
+      - "Database operations (MongoDB + PostgreSQL): ~30.5%"
+      - "Secrets & certificates: ~15.3%"
+      - "Deployments & releases: ~11.8%"
+      - "Observability & monitoring: ~9.2%"
+    uncategorized_rate: "11.3% (down from 30.8% after pattern expansion)"
 
   automation_opportunity:
     high_feasibility: "11.3% of issues (fully automatable today)"
@@ -77,20 +78,20 @@ key_findings:
 # ============ TOP REQUEST CATEGORIES (ranked) ============
 top_request_categories:
   - rank: 1
-    category: "Database Operations (MongoDB + PostgreSQL)"
-    percentage: 19.3
-    monthly_volume: ~48
+    category: "Database Operations (MongoDB + General DB)"
+    percentage: 19.7
+    monthly_volume: ~49
     automation_potential: high
     key_workflows:
       - "MongoDB scaling (tier/disk)"
-      - "Migration recovery (decrement/mark clean)"
-      - "Index creation/deletion"
       - "Adhoc query execution"
+      - "Index creation/deletion"
+      - "Trigger management"
 
   - rank: 2
     category: "Secrets & Certificate Management"
-    percentage: 13.7
-    monthly_volume: ~34
+    percentage: 15.3
+    monthly_volume: ~38
     automation_potential: very_high
     key_workflows:
       - "Secret creation (GSM/AWS)"
@@ -99,9 +100,31 @@ top_request_categories:
       - "Certificate rotation"
 
   - rank: 3
-    category: "Observability & Monitoring"
-    percentage: 10.7
+    category: "Deployment & Release Operations"
+    percentage: 11.8
+    monthly_volume: ~30
+    automation_potential: high
+    key_workflows:
+      - "Plugin version updates (ssca)"
+      - "Workload identity mapping"
+      - "Image copy between registries"
+      - "Helm operations"
+
+  - rank: 4
+    category: "PostgreSQL / Migration Operations"
+    percentage: 10.8
     monthly_volume: ~27
+    automation_potential: high
+    key_workflows:
+      - "Migration decrement/recovery"
+      - "CloudSQL scaling"
+      - "Adhoc query execution"
+      - "Migration lock removal"
+
+  - rank: 5
+    category: "Observability & Monitoring"
+    percentage: 9.2
+    monthly_volume: ~23
     automation_potential: high
     key_workflows:
       - "Grafana access provisioning"
@@ -109,70 +132,51 @@ top_request_categories:
       - "Dashboard creation/migration"
       - "Metrics troubleshooting"
 
-  - rank: 4
-    category: "Deployment & Release Operations"
-    percentage: 9.5
-    monthly_volume: ~24
-    automation_potential: medium_high
+  - rank: 6
+    category: "Networking & DNS"
+    percentage: 3.5
+    monthly_volume: ~9
+    automation_potential: high
     key_workflows:
-      - "Plugin version updates"
-      - "Image copy between registries"
-      - "Workload identity mapping"
-      - "Helm operations"
+      - "Vanity URL creation"
+      - "DNS record updates"
+      - "IP whitelisting"
+      - "GCLB rule creation"
 
-  - rank: 5
+  - rank: 7
     category: "Access & Permissions"
-    percentage: 4.0
-    monthly_volume: ~10
+    percentage: 2.8
+    monthly_volume: ~7
     automation_potential: high
     key_workflows:
       - "GCP IAM role grants"
       - "Grafana RBAC"
       - "Database read access"
 
-  - rank: 6
-    category: "Networking & DNS"
-    percentage: 3.2
-    monthly_volume: ~8
+  - rank: 8
+    category: "Cloud Storage & Buckets"
+    percentage: 2.7
+    monthly_volume: ~7
     automation_potential: high
     key_workflows:
-      - "Vanity URL creation"
-      - "DNS record updates"
-      - "GCLB rule creation"
+      - "GCS bucket creation"
+      - "S3 bucket creation"
+      - "CORS/versioning configuration"
 
-  - rank: 7
+  - rank: 9
     category: "Kubernetes & Cluster Operations"
-    percentage: 3.2
-    monthly_volume: ~8
+    percentage: 2.3
+    monthly_volume: ~6
     automation_potential: medium
     key_workflows:
       - "Pod/app lifecycle management"
       - "Cluster configuration"
       - "Resource troubleshooting"
 
-  - rank: 8
-    category: "Environment & Account Setup"
-    percentage: 3.0
-    monthly_volume: ~8
-    automation_potential: medium
-    key_workflows:
-      - "Account/org creation"
-      - "Infrastructure preparation"
-
-  - rank: 9
-    category: "Kafka & Event Processing"
-    percentage: 2.0
-    monthly_volume: ~5
-    automation_potential: high
-    key_workflows:
-      - "Outbox event unblocking"
-      - "Topic management"
-      - "Consumer lag investigation"
-
   - rank: 10
     category: "Troubleshooting & Investigation"
-    percentage: 2.7
-    monthly_volume: ~7
+    percentage: 2.2
+    monthly_volume: ~6
     automation_potential: low
     key_workflows:
       - "Incident investigation"

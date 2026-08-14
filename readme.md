@@ -44,7 +44,7 @@ flowchart LR
 | **Jira tickets (6mo)** | ~1,496 |
 | **Slack messages** | 924 |
 | **Automatable/month** | ~53 tickets (~106 eng-hours saved) |
-| **Top workload** | DB ops 19%, Secrets 14%, Observability 11% |
+| **Top workload** | DB ops 31%, Secrets 15%, Deployments 12% |
 | **Key insight** | 80% of Slack requests never become tickets |
 
 ## Run

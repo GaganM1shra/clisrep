@@ -18,6 +18,20 @@ from pathlib import Path
 import yaml
 
 
+NOISE_PATTERNS = [
+    r"^(na|team)$",
+    r"^testing\s",
+    r"^test ticket",
+    r"^\!subteam",
+    r"^https?://",
+]
+
+
+def is_noise(summary: str) -> bool:
+    text = summary.strip().lower()
+    return any(re.search(p, text) for p in NOISE_PATTERNS)
+
+
 def categorize_text(text: str, categories: dict) -> str:
     text_lower = text.lower()
     for cat_id, cat_info in categories.items():
@@ -46,7 +60,10 @@ def analyze_jira(issues: list, config: dict) -> dict:
         desc = fields.get("description", "") or ""
         text = summary + " " + desc
 
-        cat = categorize_text(text, categories_config)
+        if is_noise(summary):
+            cat = "noise_invalid"
+        else:
+            cat = categorize_text(text, categories_config)
         categorized[cat].append({
             "key": issue["key"],
             "summary": summary,
@@ -270,7 +287,7 @@ def run(config_path: str):
                 "estimated_total_requests": (jira_analysis["total_issues"] if jira_analysis else 0) + (slack_analysis["intent_breakdown"]["slack_only"] if slack_analysis else 0),
             },
             "key_findings": [
-                "80.8% of Slack requests never become formal Jira tickets",
+                f"{slack_analysis['slack_only_percentage']}% of Slack requests never become formal Jira tickets" if slack_analysis else "Slack data pending",
                 "Database operations (MongoDB + PostgreSQL) are the #1 workload at 19.3% of tickets",
                 "Secrets management is the #2 workload at 13.7% - highly automatable",
                 "Top 3 engineers handle 38% of all ticket work (load concentration risk)",

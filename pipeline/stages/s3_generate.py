@@ -143,7 +143,7 @@ table td {{ padding: 8px; border-bottom: 1px solid var(--border); }}
 </div>
 <div class="card">
 <h3>Coverage Gap</h3>
-<div class="insight-box amber">80.8% of Slack requests never become formal Jira tickets — invisible workload</div>
+<div class="insight-box amber">{slack.get('slack_only_percentage', 0)}% of Slack requests never become formal Jira tickets — invisible workload</div>
 <div class="insight-box green">45+ knowledge questions in Slack could be answered by AI with a Knowledge Graph</div>
 <div class="insight-box">Plugin version updates (ssca-plugins) alone: 19 identical tickets in 6 months</div>
 </div>

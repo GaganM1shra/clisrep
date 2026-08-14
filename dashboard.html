@@ -103,7 +103,7 @@ table td { padding: 8px; border-bottom: 1px solid var(--border); }
 </div>
 <div class="card">
 <h3>Coverage Gap</h3>
-<div class="insight-box amber">80.8% of Slack requests never become formal Jira tickets — invisible workload</div>
+<div class="insight-box amber">82.1% of Slack requests never become formal Jira tickets — invisible workload</div>
 <div class="insight-box green">45+ knowledge questions in Slack could be answered by AI with a Knowledge Graph</div>
 <div class="insight-box">Plugin version updates (ssca-plugins) alone: 19 identical tickets in 6 months</div>
 </div>
@@ -119,7 +119,7 @@ table td { padding: 8px; border-bottom: 1px solid var(--border); }
 <div class="card">
 <h3>Top Categories</h3>
 <ul class="bar-list">
-<li><span class="bar-label">Uncategorized</span><span class="bar-bg"><span class="bar-fill" style="width:100.0%;background:var(--accent)"></span></span><span class="bar-value">30.8%</span></li><li><span class="bar-label">Secrets Certificates</span><span class="bar-bg"><span class="bar-fill" style="width:50.97402597402597%;background:var(--accent)"></span></span><span class="bar-value">15.7%</span></li><li><span class="bar-label">Database Mongodb</span><span class="bar-bg"><span class="bar-fill" style="width:43.18181818181818%;background:var(--accent)"></span></span><span class="bar-value">13.3%</span></li><li><span class="bar-label">Observability</span><span class="bar-bg"><span class="bar-fill" style="width:31.49350649350649%;background:var(--accent)"></span></span><span class="bar-value">9.7%</span></li><li><span class="bar-label">Deployment Release</span><span class="bar-bg"><span class="bar-fill" style="width:28.246753246753244%;background:var(--accent)"></span></span><span class="bar-value">8.7%</span></li><li><span class="bar-label">Database Postgres</span><span class="bar-bg"><span class="bar-fill" style="width:19.480519480519483%;background:var(--accent)"></span></span><span class="bar-value">6.0%</span></li><li><span class="bar-label">Access Permissions</span><span class="bar-bg"><span class="bar-fill" style="width:10.38961038961039%;background:var(--accent)"></span></span><span class="bar-value">3.2%</span></li><li><span class="bar-label">Networking Dns</span><span class="bar-bg"><span class="bar-fill" style="width:10.38961038961039%;background:var(--accent)"></span></span><span class="bar-value">3.2%</span></li>
+<li><span class="bar-label">Database Mongodb</span><span class="bar-bg"><span class="bar-fill" style="width:100.0%;background:var(--accent)"></span></span><span class="bar-value">19.7%</span></li><li><span class="bar-label">Secrets Certificates</span><span class="bar-bg"><span class="bar-fill" style="width:77.66497461928935%;background:var(--accent)"></span></span><span class="bar-value">15.3%</span></li><li><span class="bar-label">Uncategorized</span><span class="bar-bg"><span class="bar-fill" style="width:57.360406091370564%;background:var(--accent)"></span></span><span class="bar-value">11.3%</span></li><li><span class="bar-label">Deployment Release</span><span class="bar-bg"><span class="bar-fill" style="width:57.360406091370564%;background:var(--accent)"></span></span><span class="bar-value">11.3%</span></li><li><span class="bar-label">Database Postgres</span><span class="bar-bg"><span class="bar-fill" style="width:54.82233502538072%;background:var(--accent)"></span></span><span class="bar-value">10.8%</span></li><li><span class="bar-label">Observability</span><span class="bar-bg"><span class="bar-fill" style="width:46.700507614213194%;background:var(--accent)"></span></span><span class="bar-value">9.2%</span></li><li><span class="bar-label">Networking Dns</span><span class="bar-bg"><span class="bar-fill" style="width:18.781725888324875%;background:var(--accent)"></span></span><span class="bar-value">3.7%</span></li><li><span class="bar-label">Access Permissions</span><span class="bar-bg"><span class="bar-fill" style="width:15.228426395939088%;background:var(--accent)"></span></span><span class="bar-value">3.0%</span></li>
 </ul>
 </div>
 </div>
@@ -254,8 +254,8 @@ Chart.defaults.borderColor = '#2d3548';
 new Chart(document.getElementById('categoryChart'), {
     type: 'doughnut',
     data: {
-        labels: ["Uncategorized", "Secrets Certificates", "Database Mongodb", "Observability", "Deployment Release", "Database Postgres", "Access Permissions", "Networking Dns"],
-        datasets: [{ data: [185, 94, 80, 58, 52, 36, 19, 19], backgroundColor: ['#6366f1','#818cf8','#3b82f6','#10b981','#f59e0b','#ef4444','#ec4899','#8b5cf6'] }]
+        labels: ["Database Mongodb", "Secrets Certificates", "Uncategorized", "Deployment Release", "Database Postgres", "Observability", "Networking Dns", "Access Permissions"],
+        datasets: [{ data: [118, 92, 68, 68, 65, 55, 22, 18], backgroundColor: ['#6366f1','#818cf8','#3b82f6','#10b981','#f59e0b','#ef4444','#ec4899','#8b5cf6'] }]
     },
     options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { boxWidth: 12, font: { size: 11 } } } } }
 });

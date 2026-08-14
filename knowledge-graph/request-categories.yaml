@@ -282,7 +282,7 @@ categories:
           - "Create grafana service account for using with mcp"
         automation_feasibility: high
 
-  - id: environment_onboarding
+  - id: environment_setup
     name: "Environment & Account Setup"
     percentage: 3.0
     volume_per_month: ~8
@@ -340,19 +340,91 @@ categories:
           - "[PIPE-36489] prod3: Repair 15 auditevents rows"
         automation_feasibility: low
 
-  - id: compliance_security
-    name: "Compliance & Security"
+  - id: storage_buckets
+    name: "Cloud Storage & Buckets"
+    percentage: 1.7
+    volume_per_month: ~4
+    description: "GCS bucket creation, S3 bucket setup, CORS config, versioning"
+    sub_types:
+      - id: gcs_bucket_creation
+        name: "GCS Bucket Creation"
+        examples:
+          - "Create GCS buckets (blobstore) for Test Intelligence"
+          - "Request for GCS Bucket in Prod 1 and Prod 2 with CORS enabled"
+        automation_feasibility: high
+        typical_workflow: "Validate project → create bucket → set CORS/versioning → verify"
+      - id: s3_bucket_creation
+        name: "S3 Bucket Creation"
+        examples:
+          - "Create S3 bucket for data retention on QA1 env"
+        automation_feasibility: high
+      - id: bucket_config
+        name: "Bucket Configuration Changes"
+        examples:
+          - "Change location of GCS Prod8 bucket from US to EU"
+          - "Disable bucket versioning in Clickhouse FME S3 buckets"
+        automation_feasibility: medium
+
+  - id: data_cleanup_deletion
+    name: "Data Cleanup & Deletion"
+    percentage: 2.0
+    volume_per_month: ~5
+    description: "Entity deletion, config cleanup, record removal, data fixes"
+    sub_types:
+      - id: entity_deletion
+        name: "Config/Entity Deletion"
+        examples:
+          - "Deleting incorrectly set config entity"
+          - "Delete Coles Recommendations to Enable Regeneration"
+        automation_feasibility: medium
+        typical_workflow: "Identify target → verify safe to delete → backup → delete → confirm"
+      - id: record_removal
+        name: "Record/Data Removal"
+        examples:
+          - "Delete agents marked as 'deleted' from Split project in acm db"
+          - "Delete the last s3 sync record for account"
+        automation_feasibility: medium
+
+  - id: security_compliance
+    name: "Security & Compliance"
     percentage: 1.2
     volume_per_month: ~3
-    description: "FedRAMP, DR clusters, security findings, audits"
+    description: "CVE remediation, pentests, PCI evidence, vulnerability response"
     sub_types:
-      - id: fedramp
-        name: "FedRAMP Operations"
+      - id: cve_remediation
+        name: "CVE/Vulnerability Remediation"
         examples:
-          - "FedRAMP DR Cluster"
+          - "CVEs Reported by Bofa on SMP v1.40.1 [Traceable]"
+          - "Critical/High/Medium/Low - ubi9/python3:3.11-rfcurated - all packages"
         automation_feasibility: low
-      - id: security_findings
-        name: "Security Findings Response"
+      - id: pentest_findings
+        name: "Pentest Findings"
         examples:
-          - "AWS GuardDuty finding - reverse shell detected on EC2 instance"
+          - "FY27 - Harness External Pentest | Traceable - Medium Finding"
         automation_feasibility: low
+      - id: compliance_evidence
+        name: "Compliance Evidence"
+        examples:
+          - "PCI Evidence - EC2 Instance System Time Settings"
+          - "AWS GuardDuty finding - reverse shell detected"
+        automation_feasibility: low
+
+  - id: feature_toggles_config
+    name: "Feature Toggles & Config"
+    percentage: 1.3
+    volume_per_month: ~3
+    description: "Feature flag changes, enable/disable features, publication setup"
+    sub_types:
+      - id: feature_flag_ops
+        name: "Feature Flag Operations"
+        examples:
+          - "Improve Harness Feature Flag Approval process"
+          - "add dbops owners to ff-qa-approval-group"
+        automation_feasibility: medium
+      - id: enable_disable
+        name: "Enable/Disable Features"
+        examples:
+          - "Enable SpiceDB UserGroup Migration in QA environment"
+          - "Disable cbo_enable_low_cardinality_optimize in production"
+          - "Enable publication for IRO DB tables in QA"
+        automation_feasibility: high

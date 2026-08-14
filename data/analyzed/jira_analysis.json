@@ -1,57 +1,77 @@
 {
   "total_issues": 600,
   "categories": {
-    "uncategorized": {
-      "count": 185,
-      "percentage": 30.8
+    "database_mongodb": {
+      "count": 118,
+      "percentage": 19.7
     },
     "secrets_certificates": {
-      "count": 94,
-      "percentage": 15.7
+      "count": 92,
+      "percentage": 15.3
     },
-    "database_mongodb": {
-      "count": 80,
-      "percentage": 13.3
-    },
-    "observability": {
-      "count": 58,
-      "percentage": 9.7
+    "uncategorized": {
+      "count": 68,
+      "percentage": 11.3
     },
     "deployment_release": {
-      "count": 52,
-      "percentage": 8.7
+      "count": 68,
+      "percentage": 11.3
     },
     "database_postgres": {
-      "count": 36,
-      "percentage": 6.0
+      "count": 65,
+      "percentage": 10.8
     },
-    "access_permissions": {
-      "count": 19,
-      "percentage": 3.2
+    "observability": {
+      "count": 55,
+      "percentage": 9.2
     },
     "networking_dns": {
-      "count": 19,
-      "percentage": 3.2
+      "count": 22,
+      "percentage": 3.7
+    },
+    "access_permissions": {
+      "count": 18,
+      "percentage": 3.0
+    },
+    "storage_buckets": {
+      "count": 16,
+      "percentage": 2.7
     },
     "kubernetes_infra": {
-      "count": 19,
-      "percentage": 3.2
+      "count": 14,
+      "percentage": 2.3
+    },
+    "noise_invalid": {
+      "count": 13,
+      "percentage": 2.2
     },
     "troubleshooting": {
-      "count": 15,
-      "percentage": 2.5
+      "count": 13,
+      "percentage": 2.2
     },
-    "scaling_resources": {
+    "feature_toggles_config": {
       "count": 10,
       "percentage": 1.7
+    },
+    "scaling_resources": {
+      "count": 9,
+      "percentage": 1.5
     },
     "environment_setup": {
       "count": 7,
       "percentage": 1.2
     },
+    "data_cleanup_deletion": {
+      "count": 5,
+      "percentage": 0.8
+    },
     "kafka_messaging": {
-      "count": 6,
-      "percentage": 1.0
+      "count": 4,
+      "percentage": 0.7
+    },
+    "security_compliance": {
+      "count": 3,
+      "percentage": 0.5
     }
   },
   "statuses": {

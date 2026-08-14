@@ -28,12 +28,12 @@ analysis:
     # Pattern-based categorization rules
     # Each category has patterns that match against summary + description text
     categories:
-      database_mongodb:
-        patterns: ["mongo", "collection", "replicaset", "mongos", "sharding"]
-        label: "MongoDB Operations"
       database_postgres:
-        patterns: ["postgres", "pg[\\s\\-_]", "cloudsql", "alloydb", "migration.*dirty", "analyticsdb"]
+        patterns: ["postgres", "pg[\\s\\-_]", "cloudsql", "alloydb", "migration.*dirty", "analyticsdb", "migration", "decrement.*migration", "migration.*lock", "spicedb"]
         label: "PostgreSQL Operations"
+      database_mongodb:
+        patterns: ["mongo", "collection", "replicaset", "mongos", "sharding", "\\bdb\\b", "database", "query", "\\bindex", "drop.*trigger", "create.*index"]
+        label: "MongoDB & General DB Operations"
       secrets_certificates:
         patterns: ["secret", "certificate", "cert\\b", "tls", "ssl", "token", "credential", "service.?account"]
         label: "Secrets & Certificates"
@@ -41,10 +41,10 @@ analysis:
         patterns: ["metric", "grafana", "dashboard", "alert", "monitor", "mimir", "prometheus", "loki", "observ"]
         label: "Observability & Monitoring"
       deployment_release:
-        patterns: ["deploy", "restart", "rollback", "helm", "argocd", "rollout", "release", "publish.*image"]
+        patterns: ["deploy", "restart", "rollback", "helm", "argocd", "rollout", "release", "publish.*image", "workload.*identity", "plugin.*version", "ssca.*plugin", "push.*image"]
         label: "Deployment & Release"
       networking_dns:
-        patterns: ["dns", "vanity.*url", "ingress", "load.?balancer", "\\blb\\b", "vpc", "gclb", "domain"]
+        patterns: ["dns", "vanity.*url", "ingress", "load.?balancer", "\\blb\\b", "vpc", "gclb", "domain", "whitelist", "ip.*whitelist", "egress"]
         label: "Networking & DNS"
       kubernetes_infra:
         patterns: ["\\bpod\\b", "namespace", "cluster\\b", "\\beks\\b", "\\bgke\\b", "k8s", "kube"]
@@ -52,18 +52,30 @@ analysis:
       kafka_messaging:
         patterns: ["kafka", "outbox", "topic\\b", "consumer", "producer"]
         label: "Kafka & Messaging"
-      scaling_resources:
-        patterns: ["scale\\b", "resize", "increase.*(?:cpu|mem|disk)", "bump.*(?:cpu|mem)", "quota", "downsize"]
-        label: "Scaling & Resources"
       access_permissions:
         patterns: ["access", "permission", "rbac", "iam", "role\\b"]
         label: "Access & Permissions"
+      scaling_resources:
+        patterns: ["scale\\b", "resize", "increase.*(?:cpu|mem|disk)", "bump.*(?:cpu|mem)", "quota", "downsize"]
+        label: "Scaling & Resources"
       troubleshooting:
         patterns: ["investigat", "debug", "\\bwhy\\b", "stuck\\b", "broken", "crash", "oom", "timeout"]
         label: "Troubleshooting"
       environment_setup:
         patterns: ["account.*creat", "onboard", "new.*(?:env|cluster|project)", "setup\\b", "prepare.*infra"]
         label: "Environment Setup"
+      storage_buckets:
+        patterns: ["\\bgcs\\b", "\\bs3\\b", "bucket", "blobstore"]
+        label: "Cloud Storage & Buckets"
+      data_cleanup_deletion:
+        patterns: ["delet(?:e|ing).*(?:record|entity|agent|config|bundle|data|collection)", "datafix", "data.*fix"]
+        label: "Data Cleanup & Deletion"
+      security_compliance:
+        patterns: ["cve", "pentest", "pci\\b", "vulnerab", "security.*review", "guardduty"]
+        label: "Security & Compliance"
+      feature_toggles_config:
+        patterns: ["feature.?flag", "\\bff\\b.*approv", "\\benable\\b.*(?:migration|cdc|publication|spicedb|spark|log)", "\\bdisable\\b.*(?:cbo|feature|generat|bucket)"]
+        label: "Feature Toggles & Config"
 
   automation_feasibility:
     high_patterns: ["unblock.*outbox", "vanity.*url", "scale.*disk", "restart", "bump.*cpu", "increase.*timeout", "copy.*image", "update.*plugin", "create.*secret", "grafana.*access"]

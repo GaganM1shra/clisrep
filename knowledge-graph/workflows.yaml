@@ -361,6 +361,58 @@ workflows:
       - "gcloud projects add-iam-policy-binding"
       - "kubectl create rolebinding"
 
+  - id: wf_gcs_bucket_creation
+    name: "Create GCS Bucket"
+    category: storage_buckets
+    automation_tier: p1_assisted
+    frequency: "1-2x per week"
+    owner: saurabh_pahuja
+    triggers:
+      - "create GCS bucket"
+      - "request for GCS bucket"
+      - "GCS bucket in"
+      - "blobstore bucket"
+    steps:
+      - validate_project_and_region
+      - check_bucket_doesnt_exist
+      - create_bucket_with_config
+      - set_cors_and_lifecycle
+      - configure_iam_bindings
+      - verify_bucket_accessible
+      - notify_requester
+    apis_needed:
+      - "gcloud storage buckets create"
+      - "gcloud storage buckets update"
+    guardrails:
+      - "Must specify project and region"
+      - "Default to standard storage class unless specified"
+      - "Prod buckets require approval"
+
+  - id: wf_data_entity_deletion
+    name: "Delete Data Entity/Config"
+    category: data_cleanup_deletion
+    automation_tier: p1_assisted
+    frequency: "2-3x per week"
+    owner: varies_by_service
+    triggers:
+      - "delete config entity"
+      - "delete record"
+      - "remove data"
+      - "datafix"
+    steps:
+      - identify_target_entity
+      - validate_safe_to_delete
+      - create_backup
+      - execute_deletion
+      - verify_removal
+      - notify_requester
+    apis_needed:
+      - "MongoDB/PostgreSQL direct query"
+    guardrails:
+      - "Always backup before deletion"
+      - "Prod deletions require approval"
+      - "Log all deleted records"
+
   # ===== P2 - AI-GUIDED (HUMAN EXECUTES) =====
 
   - id: wf_incident_investigation
@@ -391,8 +443,9 @@ workflows:
     frequency: "2x per month"
     owner: vishnu_smurali
     triggers:
-      - "dirty migration"
       - "recovering dirty migration"
+      - "dirty migration.*failed"
+      - "migration stuck in dirty state"
     ai_assists_with:
       - "Check migration table state"
       - "Identify failed migration"
@@ -442,7 +495,7 @@ workflows:
 
   - id: wf_environment_setup
     name: "New Environment/Service Onboarding"
-    category: environment_onboarding
+    category: environment_setup
     automation_tier: p2_guided
     frequency: "2x per month"
     owner: varies
@@ -460,7 +513,7 @@ workflows:
 
   - id: wf_security_response
     name: "Security Finding Response"
-    category: compliance_security
+    category: security_compliance
     automation_tier: p2_guided
     frequency: "1-2x per month"
     owner: security_team
