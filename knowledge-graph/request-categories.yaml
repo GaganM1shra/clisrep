@@ -14,9 +14,9 @@ metadata:
 
 categories:
   - id: database_mongodb
-    name: "MongoDB Operations"
-    percentage: 13.3
-    volume_per_month: ~33
+    name: "MongoDB & General DB Operations"
+    percentage: 19.7
+    volume_per_month: ~49
     description: "Scaling, disk operations, index management, data fixes on MongoDB clusters"
     sub_types:
       - id: mongo_scaling
@@ -49,8 +49,8 @@ categories:
 
   - id: database_postgres
     name: "PostgreSQL / CloudSQL Operations"
-    percentage: 6.0
-    volume_per_month: ~15
+    percentage: 10.8
+    volume_per_month: ~27
     description: "Dirty migrations, scaling, query execution, access provisioning"
     sub_types:
       - id: pg_dirty_migration
@@ -82,8 +82,8 @@ categories:
 
   - id: secrets_certificates
     name: "Secrets & Certificates Management"
-    percentage: 13.7
-    volume_per_month: ~34
+    percentage: 15.3
+    volume_per_month: ~38
     description: "Creating secrets in GSM/AWS, cert rotation, token generation, service accounts"
     sub_types:
       - id: secret_creation
@@ -123,8 +123,8 @@ categories:
 
   - id: observability
     name: "Observability & Monitoring"
-    percentage: 10.7
-    volume_per_month: ~27
+    percentage: 9.2
+    volume_per_month: ~23
     description: "Grafana access, dashboard creation, alert configuration, metrics issues"
     sub_types:
       - id: grafana_access
@@ -157,8 +157,8 @@ categories:
 
   - id: deployment_release
     name: "Deployment & Release Operations"
-    percentage: 9.5
-    volume_per_month: ~24
+    percentage: 11.3
+    volume_per_month: ~28
     description: "Image publishing, helm operations, config changes, rollouts"
     sub_types:
       - id: image_publishing
@@ -190,8 +190,8 @@ categories:
 
   - id: networking_dns
     name: "Networking, DNS & Load Balancers"
-    percentage: 3.2
-    volume_per_month: ~8
+    percentage: 3.7
+    volume_per_month: ~9
     description: "Vanity URLs, GCLB rules, DNS records, VPC operations"
     sub_types:
       - id: vanity_urls
@@ -216,8 +216,8 @@ categories:
 
   - id: kubernetes_infra
     name: "Kubernetes & Cluster Operations"
-    percentage: 3.2
-    volume_per_month: ~8
+    percentage: 2.3
+    volume_per_month: ~6
     description: "Cluster operations, namespace management, node issues, pod operations"
     sub_types:
       - id: cluster_operations
@@ -240,8 +240,8 @@ categories:
 
   - id: kafka_messaging
     name: "Kafka & Event Processing"
-    percentage: 2.0
-    volume_per_month: ~5
+    percentage: 0.7
+    volume_per_month: ~2
     description: "Outbox unblocking, topic management, Kafka Connect operations"
     sub_types:
       - id: outbox_unblock
@@ -265,8 +265,8 @@ categories:
 
   - id: access_permissions
     name: "Access & Permissions"
-    percentage: 4.0
-    volume_per_month: ~10
+    percentage: 3.0
+    volume_per_month: ~8
     description: "IAM roles, RBAC, read-only access, GCP project permissions"
     sub_types:
       - id: gcp_iam
@@ -284,8 +284,8 @@ categories:
 
   - id: environment_setup
     name: "Environment & Account Setup"
-    percentage: 3.0
-    volume_per_month: ~8
+    percentage: 1.2
+    volume_per_month: ~3
     description: "New accounts, org creation, infra prep for new environments"
     sub_types:
       - id: account_creation
@@ -303,8 +303,8 @@ categories:
 
   - id: troubleshooting
     name: "Troubleshooting & Investigation"
-    percentage: 2.7
-    volume_per_month: ~7
+    percentage: 2.2
+    volume_per_month: ~6
     description: "Incident investigation, performance issues, stuck processes"
     sub_types:
       - id: incident_investigation
@@ -326,24 +326,29 @@ categories:
           - "GKE prod1 pod restart storm - memory pressure and health check failures"
         automation_feasibility: low
 
-  - id: data_operations
-    name: "Data Operations & Backfills"
-    percentage: 0.5
-    volume_per_month: ~2
-    description: "Data fixes, backfills, record deletions"
+  - id: scaling_resources
+    name: "Scaling & Resources"
+    percentage: 1.5
+    volume_per_month: ~4
+    description: "CPU/memory/disk scaling, quota increases, resource resizing"
     sub_types:
-      - id: data_fix
-        name: "Production Data Fixes"
+      - id: resource_scaling
+        name: "Resource Scaling (CPU/Memory/Disk)"
         examples:
-          - "Backfill gitops licensing related data in ng-manager postgres"
-          - "Insert ceDataReRunRequest docs for DFIN anomaly rerun"
-          - "[PIPE-36489] prod3: Repair 15 auditevents rows"
-        automation_feasibility: low
+          - "Need to increase DB CPU from 4 to 8 in sto-prod1"
+          - "Bump cpu/mem for pipeline-service in prod2"
+          - "Downscale Elasticsearch clusters for SSCA"
+        automation_feasibility: high
+      - id: quota_management
+        name: "Quota Increases"
+        examples:
+          - "Increase GCP quota for n2-standard instances in prod"
+        automation_feasibility: medium
 
   - id: storage_buckets
     name: "Cloud Storage & Buckets"
-    percentage: 1.7
-    volume_per_month: ~4
+    percentage: 2.7
+    volume_per_month: ~7
     description: "GCS bucket creation, S3 bucket setup, CORS config, versioning"
     sub_types:
       - id: gcs_bucket_creation
@@ -367,8 +372,8 @@ categories:
 
   - id: data_cleanup_deletion
     name: "Data Cleanup & Deletion"
-    percentage: 2.0
-    volume_per_month: ~5
+    percentage: 0.8
+    volume_per_month: ~2
     description: "Entity deletion, config cleanup, record removal, data fixes"
     sub_types:
       - id: entity_deletion
@@ -387,8 +392,8 @@ categories:
 
   - id: security_compliance
     name: "Security & Compliance"
-    percentage: 1.2
-    volume_per_month: ~3
+    percentage: 0.5
+    volume_per_month: ~1
     description: "CVE remediation, pentests, PCI evidence, vulnerability response"
     sub_types:
       - id: cve_remediation
@@ -411,8 +416,8 @@ categories:
 
   - id: feature_toggles_config
     name: "Feature Toggles & Config"
-    percentage: 1.3
-    volume_per_month: ~3
+    percentage: 1.7
+    volume_per_month: ~4
     description: "Feature flag changes, enable/disable features, publication setup"
     sub_types:
       - id: feature_flag_ops

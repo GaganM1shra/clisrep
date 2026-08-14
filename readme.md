@@ -45,7 +45,7 @@ flowchart LR
 | **Slack messages** | 924 |
 | **Automatable/month** | ~53 tickets (~106 eng-hours saved) |
 | **Top workload** | DB ops 31%, Secrets 15%, Deployments 12% |
-| **Key insight** | 80% of Slack requests never become tickets |
+| **Key insight** | 82% of Slack requests never become tickets |
 
 ## Run
 

@@ -232,22 +232,22 @@ recommendations:
         - "iam/service-account/create"
 
   next_steps:
-    - "Configure Slack MCP and analyze all-cloud-engineers channel"
     - "Build service inventory (Story 2.1 from init doc)"
     - "Integrate with PagerDuty for incident correlation"
     - "Implement P0 automation workflows"
-    - "Set up baseline metrics (Story 1.3)"
+    - "Build intent detection agent with KG routing"
 
 # ============ BASELINE METRICS (Story 1.3) ============
 baseline_metrics:
   requests_per_week: ~58
   estimated_engineer_hours_per_week: ~116  # assuming 2hr avg
-  average_response_time: "Unknown (need Slack data for informal requests)"
+  average_response_time: "Median Slack thread reply within same day (based on 117 threads)"
   top_support_categories:
-    - "Database operations: 19.3%"
-    - "Secrets management: 13.7%"
-    - "Observability: 10.7%"
-    - "Deployments: 9.5%"
+    - "Database operations (Mongo + Postgres): 30.5%"
+    - "Secrets management: 15.3%"
+    - "Deployments & releases: 11.3%"
+    - "Observability: 9.2%"
+  uncategorized_rate: "11.3% (down from 30.8% after pattern expansion)"
   repeat_question_frequency: "~15% of tickets are near-duplicates of previous requests"
   resolution_rate: "58% Done, 11% Answered, 6.3% Invalid, 4.7% Cancelled"
   p0_p1_percentage: "5.2% (31 issues in 6 months)"

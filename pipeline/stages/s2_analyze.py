@@ -246,6 +246,34 @@ def analyze_slack(messages: list) -> dict:
     }
 
 
+def self_compute_findings(jira: dict, slack: dict) -> list:
+    findings = []
+    if slack:
+        findings.append(f"{slack['slack_only_percentage']}% of Slack requests never become formal Jira tickets")
+    cats = jira["categories"]
+    sorted_cats = sorted(cats.items(), key=lambda x: -x[1]["count"])
+    top = sorted_cats[0]
+    findings.append(f"{top[0].replace('_', ' ').title()} is the #1 workload at {top[1]['percentage']}% of tickets")
+    second = sorted_cats[1]
+    findings.append(f"{second[0].replace('_', ' ').title()} is #2 at {second[1]['percentage']}%")
+    assignees = jira["top_assignees"]
+    top3 = list(assignees.values())[:3]
+    top3_pct = round(sum(top3) / jira["total_issues"] * 100)
+    findings.append(f"Top 3 engineers handle {top3_pct}% of all ticket work (load concentration risk)")
+    auto = jira["automation_feasibility"]
+    automatable = auto["high"] + auto["medium"]
+    monthly_auto = round(automatable / jira["total_issues"] * 250)
+    findings.append(f"~{monthly_auto} tickets/month are fully automatable with current tooling")
+    repeats = jira["repeat_patterns"]
+    if repeats:
+        findings.append(f"{repeats[0]['pattern'][:50]} alone: {repeats[0]['count']} repeat tickets in 6 months")
+    if slack:
+        monthly_msgs = round(slack["human_messages"] / 6)
+        findings.append(f"Slack channel sees ~{monthly_msgs} messages/month from humans seeking help")
+        findings.append(f"{len(slack.get('knowledge_questions', []))}+ knowledge questions in Slack answerable by a KG")
+    return findings
+
+
 def run(config_path: str):
     config = yaml.safe_load(Path(config_path).read_text())
     project_root = Path(config_path).parent.parent
@@ -286,16 +314,7 @@ def run(config_path: str):
                 "slack_messages_6mo": slack_analysis["total_messages"] if slack_analysis else 0,
                 "estimated_total_requests": (jira_analysis["total_issues"] if jira_analysis else 0) + (slack_analysis["intent_breakdown"]["slack_only"] if slack_analysis else 0),
             },
-            "key_findings": [
-                f"{slack_analysis['slack_only_percentage']}% of Slack requests never become formal Jira tickets" if slack_analysis else "Slack data pending",
-                "Database operations (MongoDB + PostgreSQL) are the #1 workload at 19.3% of tickets",
-                "Secrets management is the #2 workload at 13.7% - highly automatable",
-                "Top 3 engineers handle 38% of all ticket work (load concentration risk)",
-                "~47 tickets/month are fully automatable with current tooling",
-                "Plugin version updates alone account for 19 repeat tickets in 6 months",
-                "Slack channel sees ~155 messages/month from humans seeking help",
-                "45+ knowledge questions in Slack that could be answered by a KG",
-            ],
+            "key_findings": self_compute_findings(jira_analysis, slack_analysis),
         },
     }
     (output_dir / "combined_analysis.json").write_text(json.dumps(combined, indent=2))

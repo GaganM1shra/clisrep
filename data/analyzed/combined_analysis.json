@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T14:57:29.047262",
+  "generated_at": "2026-08-14T15:23:02.788533",
   "jira": {
     "total_issues": 600,
     "categories": {
@@ -837,13 +837,13 @@
     },
     "key_findings": [
       "82.1% of Slack requests never become formal Jira tickets",
-      "Database operations (MongoDB + PostgreSQL) are the #1 workload at 19.3% of tickets",
-      "Secrets management is the #2 workload at 13.7% - highly automatable",
+      "Database Mongodb is the #1 workload at 19.7% of tickets",
+      "Secrets Certificates is #2 at 15.3%",
       "Top 3 engineers handle 38% of all ticket work (load concentration risk)",
-      "~47 tickets/month are fully automatable with current tooling",
-      "Plugin version updates alone account for 19 repeat tickets in 6 months",
-      "Slack channel sees ~155 messages/month from humans seeking help",
-      "45+ knowledge questions in Slack that could be answered by a KG"
+      "~53 tickets/month are fully automatable with current tooling",
+      "updating plugin version for ssca-plugins alone: 19 repeat tickets in 6 months",
+      "Slack channel sees ~128 messages/month from humans seeking help",
+      "20+ knowledge questions in Slack answerable by a KG"
     ]
   }
 }

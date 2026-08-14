@@ -473,7 +473,7 @@ workflows:
 
   - id: wf_data_backfill
     name: "Production Data Backfill"
-    category: data_operations
+    category: data_cleanup_deletion
     automation_tier: p2_guided
     frequency: "1x per week"
     owner: varies_by_service
