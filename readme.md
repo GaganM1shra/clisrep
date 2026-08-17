@@ -18,7 +18,7 @@
 
 ## Next Steps
 
-1. **Build 2 workflows** — `provision_datastore` and `rotate_secret` (highest volume intents)
+1. **Build 2 workflows**
 2. **Build the Knowledge Graph** — repo-based `.md` files with intent-to-workflow mapping, daily cron updates
 3. **KB (vector-db)** — ingest Slack + Confluence for knowledge questions, hourly cron sync
 
