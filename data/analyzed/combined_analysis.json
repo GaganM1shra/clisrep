@@ -1,79 +1,3715 @@
 {
-  "generated_at": "2026-08-14T15:23:02.788533",
+  "generated_at": "2026-08-17T10:25:41.047810",
   "jira": {
     "total_issues": 600,
     "categories": {
       "database_mongodb": {
         "count": 118,
-        "percentage": 19.7
+        "percentage": 19.7,
+        "tickets": [
+          {
+            "key": "CLI-57514",
+            "summary": "Scale MongoDB cdng to M80 in prod2",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-57510",
+            "summary": "Scale MongoDB cdng to M80 in prod3",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-57502",
+            "summary": "Need to increase DB CPU from 4 to 8 in  sto-prod1",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57294",
+            "summary": "Require Adhoc query run in prod2 for iac db",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57256",
+            "summary": "Need to check consumer lag for kafka topic - pmsMongo.pms-harness.planExecutionsSummary",
+            "status": "Answered",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57229",
+            "summary": "Scale MongoDB rbac disk to 333Gi in prod1",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-57220",
+            "summary": "Enable publication for IRO DB tables in QA",
+            "status": "Duplicate",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-57219",
+            "summary": "Enable publication for IRO DB tables in QA",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-57214",
+            "summary": "Require adhoc query execution for iac db in prod0/1/2/3",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-57176",
+            "summary": "Separate mongo db for integration-manager from idp in QA and migrate all data",
+            "status": "Done",
+            "assignee": "cmmadhav.prabhu"
+          },
+          {
+            "key": "CLI-57146",
+            "summary": "IDP QA Mongo is extremely slow",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57133",
+            "summary": "Hi team !subteam^S08Q66LS9SL Our celerdata BYOC cluster had a barrage of queries that brought down StarRocks FE node.  I need to identify the source of the query.Per the Celerdata support engineerThe query is a multi-level CTE against `sei_iceberg...",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-57130",
+            "summary": "Scale MongoDB audit disk to 5.5Ti in prod3",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-57126",
+            "summary": "Scale MongoDB cg disk to 4Ti in prod2",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56450",
+            "summary": "Create index on `runtime_inputs_info` to improve customer query utilising `runtime_inputs_info.display_name`",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-56434",
+            "summary": "Request for Co-located Delegate for Data Ops MongoDB Replication (prod0-4)",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56420",
+            "summary": "MongoDB Fed Temporary Access",
+            "status": "Invalid",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56410",
+            "summary": "Read-only query to find cgr.dev references in pipelines YAML on QA",
+            "status": "To Do",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-56409",
+            "summary": "Read-only query to find cgr.dev references in connectors on QA",
+            "status": "Invalid",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56408",
+            "summary": "Need help in querying the CI database to check which accounts have image/connector references to cgr.dev",
+            "status": "Answered",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-56365",
+            "summary": "Execute query in prod8 pms-harness db",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-56310",
+            "summary": "Execute query in prod8 pms-harness db",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-56286",
+            "summary": "Requirement of cloned prod3-sto DB clone",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-56267",
+            "summary": "team !subteam^S09LZ0G7NKC what is the process for index creation in mongo? is it different for dev / qpe environment and prod?",
+            "status": "Answered",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56242",
+            "summary": "[Harness-CODE] Update code-api DB to update the PR seq num for the migrated go-scm repo on H0",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-56216",
+            "summary": "Need Harness QA DB Access",
+            "status": "To Do",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58399",
+            "summary": "Exempt qpeperfmongodb and scaletestmongdb from deletion ttl",
+            "status": "Answered",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-58346",
+            "summary": "Customer data deletion out of MongoDB Atlas",
+            "status": "Answered",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-58324",
+            "summary": "[ai-verify-agents-service] Create MongoDB database and user on prod (prod0/prod4/prod6/eu1)",
+            "status": "To Do",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-58318",
+            "summary": "team !subteam^S03S53F9LJG - We observed that the `qpeperfmongodb` namespace got deleted in scale-setup-play project . We have recreated the namespace, but are currently facing authentication issues with older password. Could you please help us res...",
+            "status": "Invalid",
+            "assignee": "cmmadhav.prabhu"
+          },
+          {
+            "key": "CLI-58298",
+            "summary": "Prod2: Delete 6975 duplicate k8sWorkloadRecommendation entries + create unique index",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-58227",
+            "summary": "Query replay testing using prod3/prod4 PMS datasets with Mongo 8.0",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-58218",
+            "summary": "Create missing MongoDB indexes for CCM recommendation collections on Prod1",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-58215",
+            "summary": "Run DB query to increase interval of perpetual task on Prod-2",
+            "status": "Cancelled",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-58205",
+            "summary": "Remove mongo indexes from ti db",
+            "status": "To Do",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-58194",
+            "summary": "Create unique index on subdomainUrl field in gateway and harness DB in Prod 7",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-58180",
+            "summary": "DBRE: Provision CDC read-only MongoDB credentials for component database on prod1, prod2, prod3, and prod6",
+            "status": "Answered",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-58170",
+            "summary": "Prod5 sanity fails intermittently due to connection timeout for db-devops",
+            "status": "Cancelled",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-58142",
+            "summary": " Create unique index on subdomainUrl field in gateway and harness DB in Prod 7",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-58124",
+            "summary": "Create index on sbomComponent collection in Prod3 SSCA MongoDB",
+            "status": "In Progress",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-58105",
+            "summary": "Mongo 8.0 Pre checklist for Driver compatibility",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-58090",
+            "summary": "Delete records from FF classic database Prod2",
+            "status": "Duplicate",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-58026",
+            "summary": "Drop unused indexes for test_execution_history",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-58024",
+            "summary": "Customer Report - Critical MongoDB CVE",
+            "status": "In Progress",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-62659",
+            "summary": "Drop trigger on prod3 in sto-core",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62658",
+            "summary": "Drop trigger on prod3 in sto-core",
+            "status": "Cancelled",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-62615",
+            "summary": " Delete stale database entries from lifecycle policies with * * * * * cron causing Kafka lag",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62606",
+            "summary": "Drop trigger on prod4 in sto-core",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62601",
+            "summary": "Need a new mongo cluster for fme module in QA",
+            "status": "Done",
+            "assignee": "hemant.trigunayat"
+          },
+          {
+            "key": "CLI-62586",
+            "summary": "Drop trigger on eu1 in sto-core",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62517",
+            "summary": "FY27 Q2 Mongo UAR",
+            "status": "Answered",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-62509",
+            "summary": "We are in process of extracting out a new service out of iac-server, and will require assistance/guidance on how to move a set of tables out to a new database. Who would be the best person to talk about this?",
+            "status": "Invalid",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62437",
+            "summary": "Duplicate function in harnessti database is causing ti-service failure after 0.42.0 upgrade",
+            "status": "To Do",
+            "assignee": "soumik.ghosh"
+          },
+          {
+            "key": "CLI-62411",
+            "summary": "Delete agents marked as 'deleted' from Split project in acm db for harness0",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62238",
+            "summary": "Do perf testing on PMS cluster for mongo 8",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-62237",
+            "summary": "Deploy mongo-cluster in prod3 ng-manager to support jdbc connector user credentials having readWrite and collMod permissions for prod3",
+            "status": "Duplicate",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-62222",
+            "summary": "Hi Hero ,I am getting this error in prod0 deployment -```HelmClientRuntimeException: Failed to upgrade helm chart. Executed command: KUBECONFIG=/opt/harness-delegate/repository/helm/.kube/b284445499a51deca312305903a11b9a helm upgrade --install db-...",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62206",
+            "summary": "Copy registry DB QA secrets into sre-play GSM",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-55706",
+            "summary": "team !subteam^S03S53F9LJG we are seeing one pipeline-service in prod0 not being able to come up due to failures while connecting to mongo",
+            "status": "In Progress",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55691",
+            "summary": "[SSCA-Manager] Delete records from outboxEvent collection from Prod3 Env",
+            "status": "Cancelled",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55663",
+            "summary": "Mongo Self Hosted EU1 Access not working",
+            "status": "Answered",
+            "assignee": "cmmadhav.prabhu"
+          },
+          {
+            "key": "CLI-55623",
+            "summary": "Update the parentUniqueId in the entitySetupUsage collection",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55605",
+            "summary": "teamNeed some help understanding why this pod got killed pleasehttps://console.cloud.google.com/logs/query;aroundTime=2026-02-18T20:35:40.449Z;cursorTimestamp=2026-02-18T20:36:44.380995Z;duration=PT15M;pinnedLogId=2026-02-18T20:35:44.128294344Z%2F...",
+            "status": "To Do",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55585",
+            "summary": "Create Unified Chat database in prod",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55561",
+            "summary": "create ACM database in prod1 & prod2",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-55558",
+            "summary": "Hello teamIs the process to check Harness0 database different than other SaaS clusters? I am able to connect to SaaS cluster, but failing for Harness0.",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55532",
+            "summary": "Cannot query tables in lightwing prod4 ",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-55501",
+            "summary": "Adding 3M Documents in ACL Collection via MongoScript-Test",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55500",
+            "summary": "Adding 10 Documents in ACL Collection via MongoScript-Test",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55499",
+            "summary": "Adding 3M Documents in ACL Collection via MongoScript-Test",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55498",
+            "summary": "Adding 10 Documents in ACL Collection via MongoScript-Test",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55497",
+            "summary": "Investigate MongoDB cluster health during 2026-02-20 gateway slow-response incident",
+            "status": "Answered",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-55431",
+            "summary": "Please help create index on TSDB",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-55367",
+            "summary": "Need investigation on what requests are causing the spike in mongo",
+            "status": "Answered",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-55354",
+            "summary": "Need help to run write query for the component-analysis DB",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-64252",
+            "summary": "Scale MongoDB cluster disk to 900Gi in prod0",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64104",
+            "summary": "Increase timeout of PDT write queries for 'looker' db user in Prod1",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-64092",
+            "summary": "add label to LB for cost attribution",
+            "status": "To Do",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64090",
+            "summary": "Unblock QA outbox events",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64087",
+            "summary": "Unblock QA outbox events",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64082",
+            "summary": "qa-setup GCP project: Cloud Monitoring Prometheus metric descriptor quota (25000) exhausted \u2014 blocks ingestion of new metrics",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64067",
+            "summary": "Unblock QA outbox events",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64058",
+            "summary": "Unblock QA outbox events",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64050",
+            "summary": "Deleting the data in these collections to ease new index and field creations.",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-64049",
+            "summary": "Deleting the data in these collections to ease new index and field creations.",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-64048",
+            "summary": "Process QA outbox blocked events",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64047",
+            "summary": "Deploy Lightweight Apache Superset with Read-Only StarRocks Connection",
+            "status": "To Do",
+            "assignee": "rutvik.shiyani"
+          },
+          {
+            "key": "CLI-64031",
+            "summary": "Unblock QA outbox events",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63990",
+            "summary": "Unblock QA outbox events",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63980",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63971",
+            "summary": "Insert ceDataReRunRequest docs for DFIN anomaly rerun (July 1-25)",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-63965",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-63957",
+            "summary": "teamWe need a simplified SDLC for onboarding new collection into existing kakfa-connect, so that copy_existing can work for Mongo connectors.",
+            "status": "To Do",
+            "assignee": "nikhil.rajesh"
+          },
+          {
+            "key": "CLI-63949",
+            "summary": "AppSec: [On-Prem] mongodb-indexes Job does not apply declared indexes on fresh install",
+            "status": "To Do",
+            "assignee": "gautam.panchal"
+          },
+          {
+            "key": "CLI-63945",
+            "summary": "Need index performance for mongo prod2-cvng-0 cluster",
+            "status": "To Do",
+            "assignee": "hemant.trigunayat"
+          },
+          {
+            "key": "CLI-63941",
+            "summary": "Unblock QA outbox events",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63937",
+            "summary": "populating acl for a service account role assignment",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63934",
+            "summary": "populating acl for a service account role assignment",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63932",
+            "summary": "populating acl for a service account role assignment",
+            "status": "To Do",
+            "assignee": "hemant.trigunayat"
+          },
+          {
+            "key": "CLI-63928",
+            "summary": "Auto Index Generator Pipeline in Release tool is intermittently taking lot of time ",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63925",
+            "summary": "temp changes to Deploy version 1.159.XX to Prod-3 from harness0",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63923",
+            "summary": "Scale MongoDB cluster disk to 90Gi in eu1",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63921",
+            "summary": "Scale MongoDB audit disk to 5900Gi in prod3",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63920",
+            "summary": "Scale MongoDB cg disk to 5100Gi in prod2",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63919",
+            "summary": "Scale MongoDB cluster disk to 1500Gi in harness0",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63918",
+            "summary": "Scale MongoDB ssca disk to 3100Gi in prod1",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63911",
+            "summary": "Disable 2FA for two ABSA users on EU1 (account MTNmYzZkMDUtZDU1OC00Mj)",
+            "status": "Invalid",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63898",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63891",
+            "summary": "Please fix containerD confg",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63882",
+            "summary": "Scale MongoDB pms disk to 2300Gi in prod1",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63880",
+            "summary": "Invalidate DFIN anomaly batch job records from July 1 for rerun",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-63858",
+            "summary": "Data Fix for sandbox account [ CCM-34804 ]",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-63854",
+            "summary": "set harness_managed to true for default user groups.",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-63852",
+            "summary": "Create a mongo in QA for Enrichment Service",
+            "status": "To Do",
+            "assignee": "hemant.trigunayat"
+          },
+          {
+            "key": "CLI-63829",
+            "summary": "Confirm GMP frontend name config override for prod envs/and devspace - Booking escalation",
+            "status": "Answered",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-63824",
+            "summary": "Increase CPU_PER_VM_FAMILY quota for ci hosted vm",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-63820",
+            "summary": "harness-proxy plugin is throwing NPE and we cant update this from UI as pods are stuck in restart loop",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-63819",
+            "summary": "Data Fix for sandbox account [ CCM-34804 ]",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          }
+        ]
       },
       "secrets_certificates": {
         "count": 92,
-        "percentage": 15.3
+        "percentage": 15.3,
+        "tickets": [
+          {
+            "key": "CLI-57291",
+            "summary": "Create prod Bedrock token secrets for AI chat runner_v3 rollout",
+            "status": "Done",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-57290",
+            "summary": "Create harness0 secrets for AI chat runner_v3 rollout",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57262",
+            "summary": "Create secret in GSM for SEI",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57253",
+            "summary": "Create secrets in GCP Secret Manager for SEI Service",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57208",
+            "summary": "Secrets creation in AWS Prod5 and Prod7",
+            "status": "Done",
+            "assignee": "ragesh.moyan"
+          },
+          {
+            "key": "CLI-57205",
+            "summary": "Migrate secrets from prod-shared to harness-zero-shared",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57202",
+            "summary": "Create a new service account in levelops-dev GCP project with Storage Object Viewer role",
+            "status": "Invalid",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57139",
+            "summary": "Create a new Secret for Forge POC in QA",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57129",
+            "summary": "Create GCP secrets for new service: harness-fulcio in EU1 environment",
+            "status": "Answered",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-57119",
+            "summary": "Deprecate TLS 1.0, 1.1 and Enforce TLS 1.2 - QA and remaining",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-57108",
+            "summary": "Update Secret values in Prod4",
+            "status": "Cancelled",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57101",
+            "summary": "Update clientSecret CLOUD_INFO_CONFIG_FILE in prod-shared-3921",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-56516",
+            "summary": "Create secrets for SEI onboarding on prod4 ",
+            "status": "Done",
+            "assignee": "ragesh.moyan"
+          },
+          {
+            "key": "CLI-56466",
+            "summary": "Creation of new secrets for Global Gateway in Prod5 (AWS)",
+            "status": "Waiting for customer",
+            "assignee": "ragesh.moyan"
+          },
+          {
+            "key": "CLI-56401",
+            "summary": "Secrets creation for new SEI deployment in Prod4",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56398",
+            "summary": "Create clickhouse secrets on prod8",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56397",
+            "summary": "Create clickhouse secrets on prod7",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-56396",
+            "summary": "Create clickhouse secrets on prod6",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-56395",
+            "summary": "Create clickhouse secrets on prod5",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56394",
+            "summary": "Create clickhouse secrets on prod4",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56390",
+            "summary": "Create a GCP secret in qa-setup (fme-api-key)",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-56364",
+            "summary": "Generate the Admin portal token for account deletion in Prod1: Requested on Mar 25th",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56360",
+            "summary": "Need to update the ng-license secret in harness0 secret",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56262",
+            "summary": "team, I\u2019m trying to configure grafana mcp server for which I need a service account token. Can someone help with this? (for `https://monitoring.harness.io/`)",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-56256",
+            "summary": "Add secret to harness0 GSM",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58373",
+            "summary": "Create new Secret in QA Secret Store",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58360",
+            "summary": "Create GCP Secret for MCP Server Segment Write API Key (cluster-qa2)",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58330",
+            "summary": "Create cluster secrets for prod-prod6-7362",
+            "status": "Done",
+            "assignee": "jeetendra.patil"
+          },
+          {
+            "key": "CLI-58327",
+            "summary": "Create GCP Secret for MCP Server Segment Write API Key (Prod)",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58326",
+            "summary": "[ai-verify-agents-service] Verify Kafka user and SSL secret on prod (prod0/prod4/prod6/eu1)",
+            "status": "Answered",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58325",
+            "summary": "[ai-verify-agents-service] Create GCP secrets and ESO mappings on prod (prod0/prod4/prod6/eu1)",
+            "status": "Cancelled",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-58319",
+            "summary": "Create UDP_OTEL_HARNESS_SERVICE_TOKEN secret for genai-service (QA)",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58289",
+            "summary": "Create and share Grafana service account token for MCP",
+            "status": "Cancelled",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-58220",
+            "summary": "Create Kubernetes ServiceAccount and bind to cross-project GCP IAM role",
+            "status": "Cancelled",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-58189",
+            "summary": "Grafana MCP Service Account Token",
+            "status": "Cancelled",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58177",
+            "summary": "Create grafana service account for using with mcp",
+            "status": "To Do",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-58166",
+            "summary": "Add 'signBlob' permissions to Kubernetes Service Accounts for ssca-manager ",
+            "status": "Answered",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58148",
+            "summary": "Compare secret values in prod1 project",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58073",
+            "summary": "Secret Creation in prod-shared project",
+            "status": "Done",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-58072",
+            "summary": "FY27 - Harness External Pentest | Traceable - Medium Finding (#PT36406_10) - Unauthorized Service Account Management",
+            "status": "Cancelled",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-58070",
+            "summary": "FY27 - Harness External Pentest | Traceable - Medium Finding (#PT36406_13) - Analyst Role Can Read Jira Integration Credentials via GraphQL BFLA",
+            "status": "Cancelled",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62604",
+            "summary": "Update UDP_OTEL_HARNESS_SERVICE_TOKEN secret (QA)",
+            "status": "Done",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-62597",
+            "summary": "Consultation on RSA public key and X509 certificate management",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-62516",
+            "summary": "Create and share Grafana service account token for MCP",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-62505",
+            "summary": "Create new Secret (MCP_GATEWAY_KEK_B64) in prod2, prod3, prod4, prod6, eu1, harness0 Secret Stores",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-62501",
+            "summary": "Create a secret in GSM in QA-Setup ",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-62497",
+            "summary": "Please give the value of secret in prod-shared project",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-62430",
+            "summary": "Create GCP secrets in QA and prod-n environment",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62386",
+            "summary": "Update secret in cluster-qa2",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62384",
+            "summary": "Secret Creation in prod-shared project",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62366",
+            "summary": "Copy prod Segment keys into QA Secret Manager (_PROD suffix) for telemetry validation",
+            "status": "Cancelled",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62358",
+            "summary": "Create secrets in shared project for eu1",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62972",
+            "summary": "AWS_ACCOUNT_ID is not set in ce-nextgen service secret",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-62351",
+            "summary": "Create secret PLATFORM_CONFIG_SERVICE_SECRET in all environments",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62349",
+            "summary": "Execute secret rotation activity for EU environment - Skip version check to directly deploy on EU",
+            "status": "To Do",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-62236",
+            "summary": "Create jdbc connector user credentials having readWrite and collMod permissions for prod2",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-62198",
+            "summary": "Create 2 secret in prod0 SELF_SERVE_STRIPE_WEBHOOK_SECRET and DEVOPS_STRIPE_API_KEY",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-62186",
+            "summary": "Help to create a kubernetes secret in QA-setup project ",
+            "status": "To Do",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-55697",
+            "summary": "Create genai-service-sa GCP Service Account and Workload Identity binding for harness0",
+            "status": "To Do",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55688",
+            "summary": "Please help to create a GCP secret in QA",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55622",
+            "summary": "Generate the Admin portal token for account deletion in Prod1: Requested on Feb 26th",
+            "status": "Done",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-55687",
+            "summary": "Create grafana service account for using with mcp",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55606",
+            "summary": "Please update this secret IR_RECALLAI version in prod0",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55587",
+            "summary": "Request Access to Kubernetes Service Account node-api-sa (Prod1 & Prod2)",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-55538",
+            "summary": "Move google chat secrets from qa-setup to qa-qa2-d82e",
+            "status": "Cancelled",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55537",
+            "summary": "Devspace setup :Issue with harness manager timescaledb secret",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55536",
+            "summary": "Create Temporal API key secret in Harness0 shared project",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55519",
+            "summary": "Get access to Prod GCP Secrets from AWS",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-55518",
+            "summary": "team !subteam^S08Q66LS9SLCan you help provide workload identity binding for harness0, to host cache-service in all harness0 namespaces with a new service account. this needs to be done with tf provisioning",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55504",
+            "summary": "Add secret to prod0 GSM",
+            "status": "Answered",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-55503",
+            "summary": "Add secret to prod3 GSM",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55502",
+            "summary": "Add secret to prod2 GSM",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-55493",
+            "summary": "Setup secrets for Temporal in prod4 for ccm-ingestion-worker",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-55436",
+            "summary": "Add secret to prod1 GSM",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55435",
+            "summary": "Deprecate TLS 1.0, 1.1 and Enforce TLS 1.2",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55371",
+            "summary": "Please create 4 secrets in all prod environment and qa environment",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-55369",
+            "summary": "Create OPA_SERVICE_AUTH_SECRET secret in prod4",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-64065",
+            "summary": "Update Temporal client cert secrets for QA-Setup Cluster",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64061",
+            "summary": "team We(Delegate team) got to know that CLI team does token generation across each cluster and then use it for publishing alerts. We wanted to understand this token generation part, so, can someone help us with relevant wiki/code for the same. Fee...",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64045",
+            "summary": "Need  help in adding in secret in Prod environment for RO service",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63966",
+            "summary": "Create Vanity URL Mapping for Staging Environment \u2013 idp-staging.harness.io",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-63955",
+            "summary": "Fix GitLab OAuth client ID and secret mismatch in QA environment",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63954",
+            "summary": "That hostname has no DNS record and no ingress route on GovCloud, so every clone and push fails with \"no such host\".",
+            "status": "To Do",
+            "assignee": "mayank.singhi"
+          },
+          {
+            "key": "CLI-63930",
+            "summary": "Hello teamNeed help to create new secrets across prod environment. Can you please help?I can share the values over LastPass. Secret can be called as - `HARNESS_MANAGER_UDP_SERVICE_TOKEN`QA example -  https://console.cloud.google.com/security/secre...",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63922",
+            "summary": "New FME keys in GSM for respective prod projects",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-63910",
+            "summary": "Hi team team,we need  help in adding in secret in QA environment for RO service",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63909",
+            "summary": "Hi team team,we need  help in adding in secret in QA environment for RO service. (edited)",
+            "status": "Duplicate",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63904",
+            "summary": "Hello teamWe need help to update a secret in QA secret store. I can share the new value over LastPass.Secret: https://console.cloud.google.com/security/secret-manager/secret/HARNESS_MANAGER_UDP_SERVICE_TOKEN/versions?project=qa-qa2-d82eSecurity \u2013 ...",
+            "status": "Done",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-63900",
+            "summary": "Generate the Admin portal token for account deletions in Prod1",
+            "status": "Done",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-63862",
+            "summary": "Remove newline from secret value in prod",
+            "status": "Answered",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-63857",
+            "summary": "Remove newline from secret value",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-63833",
+            "summary": "Generate the Admin portal token for account deletions in Prod1",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          }
+        ]
       },
       "uncategorized": {
         "count": 68,
-        "percentage": 11.3
+        "percentage": 11.3,
+        "tickets": [
+          {
+            "key": "CLI-57513",
+            "summary": "Review Booking-related endpoints to identify paths that should require authentication",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-57281",
+            "summary": "Fix 'yaml' module script error on harness-zero-harness0-primary-del delegate",
+            "status": "Invalid",
+            "assignee": "chandraprakash.patel"
+          },
+          {
+            "key": "CLI-57279",
+            "summary": "Introduce gaurdrails ensuring no unexpected files in services",
+            "status": "Invalid",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-57261",
+            "summary": "iac-cloud-pricing-api service not present in prod2 environment",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57251",
+            "summary": "Not able to clone the harness-core",
+            "status": "Answered",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57243",
+            "summary": "Fix InvalidFieldException in ActivityCreateExecutor when base fields are changed to be",
+            "status": "Cancelled",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-57211",
+            "summary": "Read queries slow on rw instance.",
+            "status": "Invalid",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-57189",
+            "summary": "team can we please get approval for harness-manager bounce on Harness0 (this is for FF to take effect). Thanks:https://harness0.harness.io/ng/account/l7B_kbSEQD2wjrM7PShm5w/all/cd/orgs/Cloud_Infra/projects/harnessinfra/pipelines/Harness_CD_Canary_...",
+            "status": "Answered",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-57179",
+            "summary": "team Hey team, quick ask:Do we have a *non-prod / isolated environment* that we can use for running Traceable DAST/XAST scans?We want to avoid using QA or prod because these scans actively send requests (including POST/mutating calls) to validate ...",
+            "status": "Answered",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57170",
+            "summary": "team is there only 1 account in Harness0? need to know this for a hotfix",
+            "status": "Answered",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57142",
+            "summary": "Need to pause a GCP schedule",
+            "status": "Cancelled",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57141",
+            "summary": "Need invite to AWS qa0, qa1 and prod5 IDP accounts",
+            "status": "Done",
+            "assignee": "ragesh.moyan"
+          },
+          {
+            "key": "CLI-57112",
+            "summary": "adding proxy into proxyHostMap",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57111",
+            "summary": "team !subteam^S08Q66LS9SL ^",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57104",
+            "summary": "Delete Coles Recommendations to Enable Regeneration",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57102",
+            "summary": "Delete Coles Recommendations to Enable Regeneration",
+            "status": "Cancelled",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57073",
+            "summary": "Update CV Code Owners ",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-56534",
+            "summary": "Review and Confirm Harness IPs for Trust Center",
+            "status": "Backlog",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-56527",
+            "summary": "Separate out Redis Memstore instance for locking and caching for pipeline service.",
+            "status": "To Do",
+            "assignee": "unassigned"
+          },
+          {
+            "key": "CLI-56526",
+            "summary": "Updating accounts auth mechanism",
+            "status": "Done",
+            "assignee": "ragesh.moyan"
+          },
+          {
+            "key": "CLI-56525",
+            "summary": "Updating accounts auth mechanism",
+            "status": "Cancelled",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-56510",
+            "summary": "@jonathan.mell/team I brought up this service in QA using https://harness0.harness.io/ng/account/l7B_kbSEQD2wjrM7PShm5w/module/cd/orgs/Cloud_Infra/projects/harnessinfra/pipelines/Harness_CD_Canary_Pipeline_Latest/executions/AkEE5qD5S5K8Hk5rO4bRrw/...",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-56618",
+            "summary": "Need help identifying location of delegate in harness0 for troubleshooting",
+            "status": "To Do",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-56418",
+            "summary": "Help configure services for Barclays",
+            "status": "Done",
+            "assignee": "noeliamelina.urruchua"
+          },
+          {
+            "key": "CLI-56318",
+            "summary": "teamSpark jobs on QA are unable to get nodes since 30+ mins",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56289",
+            "summary": "Failover Testing (Primary & Failover)",
+            "status": "Invalid",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56213",
+            "summary": "Hi team /!subteam^S08Q66LS9SL can we enable JFR globally in harness-core values.yaml?please let me know if there are any concerns regarding enabling this globally. Thanks!",
+            "status": "To Do",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58389",
+            "summary": "team @vishnu.smurali @vineeth.chandran Please review and approve: https://harness.atlassian.net/browse/SECENG-8657?focusedCommentId=1423364",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58370",
+            "summary": "forecasting-service : Set up gcs_default Airflow connection in prod0",
+            "status": "To Do",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58368",
+            "summary": "forecasting-service : Add WI annotations to all Airflow SA components in prod0",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-58367",
+            "summary": "forecasting-service : [BLOCKER] Unpin git-sync in prod0 Airflow to HEAD",
+            "status": "Done",
+            "assignee": "rutvik.shiyani"
+          },
+          {
+            "key": "CLI-58338",
+            "summary": "team Could you please assist in identifying the account owner or any alternate POC for this ticket?https://harness.atlassian.net/browse/DETENG-38 and https://harness.atlassian.net/browse/DETENG-37",
+            "status": "To Do",
+            "assignee": "vishal.singhal"
+          },
+          {
+            "key": "CLI-58306",
+            "summary": "bounce the harness-manager pods on harness0",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-58301",
+            "summary": "Attribute cost of new Azure subscription",
+            "status": "To Do",
+            "assignee": "connor.wescott"
+          },
+          {
+            "key": "CLI-58300",
+            "summary": "Need indentation check for devspaces/{devspaces}/pipeline-input.yaml",
+            "status": "Invalid",
+            "assignee": "unassigned"
+          },
+          {
+            "key": "CLI-58192",
+            "summary": "Upgrade our MacStadium machine to the latest Tahoe 26.5 ",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-58190",
+            "summary": "Fix intermittent 'yq: command not found' error in Promote Artifacts pipeline",
+            "status": "Cancelled",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-58184",
+            "summary": "Enable read replicas for policy-mgmt in mentioned QA and Prod clusters",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-61947",
+            "summary": "Hero Can you please check this -- https://harness.slack.com/archives/C081RE6JSVB/p1779365264429019?thread_ts=1779269026.236149&amp;cid=C081RE6JSVB",
+            "status": "To Do",
+            "assignee": "routhu.shashank"
+          },
+          {
+            "key": "CLI-58094",
+            "summary": "Create aicr_db on prod2 and prod3",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58058",
+            "summary": "Action Items for #2026-05-12-inc-1779 (Secure Tunnel Incident)",
+            "status": "Under investigation",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-58056",
+            "summary": "Create jdbc connectors in cloud infra project",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-62599",
+            "summary": "Suppress INFO-level logs for sei-aggregation-service and sei-etl-worker-service in GCP Logging (logging budget overage)",
+            "status": "Done",
+            "assignee": "mayank.singhi"
+          },
+          {
+            "key": "CLI-62596",
+            "summary": "Critical/High/Medium/Low - ubi9/python3:3.11-rfcurated - all packages - 30-Jun-2026",
+            "status": "Invalid",
+            "assignee": "soumik.ghosh"
+          },
+          {
+            "key": "CLI-62595",
+            "summary": "High/Medium/Low - ubi9/java17:17.0.18_8 - all packages - 30-Jun-2026",
+            "status": "Invalid",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-62579",
+            "summary": "Maintenance tab filters in Status Portal are missing",
+            "status": "Invalid",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-62511",
+            "summary": "FY27 Q2 Redis UAR",
+            "status": "To Do",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62445",
+            "summary": "Please push the harness0.harness.io/oci/acct-docker-qa/registry-async-service:1.37.0 to GCR repo",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62444",
+            "summary": "team the issue arises again, could you please take a look ?https://harness0.harness.io/ng/account/l7B_kbSEQD2wjrM7PShm5w/module/cd/orgs/PROD/projects/Harness/pipelines/Add_or_Remove_Users_From_Harness_User_Group_v2/executions/9Z29uPLRSXKI_deZ1GuzQ...",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62396",
+            "summary": "[probe] curl esr",
+            "status": "Invalid",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62368",
+            "summary": "Create StarRocks read-only user for licensing team",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62356",
+            "summary": "r2-puller nodes scheduling is failing",
+            "status": "Done",
+            "assignee": "shivakumar.ningappa"
+          },
+          {
+            "key": "CLI-62348",
+            "summary": "Hi team !subteam^S08Q66LS9SL, I need some help on this https://harness.atlassian.net/browse/SECENG-9275. Please ping me if we can discuss this over a call.cc: @eric.brown",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62258",
+            "summary": "[PIPE] Create evaluations_pending_upload_idx CONCURRENTLY in QA Prod0 prod1, 2 ,3",
+            "status": "Answered",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62225",
+            "summary": "Expose version of build in final stage of build pipeline",
+            "status": "Invalid",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62199",
+            "summary": "team FYA: https://harness.atlassian.net/browse/SECENG-8944?focusedCommentId=1444829. Please ping me once done.",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-62176",
+            "summary": "team Could you please with this : https://harness.atlassian.net/browse/CLI-62175",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-55633",
+            "summary": "plugins/cache:1.9.23 deletion from GAR",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-55592",
+            "summary": "Hi team @jonathan.charette @vineeth.chandran, We need your help to review this requirement: https://harness.atlassian.net/browse/SECENG-5922?focusedCommentId=1348632cc: @abhinav.singh3 @sahildeep.singh",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-55515",
+            "summary": "Enable Qwiet License for Harness0",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55424",
+            "summary": "Need a fresh clone for prod2",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-55421",
+            "summary": "create a publication for the iacm_resource_bindings table in qa",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-55414",
+            "summary": "team can someone please take into this.",
+            "status": "Waiting for customer",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-59591",
+            "summary": "wait init-container hotfix",
+            "status": "Done",
+            "assignee": "soumik.ghosh"
+          },
+          {
+            "key": "CLI-55359",
+            "summary": "Customer FME Account Deletion",
+            "status": "To Do",
+            "assignee": "sebastian.marra"
+          },
+          {
+            "key": "CLI-64046",
+            "summary": "team can you please help with the request - https://harness.atlassian.net/browse/CLI-64045",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63881",
+            "summary": "Maintenance window for CI cloud default image changes",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-63826",
+            "summary": "Updating certs for frps on QA",
+            "status": "Invalid",
+            "assignee": "tanmay.maheshwari"
+          }
+        ]
       },
       "deployment_release": {
         "count": 68,
-        "percentage": 11.3
+        "percentage": 11.3,
+        "tickets": [
+          {
+            "key": "CLI-57501",
+            "summary": "Need to change the value of SEGMEMENT_WRITE_KEY in iac-server QA deployment",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57322",
+            "summary": "Grant spark-workload-identity SA pubsub.publisher on data-job-status topic in ce-qa-274307",
+            "status": "Cancelled",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57289",
+            "summary": "Uninstall Prisma Runtime Helm Chart for QA Cluster",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-57287",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57255",
+            "summary": "Deploy delegate hotfix 26.04.88904 on Harness0",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57226",
+            "summary": "Remove invalid/dummy connector from new feature not released",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-57221",
+            "summary": "Remove invalid/dummy connector from new feature not released",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-57187",
+            "summary": "teamIs it normal for prod0 deployment to not ask for approval?https://harness0.harness.io/ng/account/l7B_kbSEQD2wjrM7PShm5w/module/cd/orgs/Cloud_Infra/projects/harnessinfra/pipelines/Harness_CD_Canary_Pipeline_Latest/executions/TQsrQ7l6SnebZEeTG9F...",
+            "status": "Answered",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-57177",
+            "summary": "Devspace deployment issues",
+            "status": "Answered",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-57163",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-57151",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57132",
+            "summary": "Hi team !subteam^S08Q66LS9SL,We need some guidance on what is required from service owners to ensure consistent version propagation across environments.*Context:* `platform-ui` service is currently deployed to QA and prod0 on an internal cadence, ...",
+            "status": "Answered",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-57100",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-56541",
+            "summary": "hello teamcv-nextgen prod4 deployment failing using new pipelinehttps://harness0.harness.io/ng/account/l7B_kbSEQD2wjrM7PShm5w/module/cd/orgs/Cloud_Infra/projects/harnessinfra/pipelines/Harness_CD_Canary_Pipeline_Latest/executions/axzuRVwNQQG9iUEau...",
+            "status": "To Do",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-56533",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-56426",
+            "summary": "Investigate Kafka broker restart",
+            "status": "To Do",
+            "assignee": "shaishaw.shashank"
+          },
+          {
+            "key": "CLI-56387",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56368",
+            "summary": "```NAMESPACE             NAME                                                            READY   STATUS                       RESTARTS         AGEautoneg-system        autoneg-controller-manager-5ff568f9d8-htngd                     1/2     ImagePu...",
+            "status": "To Do",
+            "assignee": "chandraprakash.patel"
+          },
+          {
+            "key": "CLI-56367",
+            "summary": "Hi team, QQ: what is the process to remove helm releases from our environments? We want to delete a redundant deployment that's no longer needed.",
+            "status": "Answered",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56322",
+            "summary": "team could you please tell how the users who can approve the deployments in https://harness0.harness.io/ng/account/l7B_kbSEQD2wjrM7PShm5w/module/cd/orgs/Cloud_Infra/projects/harnessinfra/pipelines/Harness_CD_Canary_Pipeline_Latest/pipeline-studio/...",
+            "status": "Answered",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56323",
+            "summary": "Hero we have a failing QA deployment due to pod PodUnschedulable errors. Can someone help, we have a customer demo soon",
+            "status": "Invalid",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-56319",
+            "summary": "team trying to deploy to QA but we PodUnschedulable errors. We need the env for a demo in the next few hours. Can someone help?",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56317",
+            "summary": "Continous pod restarts from JFR issue. Applications failing to init.",
+            "status": "Duplicate",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-56314",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56304",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58386",
+            "summary": "Hey teamCan you please in investigating how these deployments were created ?rhs ( resource hierarchy service ) is a new service which we have created recently and `resource-hierarchy-service` also exist.Before removing these deployments, we want t...",
+            "status": "Invalid",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-58225",
+            "summary": "Add a github workflow to update helm subcharts similar to the upgrade locks workflow that updates library dependencies",
+            "status": "To Do",
+            "assignee": "himanshu.bohra"
+          },
+          {
+            "key": "CLI-58214",
+            "summary": "Fix deployment failure in devspaces due to missing changed_charts.txt and genDependencyGraph.py error",
+            "status": "Invalid",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58147",
+            "summary": "Investigate and resolve frequent restarts on Prod4 po-server",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58120",
+            "summary": "[harness0] Workload Identity Mapping for release-management",
+            "status": "Answered",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-58119",
+            "summary": "[prod8] Workload Identity Mapping for release-management",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58118",
+            "summary": "[prod4] Workload Identity Mapping for release-management",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58117",
+            "summary": "[prod0] Workload Identity Mapping for release-management",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58114",
+            "summary": "[prod8] Workload Identity Mapping for genai-service",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58113",
+            "summary": "[prod6] Workload Identity Mapping for genai-service",
+            "status": "Cancelled",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58112",
+            "summary": "[prod4] Workload Identity Mapping for genai-service",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-62577",
+            "summary": "Hello teamIs this document the latest process on production rollbacks - https://harness.atlassian.net/wiki/spaces/DEV/pages/22514827761/Rollback+in+ProductionRollback in Production - Cloud Engineering - Harness>, if a deployment is done using http...",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-62500",
+            "summary": "Update workload identity mapping to add airflow-service",
+            "status": "Answered",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-62376",
+            "summary": "Permission to run pipeline - 'Deploy Services - Prod - Clone'",
+            "status": "To Do",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62228",
+            "summary": "Snapshot deployment failed",
+            "status": "To Do",
+            "assignee": "unassigned"
+          },
+          {
+            "key": "CLI-62205",
+            "summary": "Delete ai-evals-ui deployment from QA",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-55689",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55672",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55670",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55664",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55626",
+            "summary": "Getting timeout error in deploy_services pipeline",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-55602",
+            "summary": "Deploy platform-ui service to all production environments",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-55575",
+            "summary": "DDL changes to be take care of for upcoming release deployment",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55554",
+            "summary": "Deploy stage3 infra on Harness0",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55690",
+            "summary": "Investigate and resolve ServiceDeployer Pipeline error",
+            "status": "To Do",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55531",
+            "summary": "team what's the recommended way for me to ensure that my new service gets deployed to all Harness environments (current and any new future envs)?",
+            "status": "To Do",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55526",
+            "summary": "team !subteam^S08Q66LS9SL question, is there any difference in how we configure redis in QA and Prod0? My deployment in QA works fine and connects correctly to redis, but in prod0 using the same chart config is failing? Is there any difference reg...",
+            "status": "In Progress",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55441",
+            "summary": "Latest HF version is not shown in deployment pipeline ",
+            "status": "Invalid",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-55762",
+            "summary": "GMP frontend in gmp-system namespace getting 403 \u2014 missing Workload Identity IAM binding",
+            "status": "To Do",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55390",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55382",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55381",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55363",
+            "summary": "Updating plugin version for ssca-plugins",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-55341",
+            "summary": "Pipeline deployment is failing after updating the deployment.yaml",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55331",
+            "summary": "Restart IAC Server pods in Prod 0",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-55325",
+            "summary": "Devspace deployment is failing due to error while creating letsencrypt-issuer",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-64248",
+            "summary": "Copy argocd 3.5.0 rapidfort images from Quay to HAR",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64243",
+            "summary": "Implement option to fail CD canary pipeline version management on single service failure",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64035",
+            "summary": "Prepare Infra components for UDP on prod6",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-63942",
+            "summary": "Hey teamEPIC -  https://harness.atlassian.net/browse/CDS-128845Design Spec/Tech Spec/Investigation for CDS-121834 - Validate Gitops Agent works with EKS-managed ArgoCD setup>I was trying to validate and test the working of managed ArgoCD capabilit...",
+            "status": "Invalid",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63893",
+            "summary": "Need to find long term solution for IP exhaustion issue in prod0",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63861",
+            "summary": "Deploy PR #233 in harness-cd-services repo - helm-common repo linking",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-63828",
+            "summary": "Investigate and restart kyverno-admission-controller in cd-play namespace",
+            "status": "Invalid",
+            "assignee": "tanmay.maheshwari"
+          }
+        ]
       },
       "database_postgres": {
         "count": 65,
-        "percentage": 10.8
+        "percentage": 10.8,
+        "tickets": [
+          {
+            "key": "CLI-57522",
+            "summary": "Need help in recovering a dirty migration on sto-core PG (prod2)",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57503",
+            "summary": "Require Read Access To Prod5 IACM Postgres",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57249",
+            "summary": "team request to run queries on postgres db in prod to check for duplicates in CCM budget_alerts table. We are adding a migration to add a primary key and require this check before merging the code.",
+            "status": "Answered",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57209",
+            "summary": "Need help in recovering a dirty migration on sto-core PG (prod1) ",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57201",
+            "summary": "I need help to truncate IACM CloudSql temporary table.",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57168",
+            "summary": "team !subteam^S08Q66LS9SL We\u2019re running a migration that includes some heavy queries (not part of regular workload).In all other envs, these complete within a few seconds, But, in *prod2*, due to the large dataset matching the criteria, execution ...",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57121",
+            "summary": "I need access to the IACM CloudSql database to truncate some temporary tables.",
+            "status": "Cancelled",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-57110",
+            "summary": "Need help running migrations manually on lightwing eu1 db.",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57096",
+            "summary": "DB - 69e7a505fb61ce54033e0890_catalog - Remove Migration Lock Manually (Prod5 AWS)",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-57065",
+            "summary": "Run migration before deployment for ti-service on prod environments.",
+            "status": "Duplicate",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-56482",
+            "summary": "Create DB in Prod4 PG instance",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-56362",
+            "summary": "decrementing migration number",
+            "status": "Invalid",
+            "assignee": "cmmadhav.prabhu"
+          },
+          {
+            "key": "CLI-56306",
+            "summary": "decrementing migration number",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56305",
+            "summary": "decrementing migration number",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56299",
+            "summary": "decrementing migration number",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56297",
+            "summary": "decrementing migration number",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56296",
+            "summary": "decrementing migration number",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56295",
+            "summary": "decrementing migration number",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56285",
+            "summary": "The metrics are not coming from prod1,2,3 registry postgres",
+            "status": "In Progress",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-58339",
+            "summary": "Request for Postgres 15 in Prod1 and Prod 2",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-58317",
+            "summary": "Need separate cloudsql instance in Snapshot env for Orchestration Graph Optimisation in SRE Play",
+            "status": "Waiting for customer",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-58302",
+            "summary": "Prod2: Delete 6975 duplicate k8sWorkloadRecommendation entries from PostgreSQL (ce_recommendations)",
+            "status": "Waiting for customer",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-58172",
+            "summary": "Provision postgres in prod0 & harness0",
+            "status": "Invalid",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58116",
+            "summary": "Create indexes for postgresql ng-manager before deployment -  All envs",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58076",
+            "summary": "Upgrade Postgres instance for QA environment (orchestration-qa-env) - pipeline-service bottleneck",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58060",
+            "summary": "Increase orchestration-qa-env Postgres DB Max connections on QA",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58032",
+            "summary": "[GitHub Migration] Integration-service repo not pushing prod parameter store changes.",
+            "status": "Done",
+            "assignee": "noeliamelina.urruchua"
+          },
+          {
+            "key": "CLI-62655",
+            "summary": "Find ways to clear wal in postgres if  kafka connector is failing",
+            "status": "To Do",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62654",
+            "summary": "Alerting if disk has grown too much in cloudsql",
+            "status": "To Do",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62609",
+            "summary": "Enable Debezium connector for AlloyDB CDC",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62605",
+            "summary": "Prod4 - Upgrade Postgres DB spec",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62440",
+            "summary": "Backup, Restore and HA for postgres deployment in Harness SMP",
+            "status": "To Do",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62409",
+            "summary": "Readonly user for acm db in postgres for harness0",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62371",
+            "summary": "Prod DB migration - Manually run the script and clear the dirty flag",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62241",
+            "summary": "Upgrading ACS CloudSQL instance VCPUs in QA Env",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62230",
+            "summary": "Hey teamWho do I reach out to get read only db(postgres) access for qa for my (iac-server) service.",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62188",
+            "summary": "For IE clusters do we have shared postgres instances across services (similar to what we have for self-hosted mongo instances)",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55686",
+            "summary": "DB - YzVkNzhmMzctNjFjOS00NW_catalog - Remove Migration Lock Manually",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55629",
+            "summary": "Postgres CDC prerequisites for Kafka Connect (HAR Unified Ingestion + Registry Async Service) in prod0",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-55589",
+            "summary": "Hello teamHow can I know which pod is consuming the connection for PG? I see that there is NAT in between and unable to know which pod is the reason. Both of the top IPs are NAT ones. This is for QA AlloyDB. Is there a way to know the IPs behind t...",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-55557",
+            "summary": "team Can you please share the account migration runbook that is used during migration. We want to know if the admin portal account disable feature is used in the migration to understand the impact of changes in it.cc: @kapil.garg @abel.mathew",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55550",
+            "summary": "team Please help in fixing the devspace issue related to timescaledbharness-manager is not able to come up. error message `couldn't find key timescaledbPostgresPassword in Secret tarunisrani/harness-secrets: CreateContainerConfigError`Devspace: ta...",
+            "status": "Invalid",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55534",
+            "summary": "Getting error when connecting to postgres DB using PAM",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55364",
+            "summary": "Enable SpiceDB RA Migration in QA environment",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-55349",
+            "summary": "Enable SpiceDB Scope Migration in QA environment",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55348",
+            "summary": "Enable SpiceDB Scope Migration in QA environment",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55347",
+            "summary": "Enable SpiceDB UserGroup Migration in QA environment",
+            "status": "Done",
+            "assignee": "anant.rao"
+          },
+          {
+            "key": "CLI-55343",
+            "summary": "Truncate Postgres-SpiceDB Table in QA Environment",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55337",
+            "summary": "Migration",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-55324",
+            "summary": "Investigate and resolve ti-service migration error related to duplicate function",
+            "status": "In Progress",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64270",
+            "summary": "Missing metrics for iac-server in new Haul Observability ",
+            "status": "To Do",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64249",
+            "summary": "Fiserv migration: Scale MongoDB cluster disk to 600Gi in prod0",
+            "status": "To Do",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-64116",
+            "summary": "Backfill gitops licensing related data in ng-manager postgres in prod1 and prod2 environments",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64115",
+            "summary": " S3 storage permissions for secrets-connectors-service (Prod5, Prod7, QA1)",
+            "status": "To Do",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64089",
+            "summary": "Investigate unclean Postgres stop and recovery for prod0-harness-postgres-analyticsdb",
+            "status": "To Do",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-64086",
+            "summary": "Increase code-prod1 postgres instance vCPU and Memory",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64080",
+            "summary": "[PIPE-36489] prod3: Repair 15 auditevents rows blocking Governance audit delivery",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64063",
+            "summary": "Downsize ACS CloudSQL instance in QA environment",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64033",
+            "summary": "Upgrade ACS CloudSQL instance in Prod2",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-63981",
+            "summary": "decrementing migration number to rerun migration",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63946",
+            "summary": "decrementing migration number to rerun migration",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63906",
+            "summary": "Need Database instance for ADLC in QA.",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-63890",
+            "summary": "Create missed index for postgresql ng-manager before deployment -  prod3",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-63888",
+            "summary": "Create index for postgresql ng-manager post rollback",
+            "status": "In Progress",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-63835",
+            "summary": "Failing migration on prod-2 postgres db",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          }
+        ]
       },
       "observability": {
         "count": 55,
-        "percentage": 9.2
+        "percentage": 9.2,
+        "tickets": [
+          {
+            "key": "CLI-57260",
+            "summary": "Create and annotate registry-log-monitor-ksa in qa-private cluster for Workload Identity",
+            "status": "Answered",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57252",
+            "summary": "Need access to Grafana Dashboards for UI Monitoring Health",
+            "status": "Done",
+            "assignee": "senan.jude"
+          },
+          {
+            "key": "CLI-57182",
+            "summary": "Need help to configure scs slack channel and PD on grafana alerts",
+            "status": "Answered",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57173",
+            "summary": "Add GCP project `ce-prod-274307` to `monitoring-prod-363017` metrics scope",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57172",
+            "summary": "Mute Service Healthcheck alerts for SEI services in Harness0",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57149",
+            "summary": "Access to create dashboards on Grafana ",
+            "status": "Cancelled",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57122",
+            "summary": "monitor stale entries in ES for this account in QA",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-57118",
+            "summary": "monitor stale entries in ES for this account in QA",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57067",
+            "summary": "team !subteam^S08Q66LS9SL Metrics have not been showing for `harness0` for the past 2 weeks in grafana, while they are working fine in other environments.I tried to port-forward to the harness0 pods to check the metrics endpoint, but wasn\u2019t able t...",
+            "status": "Answered",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-56524",
+            "summary": "STO dashboards not visible in grafana",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-56520",
+            "summary": "Monitor LB Pod restart / Node rotation / Scaling event / Failover LB backend health / cross-region routing",
+            "status": "To Do",
+            "assignee": "vineeth.chandran"
+          },
+          {
+            "key": "CLI-56475",
+            "summary": "Investigate source of provisioned Grafana alerts",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-56445",
+            "summary": "Request for access to create and edit a new dashboard on grafana",
+            "status": "Answered",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56435",
+            "summary": "Investigate and resolve Grafana alerts not reflecting after merge",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56402",
+            "summary": "Mute alerting rules for SEI services in Prod4",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56366",
+            "summary": "Provide permissions to run \"Grafana - Promote dashboard\" pipeline",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56355",
+            "summary": "Get admin role for Grafana dashboards",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56353",
+            "summary": "Need access to Promote Alerts pipeline",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56309",
+            "summary": "Get admin / editor role for Grafana dashboards",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56308",
+            "summary": "Get admin / editor role for Grafana dashboards",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56303",
+            "summary": "Prod3 metrics are not coming in ProdSetup-Managed Prometheus",
+            "status": "Invalid",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56270",
+            "summary": "Hello teamWe are creating alerts for a new service and had few questions. Read this doc, but could not find details - https://harness.atlassian.net/wiki/spaces/DEV/pages/22420324559/Onboarding+a+new+service+to+productionOnboarding a new service to...",
+            "status": "Answered",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56244",
+            "summary": "Create a new team for handling Grafana dashboards at MMO",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58381",
+            "summary": "Hello teamWas there any interim connectivity issue from production cluster to Harness0 around `2026-05-28T01:15:00Z`? We had received alerts for image pull backoff from HAR with error as `i/o timeout` for almost 25 mins, and auto-resolved.https://...",
+            "status": "In Progress",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-58378",
+            "summary": "Hello teamCan you please remove `!subteam^S0B0F67GG5S`  from the P0 alert for dashboard-load on all envs.This is not related to our squad and seems to a mistake,",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-58059",
+            "summary": "I need access for the Grafana Dasboard",
+            "status": "Done",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-58055",
+            "summary": "To add alerting on Actual customer pipeline failure in cloud builds ",
+            "status": "Answered",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-58021",
+            "summary": "Provide permissions to run \"Grafana - Promote dashboard\" pipeline",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-62589",
+            "summary": "Starrocks metrics should be scraped by prometheus",
+            "status": "Invalid",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62546",
+            "summary": "Hello Team, team / !subteam^S08Q66LS9SLWe observed an AWS GuardDuty finding related to a suspicious DNS request from an EC2 instance in your AWS account. Please help validate whether this activity is expected.Details:\u2022 *AWS Account ID:* 0503812256...",
+            "status": "Answered",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-62543",
+            "summary": "Looker dashboard is missing table",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-62529",
+            "summary": "Need permission to edit/add grafana dashboard",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-62508",
+            "summary": "Grant permission to run Grafana Alert promotion pipeline",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-62506",
+            "summary": "team / !subteam^S08Q66LS9SL*Hello Team,*We observed an AWS GuardDuty finding related to a suspicious DNS request from an EC2 instance in your AWS account. Please help validate whether this activity is expected.*Details:*\u2022 *AWS Account ID:* 0503812...",
+            "status": "Answered",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-62495",
+            "summary": "Access required to promote dashboard [IDP]",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-62369",
+            "summary": "Build an independent service to monitor any memstore",
+            "status": "To Do",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62272",
+            "summary": "Set up Redis stream monitoring for harness0",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62229",
+            "summary": "Add custom hosted datasource to monitoring.harness.io central grafana",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-62223",
+            "summary": "team !subteam^S08Q66LS9SL Can you please get the edit dashboard permissions to https://monitoring.harness.io/d/platform-unified-dashboard-v2/platform-unified-dashboard-v2?orgId=1&amp;from=2026-03-20T14:48:54.840Z&amp;to=2026-03-20T17:48:54.840Z&am...",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62212",
+            "summary": "Implement restart threshold for PagerDuty alerts",
+            "status": "To Do",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-62202",
+            "summary": "Create a symmetric and asymmetric signing key in QA-Setup",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-62192",
+            "summary": "Alert changes not reflecting in Grafana",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-55714",
+            "summary": "Metrics of last 10 days are not showing up in grafana for QA env",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55645",
+            "summary": "Deploy elastic prometheus exporter to all environments",
+            "status": "To Do",
+            "assignee": "senan.jude"
+          },
+          {
+            "key": "CLI-55630",
+            "summary": "Metrics not coming in QA Global Gateway ",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-55611",
+            "summary": "team How can I gain access to `Harness-Prod` New Relic account with ID `4440913`? I need to add a Synthetic monitor for the Platform UI service in this account, but I don\u2019t have write access. This is to ensure that we have the correct reporting se...",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55556",
+            "summary": "cache-service metrics are not publishing to the grafana",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-55551",
+            "summary": "Add elastic as datasource in grafana",
+            "status": "Done",
+            "assignee": "senan.jude"
+          },
+          {
+            "key": "CLI-55521",
+            "summary": "Grant permission to run Grafana promote pipeline",
+            "status": "Waiting for customer",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-55350",
+            "summary": "Grafana Dashboards edit access",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-64095",
+            "summary": "Create temporary log-based alert for inova_bitbucket_webhook_pipeline",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64094",
+            "summary": "Edit access to gitops grafana dashboard",
+            "status": "To Do",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64066",
+            "summary": "Hello teamWe observed an AWS GuardDuty finding indicating that a reverse shell was detected on an EC2 instance associated with the `qa1-k8s-eks-pri` EKS cluster.Event Details:\u2022 Time (UTC): 12 Aug 2026 10:25:57\u2022 AWS Account: 372454853140 (`harness-...",
+            "status": "Answered",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-63956",
+            "summary": "GKE prod1 pod restart storm - memory pressure and health check failures",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-63837",
+            "summary": "Need to setup Prometheus and Grafana for the FedRAMP Environment.",
+            "status": "To Do",
+            "assignee": "kishan.singh"
+          }
+        ]
       },
       "networking_dns": {
         "count": 22,
-        "percentage": 3.7
+        "percentage": 3.7,
+        "tickets": [
+          {
+            "key": "CLI-57311",
+            "summary": "Creation of GCLB rule for Ita\u00fa - Sandbox",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57285",
+            "summary": "Need help configuring Load Balancer",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-56545",
+            "summary": "[VanityURL] Create entry in GCLB for proofpoint-test.harness.io - Prod 1",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-56509",
+            "summary": "Creation of GCLB rule for PriceWaterhouseCoopers LLP ",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-56453",
+            "summary": "Update the QA GCLB certs in code to reflect the current state",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56386",
+            "summary": "[VanityURL] Create entry in GCLB for citizensbankqa.harness.io - Prod 1",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56358",
+            "summary": "team Ingress LB IP is missing for qpeperf devspace",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56324",
+            "summary": "Unable to connect to ingestion and coredb through pipeline , need ip whitelisting",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58336",
+            "summary": "Obtain Sonatype/Maven Central Enterprise License for Shared NAT Egress Traffic",
+            "status": "Waiting for customer",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-58332",
+            "summary": "Request for relicx IP whitelist for gateway calls",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-58287",
+            "summary": "[Devspace: ssca-team-standard] DNS resolution failing",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58231",
+            "summary": "[SMP]: TPA unable to connect to the platform when running with traefik ingress controller",
+            "status": "To Do",
+            "assignee": "vishal.singhal"
+          },
+          {
+            "key": "CLI-62449",
+            "summary": "Request for changing annotation for ingress on Harness0, Prod1 and Prod2",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62439",
+            "summary": "Request for changing annotation for ingress on QA",
+            "status": "Cancelled",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62432",
+            "summary": "IP Whitelisting for all Harness Clusters",
+            "status": "Backlog",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62381",
+            "summary": "Create Load Balancer and Cloud Armour configuration for Spark History Server UI",
+            "status": "Invalid",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-62243",
+            "summary": "[VanityURL] Create entry in GCLB for caribou.harness.io - Prod 1",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62227",
+            "summary": "Traceable Edge Clusters - restrict CDE egress (1.3.2) + remove public NTP fallback (10.6.2) (PCI DSS 4.0.1 remediation)",
+            "status": "Done",
+            "assignee": "gautam.panchal"
+          },
+          {
+            "key": "CLI-62208",
+            "summary": "Investigate missing itau-sandbox.harness.io from GCLB url-map",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64055",
+            "summary": "team - ingress ip for qpeperf devsapce has been changed but DNS is not updated accordingly , So i need help on execute below command to update DNS on sre-play```gcloud dns record-sets update http://qpeperf.pr2.harness.ioqpeperf.pr2.harness.io>. \\ ...",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64029",
+            "summary": "VPC regions + EKS regions Creation",
+            "status": "To Do",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-63973",
+            "summary": "[Vanity URL update] - bcbs",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          }
+        ]
       },
       "access_permissions": {
         "count": 18,
-        "percentage": 3.0
+        "percentage": 3.0,
+        "tickets": [
+          {
+            "key": "CLI-57512",
+            "summary": "Request longer historical access data for unauthenticated webhook details endpoint due to customer security review",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-57191",
+            "summary": "Empty S3 bucket missing Block Public Access \u2014 saas-eu2-vault2025012309053994780000004a (DataServices, eu-central-1)",
+            "status": "Under investigation",
+            "assignee": "vishal.singhal"
+          },
+          {
+            "key": "CLI-56451",
+            "summary": "Network-Level Metadata Access Restriction for CI Runners",
+            "status": "Invalid",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-56301",
+            "summary": "Create Or Update ElasticSearch API Key Access in Prod1, Prod2 and Prod3",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56293",
+            "summary": "Please grant me access to qa.harness.io",
+            "status": "Invalid",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56248",
+            "summary": "[SSCA] Need Kibana access to ssca_team user",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56210",
+            "summary": "Facing issue while accessing prod2 cvng",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-58068",
+            "summary": "FY27 - Harness External Pentest | Traceable - Medium Finding (#PT36406_15) - Unauthorized Access to Dataset Configuration via GraphQL  ",
+            "status": "Cancelled",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-58067",
+            "summary": "FY27 - Harness External Pentest | Traceable - Medium Finding (#PT36406_16) - Unauthorized Access to Label Management",
+            "status": "Cancelled",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62612",
+            "summary": "Need permission to run the IaCM Workspace",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-62443",
+            "summary": "Need create connector access to harness-infra project",
+            "status": "Done",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-62365",
+            "summary": "[INVALID - permission test, ignore] CLI Story/Initiative create check",
+            "status": "Invalid",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62265",
+            "summary": "Implement access restrictions and fix approval bug in FF_Validation_Pipeline",
+            "status": "To Do",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62256",
+            "summary": "Custom PAM Role for Port Forwarding for CCM Spark Jobs",
+            "status": "Invalid",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62233",
+            "summary": "Noisy Neighbour Causing Slowness in Access Control Service",
+            "status": "Done",
+            "assignee": "mayank.singhi"
+          },
+          {
+            "key": "CLI-55378",
+            "summary": "Provide admin access of auth0",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          },
+          {
+            "key": "CLI-55357",
+            "summary": "prod0.harness.io inaccessible",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-55328",
+            "summary": "Need a schema and user creds with write access for looker PDTs creation in prod2",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          }
+        ]
       },
       "storage_buckets": {
         "count": 16,
-        "percentage": 2.7
+        "percentage": 2.7,
+        "tickets": [
+          {
+            "key": "CLI-57521",
+            "summary": "Create GCS buckets (blobstore) for Test Intelligence",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-57505",
+            "summary": "Delete SMP 0.41.0 bundle from public bucket",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57207",
+            "summary": "Create idp-catalog-content bucket and a key ring for prod 0, 4 and EU",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57203",
+            "summary": "Create idp-catalog-content bucket and a key ring : Prod 1,2 and 3",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57200",
+            "summary": "Create S3 bucket for data retention on QA1 env",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-57196",
+            "summary": "Request for GCS Bucket in Harness0 and prod0",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57171",
+            "summary": "delete the last s3 sync record for account 4Omy8c47Q8yGMmzdMc6a1A",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-57145",
+            "summary": "delete the last s3 sync record for account 4Omy8c47Q8yGMmzdMc6a1A",
+            "status": "Done",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-56416",
+            "summary": "Needed help with deleting a spark application metadata from gcs bucket on QA",
+            "status": "Waiting for customer",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56253",
+            "summary": "Change location of GCS Prod8 bucket from US to EU",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56212",
+            "summary": "team can we prioritise this, We need to delete UAT project and migrate cache-service to gcs",
+            "status": "To Do",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58341",
+            "summary": "Request for GCS Bucket in Prod 1 and Prod 2 with CORS enabled for \"https://static.relicx.ai\"",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-58143",
+            "summary": "Create GCS bucket for Spark history server logs",
+            "status": "Cancelled",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-62653",
+            "summary": "Disable bucket versioning in Clickhouse FME S3 buckets",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62389",
+            "summary": "Explore to have CDN addition for out GCS buckets",
+            "status": "To Do",
+            "assignee": "anant.rao"
+          },
+          {
+            "key": "CLI-62360",
+            "summary": "Request for GCS Bucket in Harness QA",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          }
+        ]
       },
       "kubernetes_infra": {
         "count": 14,
-        "percentage": 2.3
+        "percentage": 2.3,
+        "tickets": [
+          {
+            "key": "CLI-57258",
+            "summary": "Thanks @jonathan.charette. We can start with this for now.team Could you please confirm which cluster the snapshot environment is currently running on?",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57099",
+            "summary": "Create bucket: idp-catalog-content for QA cluster ",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-56425",
+            "summary": "QA cluster CPU/memory under-provisioned \u2014 Spark jobs failing to schedule",
+            "status": "Waiting for customer",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56403",
+            "summary": "Move Harness0 IDP app cluster to regular nodes",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-56258",
+            "summary": "Need access to prod5 account and cluster",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-56252",
+            "summary": "Provision Elastic SAAS cluster in QA1(AWS)",
+            "status": "Done",
+            "assignee": "tanmay.maheshwari"
+          },
+          {
+            "key": "CLI-58383",
+            "summary": "Decommission GKE clusters for qa-idp-builds-5ff6 and qa-qa0-3885",
+            "status": "To Do",
+            "assignee": "eric.brown"
+          },
+          {
+            "key": "CLI-58286",
+            "summary": "Provision EKS cluster for Toyota Delegate installation",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-59589",
+            "summary": "AL2023 Compatibility Validation for SMP Harness Manager on EKS K8s 1.32 (Version 0.35.10)",
+            "status": "In Progress",
+            "assignee": "sai.veera"
+          },
+          {
+            "key": "CLI-62397",
+            "summary": "Hello teamIs it expected that QA spot nodes are not having `taints` ? Or are all QA nodes - spot nodes?```&gt; kubectl get node gke-qa-private-e2-custom-3264-spot-107dcf07-fvff -o jsonpath='spot={.metadata.labels.cloud\\.google\\.com/gke-spot}{\"\\n\"}...",
+            "status": "Answered",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62200",
+            "summary": "Investigate recurring pod startup failures and evaluate nodepool upgrade for prod1",
+            "status": "To Do",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-62194",
+            "summary": "Request for KEDA installation in Harness0 k8s cluster",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-64253",
+            "summary": "Upgrade Qdrant cluster to latest version",
+            "status": "To Do",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-64251",
+            "summary": "FedRAMP DR Cluster",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          }
+        ]
       },
       "noise_invalid": {
         "count": 13,
-        "percentage": 2.2
+        "percentage": 2.2,
+        "tickets": [
+          {
+            "key": "CLI-57498",
+            "summary": "NA",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57296",
+            "summary": "NA",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57204",
+            "summary": "!subteam^S08Q66LS9SL team is this done?",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-57125",
+            "summary": "team",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-56495",
+            "summary": "team",
+            "status": "In Progress",
+            "assignee": "ragesh.moyan"
+          },
+          {
+            "key": "CLI-56391",
+            "summary": "testing anurag",
+            "status": "Invalid",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56389",
+            "summary": "testing anurag",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56388",
+            "summary": "testing anurag",
+            "status": "Invalid",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56375",
+            "summary": "testing anurag",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-56313",
+            "summary": "https://harness.atlassian.net/browse/PIPE-32818",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58361",
+            "summary": "!subteam^S08Q66LS9SL teamCan someone look into this on priority?We are blocked and being a horizontal team, other teams are dependent on our sign-off.",
+            "status": "Done",
+            "assignee": "cmmadhav.prabhu"
+          },
+          {
+            "key": "CLI-55711",
+            "summary": "team",
+            "status": "Duplicate",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-55692",
+            "summary": "test ticket",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          }
+        ]
       },
       "troubleshooting": {
         "count": 13,
-        "percentage": 2.2
+        "percentage": 2.2,
+        "tickets": [
+          {
+            "key": "CLI-57320",
+            "summary": "Investigate span dropping in Tempo production environments",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-57295",
+            "summary": "updating session timeout",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-56540",
+            "summary": "Hello teamCan one of you please help in deleting this stuck spark app in prod3?prod3 - `hlu-ledger-1774926300001118757`This is a scheduled spark app, so cron would bring up a new app in 5 mins.",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-56503",
+            "summary": "Hello teamCan one of you please help in deleting this stuck spark app in prod2?prod2 - `hlu-ledger-1773477600020603567`This is a scheduled spark app, so cron would bring up a new app in 5 mins.",
+            "status": "Done",
+            "assignee": "jonathan.charette"
+          },
+          {
+            "key": "CLI-58213",
+            "summary": "Investigate recurring account creation failure in devspaces",
+            "status": "Done",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-58195",
+            "summary": "Investigate failure in Harness CD Canary pipeline",
+            "status": "Invalid",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58193",
+            "summary": "Investigate prod4 node failure to terminate Spark job containers",
+            "status": "Answered",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-58176",
+            "summary": "Investigate why our IP is getting blocked by Maven Central for excessive/automated consumption",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-58071",
+            "summary": "FY27 - Harness External Pentest | Traceable - Medium Finding (#PT36406_11) - Broken Function-Level Authorization on API Naming Rules ",
+            "status": "Cancelled",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-58048",
+            "summary": "Debezium connector crash-loop for componentsMetadata blocks OSS Risks data pipeline",
+            "status": "To Do",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62431",
+            "summary": "Clean up VMs preserved for runner -> lite-engine failure debugging",
+            "status": "Done",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-62361",
+            "summary": "Investigate missing pipeline-service logs in AWS CloudWatch for prod7",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-55562",
+            "summary": "Hello teamCan you please check on why multiple pods are failing to come up in devspace due to image pull error? Unable to test due to the issue.https://harness.slack.com/archives/C05B33Y19JP/p1771926821757759",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          }
+        ]
       },
       "feature_toggles_config": {
         "count": 10,
-        "percentage": 1.7
+        "percentage": 1.7,
+        "tickets": [
+          {
+            "key": "CLI-57199",
+            "summary": "disable Generative AI features in Elastic",
+            "status": "Answered",
+            "assignee": "manish.jaiswal2"
+          },
+          {
+            "key": "CLI-57143",
+            "summary": "Enable QA logs for pipeline service ",
+            "status": "Waiting for customer",
+            "assignee": "narendra.gottipati"
+          },
+          {
+            "key": "CLI-58372",
+            "summary": "forecasting-service : Enable Spark event log persistence for forecasting jobs",
+            "status": "To Do",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58369",
+            "summary": "forecasting-service : Enable remote log persistence for prod0 Airflow",
+            "status": "To Do",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-58178",
+            "summary": "Update the QA FF Approver count to 1 instead of 2",
+            "status": "Done",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-58163",
+            "summary": "Improve Harness Feature Flag Approval process by having multiple Approval steps when different group owners are mandatory",
+            "status": "To Do",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-58144",
+            "summary": "add dbops owners to ff-qa-approval-group",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-62602",
+            "summary": "Disable cbo_enable_low_cardinality_optimize in production for UDP StarRocks",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-62600",
+            "summary": "enable CDC for AR tables",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-55624",
+            "summary": "Enable pipeline-service logs on SRE-play.",
+            "status": "Answered",
+            "assignee": "sachin.kadam"
+          }
+        ]
       },
       "scaling_resources": {
         "count": 9,
-        "percentage": 1.5
+        "percentage": 1.5,
+        "tickets": [
+          {
+            "key": "CLI-57266",
+            "summary": "Increase Regional VCPU Quota Limit",
+            "status": "Invalid",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-57155",
+            "summary": "FY27 Q1 Tailscale VPN UAR Evidence Support",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-56480",
+            "summary": "Downscale Elasticsearch (ELK) Clusters for SSCA \u2013 Prod1 & Prod2",
+            "status": "Done",
+            "assignee": "ragesh.moyan"
+          },
+          {
+            "key": "CLI-56361",
+            "summary": "Scale down Elastic clusters to save cost",
+            "status": "Done",
+            "assignee": "ragesh.moyan"
+          },
+          {
+            "key": "CLI-55669",
+            "summary": "Hello teamWe need help for this CR - https://harness.atlassian.net/browse/CLI-55668[CLI-55668] Backfill data in prod3 timescale for license_usage_daily - JIRA>cc: @vishnu.smurali @sunil.mareddy",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55659",
+            "summary": "Hello teamNeed help with a P1 ticket due to timescale issue in prod3. It seems related to #C0AEM2MDSAW as start of error is exactly matchingError - https://cloudlogging.app.goo.gl/8ogpJfFXLRrVceyC7Ticket - https://harness.atlassian.net/browse/PL-6...",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64030",
+            "summary": "Quotas / type of machines",
+            "status": "To Do",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-63960",
+            "summary": "Bump cpu - mem for code-prod3",
+            "status": "To Do",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-63927",
+            "summary": "Isolate the CCM Spark Driver workload",
+            "status": "Done",
+            "assignee": "mayank.singhi"
+          }
+        ]
       },
       "environment_setup": {
         "count": 7,
-        "percentage": 1.2
+        "percentage": 1.2,
+        "tickets": [
+          {
+            "key": "CLI-57138",
+            "summary": "Create Keyring for QA setup project for use in encryption upload",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-58280",
+            "summary": "Required this taint on node pool \"locust-dep-pool\" on QA-Setup",
+            "status": "Done",
+            "assignee": "jonathan.mell"
+          },
+          {
+            "key": "CLI-55438",
+            "summary": "team Do we have a distributed tracing setup in place? If yes, can you please share.",
+            "status": "Done",
+            "assignee": "chandra.prakash"
+          },
+          {
+            "key": "CLI-64246",
+            "summary": "Request for AI-Evals Org creation in Harness0 account",
+            "status": "Done",
+            "assignee": "sunil.mareddy"
+          },
+          {
+            "key": "CLI-64064",
+            "summary": "team !subteam^S08Q66LS9SLhttps://harness0.harness.io/ng/account/l7B_kbSEQD2wjrM7PShm5w/module/cd/orgs/PROD/projects/Harness/pipelines/Publish_Immutable_Delegate_in_Ring/executions/XeSf3-eaQP-QTuEJncOB3w/pipeline?stage=lyJ-7yOuQ4aN6iTOwO-XbQ&amp;st...",
+            "status": "Done",
+            "assignee": "kishan.singh"
+          },
+          {
+            "key": "CLI-64028",
+            "summary": "Account Creation in AWS for QA",
+            "status": "To Do",
+            "assignee": "amit.kumardash"
+          },
+          {
+            "key": "CLI-63939",
+            "summary": "hey teamhttps://app.harness.io/ng/#/account/KTamSY6JSSepAOizKrdL2w/ci/orgs/default/projects/DataOps_Prod/pipelines/lookmlelt/executions/hEge-gELRX6p_NGxw-bhNg/pipelineapp.harness.io/ng#/account/\u2026/pipeline> this pipeline is failing from long timeth...",
+            "status": "Invalid",
+            "assignee": "kishan.singh"
+          }
+        ]
       },
       "data_cleanup_deletion": {
         "count": 5,
-        "percentage": 0.8
+        "percentage": 0.8,
+        "tickets": [
+          {
+            "key": "CLI-56433",
+            "summary": "Datafix for CCM-31308",
+            "status": "Done",
+            "assignee": "vishnu.smurali"
+          },
+          {
+            "key": "CLI-55482",
+            "summary": "Deleting incorrectly set config entity",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-55481",
+            "summary": "Deleting incorrectly set config entity",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-55477",
+            "summary": "Deleting incorrectly set config entity",
+            "status": "Done",
+            "assignee": "anurag.singh"
+          },
+          {
+            "key": "CLI-55411",
+            "summary": "Deleting incorrectly set config entity",
+            "status": "Done",
+            "assignee": "sachin.kadam"
+          }
+        ]
       },
       "kafka_messaging": {
         "count": 4,
-        "percentage": 0.7
+        "percentage": 0.7,
+        "tickets": [
+          {
+            "key": "CLI-56522",
+            "summary": "Bump `data-platform-cdc-ingestion-request` topic retention (and possibly broker disk size)",
+            "status": "To Do",
+            "assignee": "shaishaw.shashank"
+          },
+          {
+            "key": "CLI-58074",
+            "summary": "Clear Kafka Streams for `orchestration_log` in QA",
+            "status": "To Do",
+            "assignee": "nikhil.rajesh"
+          },
+          {
+            "key": "CLI-62215",
+            "summary": "Kafka connector in QA is not UP",
+            "status": "Done",
+            "assignee": "shaishaw.shashank"
+          },
+          {
+            "key": "CLI-55586",
+            "summary": "Connection slot issue in Kafka Connect in QA.",
+            "status": "Answered",
+            "assignee": "vishnu.smurali"
+          }
+        ]
       },
       "security_compliance": {
         "count": 3,
-        "percentage": 0.5
+        "percentage": 0.5,
+        "tickets": [
+          {
+            "key": "CLI-58312",
+            "summary": "PCI Evidence - EC2 Instance System Time Settings",
+            "status": "Waiting for customer",
+            "assignee": "vishal.singhal"
+          },
+          {
+            "key": "CLI-58069",
+            "summary": "FY27 - Harness External Pentest | Traceable - Medium Finding (#PT36406_14) - Authorization Bypass in updateAnomalyRuleConfigs GraphQL Mutation ",
+            "status": "Cancelled",
+            "assignee": "saurabh.pahuja"
+          },
+          {
+            "key": "CLI-62453",
+            "summary": "CVEs Reported by Bofa on SMP v1.40.1 [Traceable]",
+            "status": "To Do",
+            "assignee": "gautam.panchal"
+          }
+        ]
       }
     },
     "statuses": {

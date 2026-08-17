@@ -141,7 +141,11 @@ def analyze_jira(issues: list, config: dict) -> dict:
     return {
         "total_issues": len(issues),
         "categories": {
-            cat: {"count": len(items), "percentage": round(len(items) / len(issues) * 100, 1)}
+            cat: {
+                "count": len(items),
+                "percentage": round(len(items) / len(issues) * 100, 1),
+                "tickets": [{"key": t["key"], "summary": t["summary"], "status": t["status"], "assignee": (t["assignee"] or "unassigned").split("@")[0]} for t in items],
+            }
             for cat, items in sorted(categorized.items(), key=lambda x: -len(x[1]))
         },
         "statuses": dict(statuses.most_common()),
