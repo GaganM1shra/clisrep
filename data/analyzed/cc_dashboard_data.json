@@ -1,0 +1,395 @@
+{
+  "kpi": {
+    "total": 1059,
+    "noise": 13,
+    "real": 1046,
+    "unclassified": 215,
+    "coverage": 79,
+    "intents": 24
+  },
+  "categories": [
+    {
+      "cat": "operational_change",
+      "n": 629
+    },
+    {
+      "cat": "approvals",
+      "n": 160
+    },
+    {
+      "cat": "troubleshooting",
+      "n": 133
+    },
+    {
+      "cat": "access",
+      "n": 93
+    },
+    {
+      "cat": "knowledge",
+      "n": 31
+    }
+  ],
+  "intents": [
+    {
+      "act": "other_change",
+      "handler": "infra.provision_generic",
+      "feas": "approval_gated",
+      "n": 215,
+      "pct": 20.6,
+      "domain": "infra",
+      "catchall": true
+    },
+    {
+      "act": "approve_pull_request",
+      "handler": "vcs.approve_pull_request",
+      "feas": "human_only",
+      "n": 149,
+      "pct": 14.2,
+      "domain": "vcs",
+      "catchall": false
+    },
+    {
+      "act": "provision_datastore",
+      "handler": "infra.provision_datastore",
+      "feas": "approval_gated",
+      "n": 136,
+      "pct": 13.0,
+      "domain": "infra",
+      "catchall": false
+    },
+    {
+      "act": "rotate_secret",
+      "handler": "secrets.rotate_secret",
+      "feas": "approval_gated",
+      "n": 106,
+      "pct": 10.1,
+      "domain": "secrets",
+      "catchall": false
+    },
+    {
+      "act": "grant_permission",
+      "handler": "iam.grant_permission",
+      "feas": "approval_gated",
+      "n": 72,
+      "pct": 6.9,
+      "domain": "iam",
+      "catchall": false
+    },
+    {
+      "act": "deploy_failure",
+      "handler": "diag.deploy_failure",
+      "feas": "approval_gated",
+      "n": 68,
+      "pct": 6.5,
+      "domain": "diag",
+      "catchall": false
+    },
+    {
+      "act": "investigate",
+      "handler": "diag.investigate",
+      "feas": "approval_gated",
+      "n": 42,
+      "pct": 4.0,
+      "domain": "diag",
+      "catchall": false
+    },
+    {
+      "act": "update_config",
+      "handler": "config.update_config",
+      "feas": "approval_gated",
+      "n": 33,
+      "pct": 3.2,
+      "domain": "config",
+      "catchall": false
+    },
+    {
+      "act": "update_version",
+      "handler": "release.update_version",
+      "feas": "approval_gated",
+      "n": 27,
+      "pct": 2.6,
+      "domain": "release",
+      "catchall": false
+    },
+    {
+      "act": "manage_dns_or_url",
+      "handler": "network.manage_dns_or_url",
+      "feas": "approval_gated",
+      "n": 24,
+      "pct": 2.3,
+      "domain": "network",
+      "catchall": false
+    },
+    {
+      "act": "scale_resource",
+      "handler": "infra.scale_resource",
+      "feas": "approval_gated",
+      "n": 22,
+      "pct": 2.1,
+      "domain": "infra",
+      "catchall": false
+    },
+    {
+      "act": "create_service_account",
+      "handler": "iam.create_service_account",
+      "feas": "approval_gated",
+      "n": 21,
+      "pct": 2.0,
+      "domain": "iam",
+      "catchall": false
+    },
+    {
+      "act": "promote_or_deploy",
+      "handler": "release.promote_or_deploy",
+      "feas": "approval_gated",
+      "n": 21,
+      "pct": 2.0,
+      "domain": "release",
+      "catchall": false
+    },
+    {
+      "act": "how_to",
+      "handler": "kb.how_to",
+      "feas": "auto_friendly",
+      "n": 18,
+      "pct": 1.7,
+      "domain": "kb",
+      "catchall": false
+    },
+    {
+      "act": "run_migration_or_job",
+      "handler": "ops.run_migration_or_job",
+      "feas": "approval_gated",
+      "n": 15,
+      "pct": 1.4,
+      "domain": "ops",
+      "catchall": false
+    },
+    {
+      "act": "workload_unhealthy",
+      "handler": "diag.workload_unhealthy",
+      "feas": "approval_gated",
+      "n": 15,
+      "pct": 1.4,
+      "domain": "diag",
+      "catchall": false
+    },
+    {
+      "act": "delete_resource",
+      "handler": "infra.delete_resource",
+      "feas": "approval_gated",
+      "n": 12,
+      "pct": 1.1,
+      "domain": "infra",
+      "catchall": false
+    },
+    {
+      "act": "generate_token",
+      "handler": "secrets.generate_token",
+      "feas": "approval_gated",
+      "n": 12,
+      "pct": 1.1,
+      "domain": "secrets",
+      "catchall": false
+    },
+    {
+      "act": "approve_change",
+      "handler": "workflow.approve_change",
+      "feas": "human_only",
+      "n": 11,
+      "pct": 1.1,
+      "domain": "workflow",
+      "catchall": false
+    },
+    {
+      "act": "confirm_or_clarify",
+      "handler": "kb.confirm_or_clarify",
+      "feas": "auto_friendly",
+      "n": 9,
+      "pct": 0.9,
+      "domain": "kb",
+      "catchall": false
+    },
+    {
+      "act": "sync_or_data_failure",
+      "handler": "diag.sync_or_data_failure",
+      "feas": "approval_gated",
+      "n": 5,
+      "pct": 0.5,
+      "domain": "diag",
+      "catchall": false
+    },
+    {
+      "act": "toggle_feature_flag",
+      "handler": "config.toggle_feature_flag",
+      "feas": "approval_gated",
+      "n": 5,
+      "pct": 0.5,
+      "domain": "config",
+      "catchall": false
+    },
+    {
+      "act": "who_owns",
+      "handler": "kb.who_owns",
+      "feas": "auto_friendly",
+      "n": 4,
+      "pct": 0.4,
+      "domain": "kb",
+      "catchall": false
+    },
+    {
+      "act": "service_outage",
+      "handler": "diag.service_outage",
+      "feas": "approval_gated",
+      "n": 3,
+      "pct": 0.3,
+      "domain": "diag",
+      "catchall": false
+    },
+    {
+      "act": "restart_workload",
+      "handler": "ops.restart_workload",
+      "feas": "approval_gated",
+      "n": 1,
+      "pct": 0.1,
+      "domain": "ops",
+      "catchall": false
+    }
+  ],
+  "domains": [
+    [
+      "catch-all",
+      215
+    ],
+    [
+      "infra",
+      170
+    ],
+    [
+      "vcs",
+      149
+    ],
+    [
+      "diag",
+      133
+    ],
+    [
+      "secrets",
+      118
+    ],
+    [
+      "iam",
+      93
+    ],
+    [
+      "release",
+      48
+    ],
+    [
+      "config",
+      38
+    ],
+    [
+      "kb",
+      31
+    ],
+    [
+      "network",
+      24
+    ],
+    [
+      "ops",
+      16
+    ],
+    [
+      "workflow",
+      11
+    ]
+  ],
+  "auto": {
+    "Catch-all (needs split)": 215,
+    "Automatable action": 640,
+    "Human approval": 160,
+    "Self-serve answer": 31
+  },
+  "sources": {
+    "jira": 587,
+    "slack": 459
+  },
+  "top_res": [
+    {
+      "k": "deployment",
+      "n": 112
+    },
+    {
+      "k": "secret",
+      "n": 93
+    },
+    {
+      "k": "pipeline",
+      "n": 76
+    },
+    {
+      "k": "mongodb",
+      "n": 60
+    },
+    {
+      "k": "cluster",
+      "n": 57
+    },
+    {
+      "k": "grafana",
+      "n": 47
+    },
+    {
+      "k": "postgres",
+      "n": 38
+    },
+    {
+      "k": "migration",
+      "n": 29
+    },
+    {
+      "k": "kafka",
+      "n": 27
+    },
+    {
+      "k": "service-account",
+      "n": 17
+    }
+  ],
+  "top_env": [
+    {
+      "k": "qa",
+      "n": 126
+    },
+    {
+      "k": "prod (generic)",
+      "n": 71
+    },
+    {
+      "k": "prod0",
+      "n": 55
+    },
+    {
+      "k": "prod1",
+      "n": 40
+    },
+    {
+      "k": "prod2",
+      "n": 39
+    },
+    {
+      "k": "prod3",
+      "n": 38
+    },
+    {
+      "k": "prod4",
+      "n": 35
+    },
+    {
+      "k": "prod5",
+      "n": 19
+    }
+  ]
+}
