@@ -4,49 +4,7 @@
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    Dev([Dev]) --> Platform
-
-    subgraph Platform
-        Agent[Agent]
-        CTN[Containers]
-    end
-
-    Agent --> KG
-    KG --> Wf
-    KG -. "<15% escalate" .-> NoWf([Human])
-    Wf --> Control
-
-    subgraph KG[Knowledge Graph]
-        direction TB
-        MD[".md files"]
-        IntentMap["Intent → Wf mapping"]
-    end
-
-    subgraph Wf[Workflows]
-        W1[Wf 1]
-        W2[Wf 2]
-        W3[Wf N]
-    end
-
-    subgraph Control[Control Plane]
-        MCPs[MCPs / APIs]
-        RO[Read-only MCPs]
-    end
-
-    Control --> Dynamic[Dynamic Mode]
-    Dynamic --> Think["Agent Thinking\n(persona-based)"]
-    Think --> Output([Output])
-
-    KB[(KB\nvector-db)] --> Think
-    KB -. "cj: every hour" .- Slack[Slack + Confluence]
-    KG -. "cj: daily" .- Repos[Repos]
-
-    Platform --> Probe[Probe] --> Manta[Manta Dashboard]
-    Output --> CLI([CLI]) --> End([End User])
-    End -. "feedback" .-> CLI
-```
+![Architecture](new-architecture.jpg)
 
 ## Phase 1: Analysis — Complete
 
