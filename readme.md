@@ -4,7 +4,7 @@
 
 ## Architecture
 
-![Architecture](new-architecture.jpg)
+![Architecture](architecture.png)
 
 ## Phase 1: Analysis — Complete
 
